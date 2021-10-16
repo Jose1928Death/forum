@@ -14,6 +14,7 @@ export default {
     Link,
     Master,
   },
+
   methods: {
       //https://sweetalert2.github.io/#download
     getSuccess: function () {
@@ -24,8 +25,10 @@ export default {
       })
     },
   },
+
   mounted() {
     this.getSuccess();
   },
+
 };
 </script>
