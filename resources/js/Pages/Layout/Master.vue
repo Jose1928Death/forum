@@ -7,6 +7,7 @@
       <div class="row">
         <Sidebar />
         <div class="col-md-8">
+            <!--
           <div class="card">
             <div class="card-header bg-dark">
               <span class="badge bg-danger">Need fixed</span>
@@ -60,6 +61,8 @@
               </div>
             </div>
           </div>
+          -->
+          <slot></slot>
         </div>
       </div>
     </div>

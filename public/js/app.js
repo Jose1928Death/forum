@@ -3249,12 +3249,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _Layout_Master__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Layout/Master */ "./resources/js/Pages/Layout/Master.vue");
 //
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: 'EditUser'
+  components: {
+    Master: _Layout_Master__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  name: "EditUser"
 });
 
 /***/ }),
@@ -3272,6 +3301,58 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
 /* harmony import */ var _Layout_Master__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Layout/Master */ "./resources/js/Pages/Layout/Master.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3316,6 +3397,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Nav__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Nav */ "./resources/js/Pages/Layout/Nav.vue");
 /* harmony import */ var _Sidebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Sidebar */ "./resources/js/Pages/Layout/Sidebar.vue");
+//
+//
+//
 //
 //
 //
@@ -9893,7 +9977,51 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c("Master", [
+    _c("div", { staticClass: "card" }, [
+      _c("div", { staticClass: "card-header" }, [_vm._v("Bienvenido mg")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card-body" }, [
+        _c("form", { attrs: { action: "" } }, [
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "" } }, [_vm._v("Nombre")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: { type: "text", value: "Mg" }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "" } }, [_vm._v("Email")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: { type: "text", value: "Mg" }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "" } }, [_vm._v("Password")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: { type: "text", value: "Mg" }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "" } }, [_vm._v("Nombre")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: { type: "file" }
+            })
+          ])
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -9918,11 +10046,85 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "Master",
-    [_c("Link", { attrs: { href: "/logout" } }, [_vm._v("Logout")])],
-    1
-  )
+  return _c("Master", [
+    _c("div", { staticClass: "card" }, [
+      _c("div", { staticClass: "card-header bg-dark" }, [
+        _c("span", { staticClass: "badge bg-danger" }, [_vm._v("Need fixed")]),
+        _vm._v(" "),
+        _c("span", { staticClass: "text-white" }, [_vm._v("What is html?")]),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "badge bg-danger float-end",
+            staticStyle: { "margin-right": "1rem" },
+            attrs: { href: "" }
+          },
+          [_vm._v("Delete")]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "badge bg-warning float-end",
+            staticStyle: { "margin-right": "1rem" },
+            attrs: { href: "" }
+          },
+          [_vm._v("Fixed")]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card-body" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("p", [
+              _vm._v(
+                "\n                  Lorem Ipsum is simply dummy text of the printing and\n                  typesetting industry. Lorem Ipsum has been the industry's\n                  standard dummy text ever since the 1500s, when an unknown\n                  printer took a galley of type and scrambled it to make a\n                  type specimen book. It has survived not only five centuries,\n                  but also the leap into electronic typesetting, remaining\n                  essentially unchanged. It was popularised in the 1960s with\n                  the release of Letraset sheets containing Lorem Ipsum\n                  passages, and more recently with desktop publishing software\n                  like Aldus PageMaker including versions of Lorem Ipsum.\n                "
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-4" }, [
+            _c("i", { staticClass: "far fa-heart text-danger" }),
+            _vm._v(" "),
+            _c("small", [_vm._v("10")]),
+            _vm._v("\n                  \n                "),
+            _c("i", { staticClass: "far fa-comment text-success" }),
+            _vm._v(" "),
+            _c("small", [_vm._v("10")]),
+            _vm._v("\n                  \n              ")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-6" }, [
+            _c(
+              "a",
+              { staticClass: "badge bg-dark ml-1", attrs: { href: "" } },
+              [_vm._v("Android")]
+            ),
+            _vm._v(" "),
+            _c(
+              "a",
+              { staticClass: "badge bg-dark ml-1", attrs: { href: "" } },
+              [_vm._v("Web")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-2" }, [
+            _c(
+              "a",
+              {
+                staticClass: "btn btn-sm btn-dark float-end",
+                attrs: { href: "" }
+              },
+              [_vm._v("Read")]
+            )
+          ])
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -9956,7 +10158,11 @@ var render = function() {
         _c(
           "div",
           { staticClass: "row" },
-          [_c("Sidebar"), _vm._v(" "), _vm._m(0)],
+          [
+            _c("Sidebar"),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-8" }, [_vm._t("default")], 2)
+          ],
           1
         )
       ])
@@ -9964,94 +10170,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-8" }, [
-      _c("div", { staticClass: "card" }, [
-        _c("div", { staticClass: "card-header bg-dark" }, [
-          _c("span", { staticClass: "badge bg-danger" }, [
-            _vm._v("Need fixed")
-          ]),
-          _vm._v(" "),
-          _c("span", { staticClass: "text-white" }, [_vm._v("What is html?")]),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              staticClass: "badge bg-danger float-end",
-              staticStyle: { "margin-right": "1rem" },
-              attrs: { href: "" }
-            },
-            [_vm._v("Delete")]
-          ),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              staticClass: "badge bg-warning float-end",
-              staticStyle: { "margin-right": "1rem" },
-              attrs: { href: "" }
-            },
-            [_vm._v("Fixed")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card-body" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-12" }, [
-              _c("p", [
-                _vm._v(
-                  "\n                  Lorem Ipsum is simply dummy text of the printing and\n                  typesetting industry. Lorem Ipsum has been the industry's\n                  standard dummy text ever since the 1500s, when an unknown\n                  printer took a galley of type and scrambled it to make a\n                  type specimen book. It has survived not only five centuries,\n                  but also the leap into electronic typesetting, remaining\n                  essentially unchanged. It was popularised in the 1960s with\n                  the release of Letraset sheets containing Lorem Ipsum\n                  passages, and more recently with desktop publishing software\n                  like Aldus PageMaker including versions of Lorem Ipsum.\n                "
-                )
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-4" }, [
-              _c("i", { staticClass: "far fa-heart text-danger" }),
-              _vm._v(" "),
-              _c("small", [_vm._v("10")]),
-              _vm._v("\n                  \n                "),
-              _c("i", { staticClass: "far fa-comment text-success" }),
-              _vm._v(" "),
-              _c("small", [_vm._v("10")]),
-              _vm._v("\n                  \n              ")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-6" }, [
-              _c(
-                "a",
-                { staticClass: "badge bg-dark ml-1", attrs: { href: "" } },
-                [_vm._v("Android")]
-              ),
-              _vm._v(" "),
-              _c(
-                "a",
-                { staticClass: "badge bg-dark ml-1", attrs: { href: "" } },
-                [_vm._v("Web")]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-2" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "btn btn-sm btn-dark float-end",
-                  attrs: { href: "" }
-                },
-                [_vm._v("Read")]
-              )
-            ])
-          ])
-        ])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -10089,7 +10208,7 @@ var staticRenderFns = [
       },
       [
         _c("div", { staticClass: "container-fluid" }, [
-          _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
+          _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
             _vm._v("IES ALANDALUS")
           ]),
           _vm._v(" "),
@@ -10196,9 +10315,9 @@ var staticRenderFns = [
                             "a",
                             {
                               staticClass: "dropdown-item",
-                              attrs: { href: "#" }
+                              attrs: { href: "/profile/edit" }
                             },
-                            [_vm._v("Ajustes")]
+                            [_vm._v("Editar perfil")]
                           )
                         ]),
                         _vm._v(" "),

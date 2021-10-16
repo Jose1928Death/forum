@@ -10,4 +10,8 @@ class PageController extends Controller
     public function home(){
         return Inertia::render("Home");
     }
+
+    public function editProfile(){
+        return Inertia::render('EditUser');
+    }
 }

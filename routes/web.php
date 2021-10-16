@@ -18,6 +18,9 @@ use App\Http\Controllers\PageController;
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', [PageController::class, 'home'])->name('home');
     Route::get('/logout',[AuthController::class,'logout'])->name('logout');
+
+    //Editar perfil
+    Route::get('/profile/edit', [PageController::class,'editProfile']);
 });
 
 Route::group(['middleware' => 'NotLogin'], function () {

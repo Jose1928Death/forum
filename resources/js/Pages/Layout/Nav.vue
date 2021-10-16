@@ -5,7 +5,7 @@
       <!-- Container wrapper -->
       <div class="container-fluid">
         <!-- Navbar brand -->
-        <a class="navbar-brand" href="#">IES ALANDALUS</a>
+        <a href="/" class="navbar-brand">IES ALANDALUS</a>
 
         <!-- Toggle button -->
         <button
@@ -67,7 +67,7 @@
                     <a class="dropdown-item" href="#">Bienvenido</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Ajustes</a>
+                    <a class="dropdown-item" href="/profile/edit">Editar perfil</a>
                   </li>
                   <li><hr class="dropdown-divider" /></li>
                   <li>
