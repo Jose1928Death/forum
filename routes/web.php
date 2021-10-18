@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\QuestionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,9 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Editar perfil
     Route::get('/profile/edit', [PageController::class,'editProfile']);
+
+    //Pregunta detalle
+    Route::get('/question/detail', [QuestionController::class,'detail']);
 });
 
 Route::group(['middleware' => 'NotLogin'], function () {
