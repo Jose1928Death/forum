@@ -3679,7 +3679,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: 'nav'
+  name: "nav",
+  computed: {
+    user: function user() {
+      return this.$page.props.auth.user;
+    }
+  }
 });
 
 /***/ }),
@@ -3711,15 +3716,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  computed: {
-    tag: function tag() {
-      return this.$page.props.auth.tag;
-    }
-  },
-  name: 'Sidebar'
+  name: "Sidebar"
 });
 
 /***/ }),
@@ -10528,7 +10526,73 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "nav",
+    {
+      staticClass:
+        "mb-3 navbar navbar-expand-lg navbar-dark bg-primary navbar-light"
+    },
+    [
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
+          _vm._v("IES ALANDALUS")
+        ]),
+        _vm._v(" "),
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "collapse navbar-collapse",
+            attrs: { id: "navbarSupportedContent" }
+          },
+          [
+            _vm._m(1),
+            _vm._v(" "),
+            _c("ul", { staticClass: "navbar-nav d-flex flex-row me-1" }, [
+              _c("ul", { staticClass: "navbar-nav d-flex flex-row" }, [
+                _vm._m(2),
+                _vm._v(" "),
+                _c("li", { staticClass: "nav-item dropdown" }, [
+                  _vm._m(3),
+                  _vm._v(" "),
+                  _c(
+                    "ul",
+                    {
+                      staticClass: "dropdown-menu",
+                      staticStyle: { right: "0", left: "auto" },
+                      attrs: { "aria-labelledby": "navbarDropdownMenuLink" }
+                    },
+                    [
+                      _c("li", [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "dropdown-item",
+                            attrs: { href: "#" }
+                          },
+                          [
+                            _vm._v("Bienvenido "),
+                            _c("b", [_vm._v(_vm._s(_vm.user.name))])
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _vm._m(4),
+                      _vm._v(" "),
+                      _vm._m(5),
+                      _vm._v(" "),
+                      _vm._m(6)
+                    ]
+                  )
+                ])
+              ])
+            ])
+          ]
+        )
+      ])
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
@@ -10536,150 +10600,111 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
-      "nav",
+      "button",
       {
-        staticClass:
-          "mb-3 navbar navbar-expand-lg navbar-dark bg-primary navbar-light"
+        staticClass: "navbar-toggler",
+        attrs: {
+          type: "button",
+          "data-mdb-toggle": "collapse",
+          "data-mdb-target": "#navbarSupportedContent",
+          "aria-controls": "navbarSupportedContent",
+          "aria-expanded": "false",
+          "aria-label": "Toggle navigation"
+        }
+      },
+      [_c("i", { staticClass: "fas fa-bars" })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "navbar-nav me-auto mb-2 mb-lg-0" }, [
+      _c("li", { staticClass: "nav-item" }, [
+        _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+          _vm._v("Temas")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("li", { staticClass: "nav-item" }, [
+        _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+          _vm._v("Mensajes")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("li", { staticClass: "nav-item" }, [
+        _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+          _vm._v("Sin respuesta")
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "nav-item me-3 me-lg-0" }, [
+      _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+        _c("i", { staticClass: "fab fa-twitter" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "nav-link dropdown-toggle d-flex align-items-center",
+        attrs: {
+          href: "#",
+          id: "navbarDropdownMenuLink",
+          role: "button",
+          "data-mdb-toggle": "dropdown",
+          "aria-expanded": "false"
+        }
       },
       [
-        _c("div", { staticClass: "container-fluid" }, [
-          _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
-            _vm._v("IES ALANDALUS")
-          ]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "navbar-toggler",
-              attrs: {
-                type: "button",
-                "data-mdb-toggle": "collapse",
-                "data-mdb-target": "#navbarSupportedContent",
-                "aria-controls": "navbarSupportedContent",
-                "aria-expanded": "false",
-                "aria-label": "Toggle navigation"
-              }
-            },
-            [_c("i", { staticClass: "fas fa-bars" })]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "collapse navbar-collapse",
-              attrs: { id: "navbarSupportedContent" }
-            },
-            [
-              _c("ul", { staticClass: "navbar-nav me-auto mb-2 mb-lg-0" }, [
-                _c("li", { staticClass: "nav-item" }, [
-                  _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                    _vm._v("Temas")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "nav-item" }, [
-                  _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                    _vm._v("Mensajes")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "nav-item" }, [
-                  _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                    _vm._v("Sin respuesta")
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("ul", { staticClass: "navbar-nav d-flex flex-row me-1" }, [
-                _c("ul", { staticClass: "navbar-nav d-flex flex-row" }, [
-                  _c("li", { staticClass: "nav-item me-3 me-lg-0" }, [
-                    _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                      _c("i", { staticClass: "fab fa-twitter" })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "nav-item dropdown" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass:
-                          "nav-link dropdown-toggle d-flex align-items-center",
-                        attrs: {
-                          href: "#",
-                          id: "navbarDropdownMenuLink",
-                          role: "button",
-                          "data-mdb-toggle": "dropdown",
-                          "aria-expanded": "false"
-                        }
-                      },
-                      [
-                        _c("img", {
-                          staticClass: "rounded-circle",
-                          attrs: {
-                            src:
-                              "https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg",
-                            height: "22",
-                            alt: "",
-                            loading: "lazy"
-                          }
-                        })
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "ul",
-                      {
-                        staticClass: "dropdown-menu",
-                        staticStyle: { right: "0", left: "auto" },
-                        attrs: { "aria-labelledby": "navbarDropdownMenuLink" }
-                      },
-                      [
-                        _c("li", [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "dropdown-item",
-                              attrs: { href: "#" }
-                            },
-                            [_vm._v("Bienvenido")]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("li", [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "dropdown-item",
-                              attrs: { href: "/profile/edit" }
-                            },
-                            [_vm._v("Editar perfil")]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("li", [
-                          _c("hr", { staticClass: "dropdown-divider" })
-                        ]),
-                        _vm._v(" "),
-                        _c("li", [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "dropdown-item",
-                              attrs: { href: "#" }
-                            },
-                            [_vm._v("Cerrar sesión")]
-                          )
-                        ])
-                      ]
-                    )
-                  ])
-                ])
-              ])
-            ]
-          )
-        ])
+        _c("img", {
+          staticClass: "rounded-circle",
+          attrs: {
+            src: "https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg",
+            height: "22",
+            alt: "",
+            loading: "lazy"
+          }
+        })
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c(
+        "a",
+        { staticClass: "dropdown-item", attrs: { href: "/profile/edit" } },
+        [_vm._v("Editar perfil")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [_c("hr", { staticClass: "dropdown-divider" })])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
+        _vm._v("Cerrar sesión")
+      ])
+    ])
   }
 ]
 render._withStripped = true
@@ -10716,7 +10741,7 @@ var render = function() {
         _c(
           "ul",
           { staticClass: "list-group" },
-          _vm._l(_vm.$page.tag, function(tag) {
+          _vm._l(_vm.$page.props.tag, function(tag) {
             return _c("li", { key: tag.id, staticClass: "list-group-item" }, [
               _c("a", [_vm._v(_vm._s(tag.name))])
             ])
