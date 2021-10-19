@@ -3454,20 +3454,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -3476,15 +3462,22 @@ __webpack_require__.r(__webpack_exports__);
     Link: _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__.Link,
     Master: _Layout_Master__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
+  computed: {
+    user: function user() {
+      return this.$page.props.auth.user;
+    }
+  },
   methods: {
     //https://sweetalert2.github.io/#download
     getSuccess: function getSuccess() {
+      //if (this.$page.flash.success) {
       Swal.fire({
         icon: "success",
-        title: "Oops...",
-        text: "Something went wrong!"
+        title: "Bienvenido",
+        text: this.user.name
       });
-    }
+    } //},
+
   },
   mounted: function mounted() {
     this.getSuccess();
@@ -3720,13 +3713,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  computed: {
+    tag: function tag() {
+      return this.$page.props.auth.tag;
+    }
+  },
   name: 'Sidebar'
 });
 
@@ -10266,7 +10258,7 @@ var render = function() {
           _c("div", { staticClass: "col-md-12" }, [
             _c("p", [
               _vm._v(
-                "\n                  Lorem Ipsum is simply dummy text of the printing and\n                  typesetting industry. Lorem Ipsum has been the industry's\n                  standard dummy text ever since the 1500s, when an unknown\n                  printer took a galley of type and scrambled it to make a\n                  type specimen book. It has survived not only five centuries,\n                  but also the leap into electronic typesetting, remaining\n                  essentially unchanged. It was popularised in the 1960s with\n                  the release of Letraset sheets containing Lorem Ipsum\n                  passages, and more recently with desktop publishing software\n                  like Aldus PageMaker including versions of Lorem Ipsum.\n                "
+                "\n            Lorem Ipsum is simply dummy text of the printing and typesetting\n            industry. Lorem Ipsum has been the industry's standard dummy text\n            ever since the 1500s, when an unknown printer took a galley of\n            type and scrambled it to make a type specimen book. It has\n            survived not only five centuries, but also the leap into\n            electronic typesetting, remaining essentially unchanged. It was\n            popularised in the 1960s with the release of Letraset sheets\n            containing Lorem Ipsum passages, and more recently with desktop\n            publishing software like Aldus PageMaker including versions of\n            Lorem Ipsum.\n          "
               )
             ])
           ])
@@ -10277,11 +10269,11 @@ var render = function() {
             _c("i", { staticClass: "far fa-heart text-danger" }),
             _vm._v(" "),
             _c("small", [_vm._v("10")]),
-            _vm._v("\n                  \n                "),
+            _vm._v("\n            \n          "),
             _c("i", { staticClass: "far fa-comment text-success" }),
             _vm._v(" "),
             _c("small", [_vm._v("10")]),
-            _vm._v("\n                  \n              ")
+            _vm._v("\n            \n        ")
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "col-md-6" }, [
@@ -10344,7 +10336,7 @@ var render = function() {
           _c("div", { staticClass: "col-md-12" }, [
             _c("p", [
               _vm._v(
-                "\n                  Lorem Ipsum is simply dummy text of the printing and\n                  typesetting industry. Lorem Ipsum has been the industry's\n                  standard dummy text ever since the 1500s, when an unknown\n                  printer took a galley of type and scrambled it to make a\n                  type specimen book. It has survived not only five centuries,\n                  but also the leap into electronic typesetting, remaining\n                  essentially unchanged. It was popularised in the 1960s with\n                  the release of Letraset sheets containing Lorem Ipsum\n                  passages, and more recently with desktop publishing software\n                  like Aldus PageMaker including versions of Lorem Ipsum.\n                "
+                "\n            Lorem Ipsum is simply dummy text of the printing and typesetting\n            industry. Lorem Ipsum has been the industry's standard dummy text\n            ever since the 1500s, when an unknown printer took a galley of\n            type and scrambled it to make a type specimen book. It has\n            survived not only five centuries, but also the leap into\n            electronic typesetting, remaining essentially unchanged. It was\n            popularised in the 1960s with the release of Letraset sheets\n            containing Lorem Ipsum passages, and more recently with desktop\n            publishing software like Aldus PageMaker including versions of\n            Lorem Ipsum.\n          "
               )
             ])
           ])
@@ -10355,11 +10347,11 @@ var render = function() {
             _c("i", { staticClass: "far fa-heart text-danger" }),
             _vm._v(" "),
             _c("small", [_vm._v("10")]),
-            _vm._v("\n                  \n                "),
+            _vm._v("\n            \n          "),
             _c("i", { staticClass: "far fa-comment text-success" }),
             _vm._v(" "),
             _c("small", [_vm._v("10")]),
-            _vm._v("\n                  \n              ")
+            _vm._v("\n            \n        ")
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "col-md-6" }, [
@@ -10422,7 +10414,7 @@ var render = function() {
           _c("div", { staticClass: "col-md-12" }, [
             _c("p", [
               _vm._v(
-                "\n                  Lorem Ipsum is simply dummy text of the printing and\n                  typesetting industry. Lorem Ipsum has been the industry's\n                  standard dummy text ever since the 1500s, when an unknown\n                  printer took a galley of type and scrambled it to make a\n                  type specimen book. It has survived not only five centuries,\n                  but also the leap into electronic typesetting, remaining\n                  essentially unchanged. It was popularised in the 1960s with\n                  the release of Letraset sheets containing Lorem Ipsum\n                  passages, and more recently with desktop publishing software\n                  like Aldus PageMaker including versions of Lorem Ipsum.\n                "
+                "\n\n            Lorem Ipsum is simply dummy text of the printing and typesetting\n            industry. Lorem Ipsum has been the industry's standard dummy text\n            ever since the 1500s, when an unknown printer took a galley of\n            type and scrambled it to make a type specimen book. It has\n            survived not only five centuries, but also the leap into\n            electronic typesetting, remaining essentially unchanged. It was\n            popularised in the 1960s with the release of Letraset sheets\n            containing Lorem Ipsum passages, and more recently with desktop\n            publishing software like Aldus PageMaker including versions of\n            Lorem Ipsum.\n          "
               )
             ])
           ])
@@ -10433,11 +10425,11 @@ var render = function() {
             _c("i", { staticClass: "far fa-heart text-danger" }),
             _vm._v(" "),
             _c("small", [_vm._v("10")]),
-            _vm._v("\n                  \n                "),
+            _vm._v("\n            \n          "),
             _c("i", { staticClass: "far fa-comment text-success" }),
             _vm._v(" "),
             _c("small", [_vm._v("10")]),
-            _vm._v("\n                  \n              ")
+            _vm._v("\n            \n        ")
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "col-md-6" }, [
@@ -10712,42 +10704,30 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-4" }, [
-      _c(
-        "a",
-        { staticClass: "btn btn-primary btn-block", attrs: { href: "" } },
-        [_vm._v("Escribir un nuevo tema")]
-      ),
+  return _c("div", { staticClass: "col-md-4" }, [
+    _c("a", { staticClass: "btn btn-primary btn-block", attrs: { href: "" } }, [
+      _vm._v("Escribir un nuevo tema")
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "card" }, [
+      _c("div", { staticClass: "card-header" }, [_vm._v("Tags")]),
       _vm._v(" "),
-      _c("div", { staticClass: "card" }, [
-        _c("div", { staticClass: "card-header" }, [_vm._v("Tags")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card-body" }, [
-          _c("ul", { staticClass: "list-group" }, [
-            _c("li", { staticClass: "list-group-item" }, [
-              _c("a", [_vm._v("Web Development")])
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "list-group-item" }, [
-              _c("a", [_vm._v("Web Development")])
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "list-group-item" }, [
-              _c("a", [_vm._v("Web Development")])
+      _c("div", { staticClass: "card-body" }, [
+        _c(
+          "ul",
+          { staticClass: "list-group" },
+          _vm._l(_vm.$page.tag, function(tag) {
+            return _c("li", { key: tag.id, staticClass: "list-group-item" }, [
+              _c("a", [_vm._v(_vm._s(tag.name))])
             ])
-          ])
-        ])
+          }),
+          0
+        )
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 

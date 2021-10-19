@@ -6,14 +6,8 @@
             <div class="card-header">Tags</div>
             <div class="card-body">
               <ul class="list-group">
-                <li class="list-group-item">
-                  <a>Web Development</a>
-                </li>
-                <li class="list-group-item">
-                  <a>Web Development</a>
-                </li>
-                <li class="list-group-item">
-                  <a>Web Development</a>
+                <li class="list-group-item" v-for="tag in $page.tag" :key="tag.id">
+                  <a>{{tag.name}}</a>
                 </li>
               </ul>
             </div>
@@ -24,6 +18,11 @@
 
 <script>
 export default {
+    computed: {
+    tag() {
+      return this.$page.props.auth.tag
+    }
+  },
     name:'Sidebar'
 }
 </script>
