@@ -71,7 +71,7 @@
                 </li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
-                  <a class="dropdown-item" href="#">Cerrar sesión</a>
+                  <a class="dropdown-item" href="/logout">Cerrar sesión</a>
                 </li>
               </ul>
             </li>

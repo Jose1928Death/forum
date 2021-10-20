@@ -22,6 +22,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Editar perfil
     Route::get('/profile/edit', [PageController::class,'editProfile']);
+    Route::post('/profile/edit', [PageController::class,'postEditProfile']);
 
     //Pregunta detalle
     Route::get('/question/detail', [QuestionController::class,'detail']);
