@@ -17,7 +17,7 @@ use App\Http\Controllers\QuestionController;
 */
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/', [PageController::class, 'home'])->name('home');
+    Route::get('/', [QuestionController::class, 'home'])->name('home');
     Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 
     //Editar perfil

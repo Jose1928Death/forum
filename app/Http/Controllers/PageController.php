@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Question;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -10,9 +11,6 @@ use Inertia\Inertia;
 
 class PageController extends Controller
 {
-    public function home(){
-        return Inertia::render("Home");
-    }
 
     public function editProfile(){
         return Inertia::render('EditUser');
