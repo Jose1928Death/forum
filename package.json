@@ -25,6 +25,7 @@
         "vue-loader": "^15.9.8",
         "vue-toastr": "^2.1.2",
         "vue-toastr-2": "0.0.10",
-        "vuelidate": "^0.7.6"
+        "vuelidate": "^0.7.6",
+        "ziggy-js": "^1.4.2"
     }
 }

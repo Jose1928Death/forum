@@ -7,38 +7,33 @@ use App\Models\QuestionLike;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
+use App\Traits\Question as QuestionTrain;
 
 class QuestionController extends Controller
 {
+    use QuestionTrain;
+
     public function home(){
         $questions = Question::with("comment","tag","questionsave")->get();
         foreach($questions as $k => $v){
-            $questions[$k]->is_like=$this->likeDetail($v->id)['is_like'];
-            $questions[$k]->like_count=$this->likeDetail($v->id)['like_count'];
+            $questions[$k]->is_like=$this->getLikeDetail($v->id)['is_like'];
+            $questions[$k]->like_count=$this->getLikeDetail($v->id)['like_count'];
         }
         return Inertia::render("Home",['questions' => $questions]);
     }
 
-    public function detail()
+    public function detail($post)
     {
-        return Inertia::render('QuestionDetail');
+        $question = Question::where('post',$post)->with('comment.user','like','tag')->first();
+        $question->is_like = $this->getLikeDetail($question->id)['is_like'];
+        $question->is_count = $this->getLikeDetail($question->id)['like_count'];
+        return Inertia::render('QuestionDetail',['question'=>$question]);
     }
-
-    public function likeDetail($question_id){
-        //check is like
-        $q_like = Question::where('id',$question_id)
-            ->where('user_id',Auth::user()->id)
-            ->first();
-            if($q_like){
-                $is_like = 'true';
-            }else{
-                $is_like='false';
-            }
-
-            //like count
-            $like_count = QuestionLike::where('question_id',$question_id)->count();
-            $data['like_count'] = $like_count;
-            $data['is_like'] = $is_like;
-            return $data;
+    public function like($id){
+        QuestionLike::create([
+            'user_id' => Auth::user()->id,
+            'question_id' => $id
+        ]);
+        return response()->json(['success' => true]);
     }
 }

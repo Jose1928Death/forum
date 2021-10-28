@@ -25,7 +25,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/profile/edit', [PageController::class,'postEditProfile']);
 
     //Pregunta detalle
-    Route::get('/question/detail', [QuestionController::class,'detail']);
+    Route::get('/question/detail/{post}', [QuestionController::class,'detail'])->name('question.detail');
+    Route::get('/question/like/{id}',[QuestionController::class,'like']);
+
+    //Comentario
+    Route::post('question/comment/create',[QuestionController::class, 'createCommet']);
 });
 
 Route::group(['middleware' => 'NotLogin'], function () {

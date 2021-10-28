@@ -49,7 +49,7 @@
                 aria-expanded="false"
               >
                 <img
-                  src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg"
+                  :src="this.$page.props.auth_user.image"
                   class="rounded-circle"
                   height="22"
                   alt=""

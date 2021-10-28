@@ -27,23 +27,23 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Tag::create([
-            'name' => 'Web Deveploment',
-            'post' => Str::slug('Web Deveploment'),
+            'name' => 'Web',
+            'post' => Str::slug('Desarrollo web'),
         ]);
         Tag::create([
-            'name' => 'Mobile Deveploment',
-            'post' => Str::slug('Mobile Deveploment'),
+            'name' => 'Aplicacion',
+            'post' => Str::slug('Desarrollo de aplicaciones'),
         ]);
         Tag::create([
-            'name' => 'Computer Deveploment',
-            'post' => Str::slug('Computer Deveploment'),
+            'name' => 'Informal',
+            'post' => Str::slug('Cosas que pasan en el instituto'),
         ]);
 
         Question::create([
             'user_id'=>1,
-            'post'=>Str::slug('Laravel 8 not work?'),
-            'title'=>'Laravel 8 not work?',
-            'description'=>"Awoooooooooooooooo",
+            'post'=>Str::slug('¿Que es DAW?'),
+            'title'=>'¿Que es DAW?',
+            'description'=>"No sé que es DAW, me lo pueden decir?",
         ]);
 
         QuestionTag::create([
