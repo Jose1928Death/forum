@@ -41,9 +41,9 @@ class DatabaseSeeder extends Seeder
 
         Question::create([
             'user_id'=>1,
-            'post'=>Str::slug('¿Que es DAW?'),
-            'title'=>'¿Que es DAW?',
-            'description'=>"No sé que es DAW, me lo pueden decir?",
+            'post'=>Str::slug('Admin'),
+            'title'=>'Bienvenidos al foro por parte de la administracion',
+            'description'=>"Este mensaje ha sido generado para dar la bienvenida a los profesores y los alumnos del instituto",
         ]);
 
         QuestionTag::create([
