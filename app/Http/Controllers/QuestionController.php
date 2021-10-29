@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Question;
+use App\Models\QuestionComment;
 use App\Models\QuestionLike;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,6 +13,10 @@ use App\Traits\Question as QuestionTrain;
 class QuestionController extends Controller
 {
     use QuestionTrain;
+
+    public function create(){
+        return Inertia::render('CreateQuestion');
+    }
 
     public function home(){
         $questions = Question::with("comment","tag","questionsave")->get();
@@ -35,5 +40,18 @@ class QuestionController extends Controller
             'question_id' => $id
         ]);
         return response()->json(['success' => true]);
+    }
+
+    public function createComment(Request $request){
+        $q_id = $request->question_id;
+        $comment = $request -> comment;
+
+        $cmt = QuestionComment::create([
+            'question_id' => $q_id,
+            'user_id' => Auth::user()->id,
+            'comment' => $comment,
+        ]);
+        $createdComment = QuestionComment::where('id', $cmt->id)->with('user')->first();
+        return ['success' => true, 'comment' => $createdComment];
     }
 }

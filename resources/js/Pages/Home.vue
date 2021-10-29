@@ -2,7 +2,7 @@
   <Master>
     <div v-for="(q, index) in questions" :key="q.id" class="card">
       <div class="card-header bg-dark">
-        <span v-if="q.fiexed == 'false'" class="badge bg-danger">¿Tema fijado?</span>
+        <span v-if="q.fiexed == 'false'" class="badge bg-primary">¿Tema fijado?</span>
         <span v-else class="badge bg-success">Fijado</span>
         <span class="text-white">{{ q.title }}</span>
         <a v-show="isOwn(q.user_id)" href="" class="badge bg-danger float-end" style="margin-right: 1rem"

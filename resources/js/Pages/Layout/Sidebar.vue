@@ -1,6 +1,6 @@
 <template>
   <div class="col-md-4">
-    <a href class="btn btn-primary btn-block">Escribir un nuevo tema</a>
+    <a href="/question/create" class="btn btn-primary btn-block">Escribir un nuevo tema</a>
     <div class="card">
       <div class="card-header">Tags</div>
       <div class="card-body">

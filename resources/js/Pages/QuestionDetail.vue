@@ -4,7 +4,7 @@
       <div class="card-header">
         <div class="card">
           <div class="card-header bg-dark">
-            <span class="badge bg-danger">¿Tema fijado?</span>
+            <span class="badge bg-primary">¿Tema fijado?</span>
             <span class="text-white">{{ q.title }}</span>
             <a
               href=""
@@ -40,24 +40,31 @@
                 <a href class="badge bg-dark ml-1">Android</a>
                 <a href class="badge bg-dark ml-1">Web</a>
               </div>
+              <!--
               <div class="col-md-2">
                 <a href="" class="btn btn-sm btn-dark float-end">Read</a>
               </div>
+              -->
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12">
             <div class="card">
-                <div class="card-body">
-                    <form>
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Escribir comentario"></textarea>
-                        </div>
-                        <br>
-                        <button class="btn btn-primary float-end">Enviar</button>
-                    </form>
-                </div>
+              <div class="card-body">
+                <!-- Crear comentario -->
+                <form @submit.prevent="createComment(q.id)">
+                  <div class="form-group">
+                    <textarea
+                      class="form-control"
+                      placeholder="Escribir comentario"
+                      v-model="comment"
+                    ></textarea>
+                  </div>
+                  <br />
+                  <button class="btn btn-primary float-end">Enviar</button>
+                </form>
+              </div>
             </div>
           </div>
           <div class="col-md-12">
@@ -85,6 +92,7 @@
 
 <script>
 import Master from "./Layout/Master";
+import axios from "axios";
 export default {
   components: { Master },
   name: "QuestionDetail",
@@ -92,10 +100,24 @@ export default {
   data() {
     return {
       q: "",
+      comment: "",
     };
   },
   created() {
     this.q = this.question;
+  },
+  methods: {
+    createComment(q_id) {
+      var data = new FormData();
+      data.append("question_id", q_id);
+      data.append("comment", this.comment);
+      axios.post("/question/comment/create", data).then(res => {
+        const {success, comment} = res.data;
+        if(success){
+            this.q.comment.push(comment);
+        }
+      });
+    },
   },
 };
 </script>

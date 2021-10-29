@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Question extends Model
 {
     use HasFactory;
-    protected $fillable = ['question_id','post','title','description'];
+    protected $fillable = ['user_id','post','title','description'];
 
     public function comment(){
         return $this->hasMany(QuestionComment::class,'question_id');

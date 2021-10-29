@@ -20,6 +20,8 @@ class QuestionComment extends Model
         return $this->belongsTo(Question::class,'question_id');
     }
 
+    //Es un método para comparar dos fechas y nos dice la diferencia en años
+    //meses, dias, horas o minutos en el mismo formato
     public function getDateAttribute(){
         $c = new Carbon($this->created_at);
         return $c->diffForHumans();

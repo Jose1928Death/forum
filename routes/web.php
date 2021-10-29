@@ -28,8 +28,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/question/detail/{post}', [QuestionController::class,'detail'])->name('question.detail');
     Route::get('/question/like/{id}',[QuestionController::class,'like']);
 
+    //Crear pregunta
+    Route::get('/question/create',[QuestionController::class,'create'])->name('question.create');
+    Route::post('/question/create',[QuestionController::class,'store'])->name('question.store');
+
     //Comentario
-    Route::post('question/comment/create',[QuestionController::class, 'createCommet']);
+    Route::post('question/comment/create',[QuestionController::class, 'createComment']);
 });
 
 Route::group(['middleware' => 'NotLogin'], function () {
