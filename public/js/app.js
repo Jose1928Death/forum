@@ -2427,13 +2427,21 @@ __webpack_require__.r(__webpack_exports__);
       tag: [],
       description: ""
     };
-  }
-  /*
-  methods:{
-      createQuestion()
-  }
-  */
+  },
+  methods: {
+    createQuestion: function createQuestion() {
+      var _this = this;
 
+      this.loading = true;
+      var data = new FormData();
+      data.append('title', this.title);
+      data.append('tag', this.tag);
+      data.append('description', this.description);
+      this.$inertia.post('/question/create', data).then(function () {
+        return _this.loading = false;
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -10370,171 +10378,187 @@ var render = function() {
     _c("div", { staticClass: "container" }, [
       _c("div", { staticClass: "card" }, [
         _c("div", { staticClass: "card-body" }, [
-          _c("form", [
-            _c("div", { staticClass: "form-group" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.title,
-                    expression: "title"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: { type: "text", placeholder: "Enviar titulo" },
-                domProps: { value: _vm.title },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.title = $event.target.value
-                  }
+          _c(
+            "form",
+            {
+              on: {
+                submit: function($event) {
+                  $event.preventDefault()
+                  return _vm.createQuestion.apply(null, arguments)
                 }
-              })
-            ]),
-            _vm._v(" "),
-            _c("br"),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "form-group" },
-              _vm._l(_vm.$page.props.tag, function(t) {
-                return _c("div", { key: t.id }, [
-                  _c("label", { attrs: { for: "" } }, [_vm._v(_vm._s(t.name))]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.tag,
-                        expression: "tag"
+              }
+            },
+            [
+              _c("div", { staticClass: "form-group" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.title,
+                      expression: "title"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text", placeholder: "Enviar titulo" },
+                  domProps: { value: _vm.title },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
                       }
-                    ],
-                    attrs: { type: "checkbox", placeholder: "Enviar pregunta" },
-                    domProps: {
-                      value: t.id,
-                      checked: Array.isArray(_vm.tag)
-                        ? _vm._i(_vm.tag, t.id) > -1
-                        : _vm.tag
-                    },
-                    on: {
-                      change: function($event) {
-                        var $$a = _vm.tag,
-                          $$el = $event.target,
-                          $$c = $$el.checked ? true : false
-                        if (Array.isArray($$a)) {
-                          var $$v = t.id,
-                            $$i = _vm._i($$a, $$v)
-                          if ($$el.checked) {
-                            $$i < 0 && (_vm.tag = $$a.concat([$$v]))
+                      _vm.title = $event.target.value
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "form-group" },
+                _vm._l(_vm.$page.props.tag, function(t) {
+                  return _c("div", { key: t.id }, [
+                    _c("label", { attrs: { for: "" } }, [
+                      _vm._v(_vm._s(t.name))
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.tag,
+                          expression: "tag"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        placeholder: "Enviar pregunta"
+                      },
+                      domProps: {
+                        value: t.id,
+                        checked: Array.isArray(_vm.tag)
+                          ? _vm._i(_vm.tag, t.id) > -1
+                          : _vm.tag
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = _vm.tag,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = t.id,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.tag = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.tag = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
                           } else {
-                            $$i > -1 &&
-                              (_vm.tag = $$a
-                                .slice(0, $$i)
-                                .concat($$a.slice($$i + 1)))
+                            _vm.tag = $$c
                           }
-                        } else {
-                          _vm.tag = $$c
                         }
                       }
+                    })
+                  ])
+                }),
+                0
+              ),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group" }, [
+                _c("textarea", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.description,
+                      expression: "description"
                     }
-                  })
-                ])
-              }),
-              0
-            ),
-            _vm._v(" "),
-            _c("br"),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-group" }, [
-              _c("textarea", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.description,
-                    expression: "description"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: { placeholder: "Enviar pregunta" },
-                domProps: { value: _vm.description },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
+                  ],
+                  staticClass: "form-control",
+                  attrs: { placeholder: "Enviar pregunta" },
+                  domProps: { value: _vm.description },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.description = $event.target.value
                     }
-                    _vm.description = $event.target.value
                   }
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("br"),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-sm btn-primary float-end",
-                attrs: { disabled: _vm.loading }
-              },
-              [
-                _c(
-                  "div",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.loading,
-                        expression: "loading"
-                      }
-                    ],
-                    staticClass: "spinner-border spinner-border-sm",
-                    attrs: { role: "status" }
-                  },
-                  [
-                    _c("span", { staticClass: "sr-only" }, [
-                      _vm._v("Cargando...")
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.loading,
-                        expression: "loading"
-                      }
+                })
+              ]),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-sm btn-primary float-end",
+                  attrs: { disabled: _vm.loading }
+                },
+                [
+                  _c(
+                    "div",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.loading,
+                          expression: "loading"
+                        }
+                      ],
+                      staticClass: "spinner-border spinner-border-sm",
+                      attrs: { role: "status" }
+                    },
+                    [
+                      _c("span", { staticClass: "sr-only" }, [
+                        _vm._v("Cargando...")
+                      ])
                     ]
-                  },
-                  [_vm._v("Espera")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: !_vm.loading,
-                        expression: "!loading"
-                      }
-                    ]
-                  },
-                  [_vm._v("Enviar")]
-                )
-              ]
-            )
-          ])
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "span",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.loading,
+                          expression: "loading"
+                        }
+                      ]
+                    },
+                    [_vm._v("Espera")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "span",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: !_vm.loading,
+                          expression: "!loading"
+                        }
+                      ]
+                    },
+                    [_vm._v("Enviar")]
+                  )
+                ]
+              )
+            ]
+          )
         ])
       ])
     ])

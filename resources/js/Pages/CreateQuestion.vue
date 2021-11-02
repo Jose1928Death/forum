@@ -3,7 +3,7 @@
     <div class="container">
       <div class="card">
         <div class="card-body">
-          <form>
+          <form @submit.prevent='createQuestion'>
             <div class="form-group">
               <input
                 type="text"
@@ -68,10 +68,16 @@ export default {
       description: "",
     };
   },
-  /*
   methods:{
-      createQuestion()
+      createQuestion(){
+          this.loading=true;
+          var data = new FormData();
+          data.append('title',this.title);
+          data.append('tag',this.tag);
+          data.append('description',this.description);
+
+          this.$inertia.post('/question/create',data).then(()=>(this.loading=false));
+      }
   }
-  */
 };
 </script>
