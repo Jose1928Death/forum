@@ -79,7 +79,7 @@ export default {
       //if (this.$page.flash.success) {
         Swal.fire({
           icon: "success",
-          title: "Actualizaco",
+          title: "Actualizado",
           text: "Tu perfil ha sido actualizado correctamente",
         });
       },

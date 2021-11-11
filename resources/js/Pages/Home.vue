@@ -72,6 +72,7 @@ export default {
 
   created(){
       this.questions = this.$page.props.questions;
+      this.$forceUpdate();
   },
 
   computed: {

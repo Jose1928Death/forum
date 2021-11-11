@@ -32,12 +32,6 @@
         <!-- Icons -->
         <ul class="navbar-nav d-flex flex-row me-1">
           <ul class="navbar-nav d-flex flex-row">
-            <!-- Icons -->
-            <li class="nav-item me-3 me-lg-0">
-              <a class="nav-link" href="#">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
             <!-- Icon dropdown -->
             <li class="nav-item dropdown">
               <a
@@ -59,10 +53,11 @@
               <ul
                 class="dropdown-menu"
                 aria-labelledby="navbarDropdownMenuLink"
-                style="right: 0; left: auto"
               >
                 <li>
-                  <a class="dropdown-item" href="#">Bienvenido <b>{{user.name}}</b></a>
+                  <a class="dropdown-item" href="#"
+                    >Bienvenido <b>{{ user.name }}</b></a
+                  >
                 </li>
                 <li>
                   <a class="dropdown-item" href="/profile/edit"
@@ -74,6 +69,22 @@
                   <a class="dropdown-item" href="/logout">Cerrar sesión</a>
                 </li>
               </ul>
+            </li>
+            <!-- Icons -->
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="https://twitter.com/">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="https://es-es.facebook.com/">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </li>
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="https://www.youtube.com/">
+                <i class="fab fa-youtube"></i>
+              </a>
             </li>
           </ul>
         </ul>
