@@ -3,29 +3,43 @@
     <div class="containerInicio">
       <div class="cover">
         <div class="front">
-          <img v-for="img in image1" v-bind:src="img" alt="" />
+          <img class="backImg" v-for="img in image2" v-bind:src="img" alt="" />
           <div class="text">
-            <span class="text-1">Bienvenido a<br />ALANDAL</span>
+            <span class="text-1">Únete a nuestro foro</span>
             <span class="text-2"
-              >Un foro educativo para <br />
-              nuestros alumnos y profesores</span
+              >Gran cantidad de contenido<br />para los estudiantes y los
+              docentes</span
             >
           </div>
         </div>
       </div>
       <div class="forms">
         <div class="form-content">
-          <div class="login-form">
+          <div class="signup-form">
             <div class="title">
-              Iniciar sesión
+              Crear tu cuenta
               <div
                 v-show="loading"
                 class="spinner-border text-primary spinner-border-sm"
                 role="status"
               ></div>
             </div>
-            <form @submit.prevent="login">
+            <form @submit.prevent="register">
               <div class="input-boxes">
+                <div class="input-box">
+                  <i
+                    :class="[
+                      errors.name ? 'fas fa-user text-danger' : 'fas fa-user',
+                    ]"
+                  ></i>
+                  <input
+                    type="text"
+                    :class="[errors.name ? 'border-danger' : '']"
+                    id="name"
+                    v-model="name"
+                    placeholder="Nombre de usuario"
+                  />
+                </div>
                 <div class="input-box">
                   <i
                     :class="[
@@ -58,15 +72,30 @@
                     placeholder="Contraseña"
                   />
                 </div>
-                <div class="text sign-up-text">
-                  <div v-show="loading" class="button input-box">
-                    <input type="submit" value="Espera" :disabled="loading" />
+                <div class="form-group">
+                  <div style="line-height: 50%">
+                    <br />
                   </div>
+                  <label for="image">Foto de perfil</label>
+                  <input
+                    type="file"
+                    :class="[
+                      'form-control form-control-sm',
+                      errors.image ? 'border-danger' : '',
+                    ]"
+                    id="image"
+                    @change="selectImage"
+                  />
+                </div>
+                <div v-show="loading" class="button input-box">
+                  <input type="submit" value="Espera" :disabled="loading" />
+                </div>
 
-                  <div v-show="!loading" class="button input-box">
-                    <input type="submit" value="Iniciar" :disabled="loading" />
-                  </div>
-                  Únete a <a href="/register">Alandal</a>
+                <div v-show="!loading" class="button input-box">
+                  <input type="submit" value="Registrar" :disabled="loading" />
+                </div>
+                <div class="text sign-up-text">
+                  ¿Ya tienes una cuenta? <a href="/login">Inicia sesión</a>
                 </div>
               </div>
             </form>
@@ -79,42 +108,51 @@
 
 <script>
 export default {
-  name: "Login",
   props: {
     errors: {
       type: Object,
     },
   },
+  name: "Register",
   data() {
     return {
+      name: "",
       email: "",
       password: "",
+      image: "",
       loading: false,
-
-      image1: ["https://mapio.net/images-p/621666.jpg"],
       image2: [
         "https://static.ideal.es/www/pre2017/multimedia/noticias/201606/21/media/almeria/ies-andalus_xoptimizadax.jpg",
       ],
     };
   },
+  //metodos
   methods: {
-    login() {
+    selectImage(e) {
+      this.image = e.target.files[0];
+    },
+    register() {
       this.loading = true;
       var data = new FormData();
+      data.append("name", this.name);
       data.append("email", this.email);
       data.append("password", this.password);
-
-      this.$inertia.post("/login", data, {
+      data.append("image", this.image);
+      this.$inertia.post("/register", data, {
         onFinish: () => (this.loading = false),
         onError: (errors) => {
           Swal.fire({
             icon: "error",
             title: "Error",
             html:
+              (this.$page.props.errors.name ? "Se requiere un nombre" : "") +
+              "<br>" +
               (this.$page.props.errors.email ? "Se requiere un correo" : "") +
               "<br>" +
-              (this.$page.props.errors.password
-                ? "Se requiere una contraseña"
+              (this.$page.props.errors.password ? "Se requiere una contraseña" : "") +
+              "<br>" +
+              (this.$page.props.errors.image
+                ? "Se requiere una imagen png, jpg"
                 : ""),
           });
         },

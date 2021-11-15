@@ -29,11 +29,11 @@
             </div>
             <div class="row">
               <div class="col-md-4">
-                <i class="far fa-heart text-danger"></i>
-                <small>10</small>
+                <i class="fas fa-heart"></i>
+                <small>2</small>
                 &nbsp;&nbsp;
                 <i class="far fa-comment text-success"></i>
-                <small>10</small>
+                <small>{{ q.comment.length }}</small>
                 &nbsp;&nbsp;
               </div>
               <div class="col-md-6">
