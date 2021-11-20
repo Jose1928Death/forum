@@ -23,6 +23,7 @@ Route::group(['middleware' => 'auth'], function () {
     //Editar perfil
     Route::get('/profile/edit', [PageController::class,'editProfile']);
     Route::post('/profile/edit', [PageController::class,'postEditProfile']);
+    Route::get('/profile/question', [QuestionController::class, 'userQuestion'])->name('question.user');
 
     //Pregunta detalle
     Route::get('/question/detail/{post}', [QuestionController::class,'detail'])->name('question.detail');
@@ -31,6 +32,8 @@ Route::group(['middleware' => 'auth'], function () {
     //Crear pregunta
     Route::get('/question/create',[QuestionController::class,'create'])->name('question.create');
     Route::post('/question/create',[QuestionController::class,'store'])->name('question.store');
+    Route::get('/question/user',[QuestionController::class,'userQuestion'])->name('question.user');
+    Route::get('/question/delete/{id}',[QuestionController::class,'delete'])->name('question.delete');
 
     //Comentario
     Route::post('question/comment/create',[QuestionController::class, 'createComment']);

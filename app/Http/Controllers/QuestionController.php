@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Question;
 use App\Models\QuestionComment;
 use App\Models\QuestionLike;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
@@ -38,7 +39,7 @@ class QuestionController extends Controller
     }
 
     public function home(){
-        $questions = Question::with("comment","tag","questionsave")->orderBy('id','DESC')->get();
+        $questions = Question::with("comment","tag","questionsave")->orderBy('id','DESC')->paginate(2);
         foreach($questions as $k => $v){
             $questions[$k]->is_like=$this->getLikeDetail($v->id)['is_like'];
             $questions[$k]->like_count=$this->getLikeDetail($v->id)['like_count'];
@@ -72,5 +73,16 @@ class QuestionController extends Controller
         ]);
         $createdComment = QuestionComment::where('id', $cmt->id)->with('user')->first();
         return ['success' => true, 'comment' => $createdComment];
+    }
+    //Pregunta usuario
+    public function userQuestion(){
+        $user = User::find(Auth::user()->id);
+        $questions = $user->question;
+        return Inertia::render('UserQuestion',['questions'=>$questions]);
+    }
+    //Borrar pregunta
+    public function delete($id){
+        Question::where('id',$id)->delete();
+        return response()->json(['success' => true]);
     }
 }
