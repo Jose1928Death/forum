@@ -2,21 +2,11 @@
   <div class="card">
     <nav aria-label="Page navigation example">
       <ul class="pagination justify-content-between">
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Previous</span>
+        <li class="page-item" :class="{active:l.active}" v-for='(l,index) in links' :key="index">
+          <a class="page-link" :href='l.url'>
+            {{l.label}}
           </a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Next</span>
-          </a>
-        </li>
+          </li>
       </ul>
     </nav>
   </div>
@@ -25,6 +15,14 @@
 <script>
 export default {
   name: "Pagination",
-  props:{}
+  props: { links: Array },
+  created() {
+    var array = this.$page.props.questions.links;
+    array[0].label = "Anterior";
+
+    var array = this.$page.props.questions.links;
+    array.slice(-1)[0].label = "Siguiente";
+  },
 };
+
 </script>

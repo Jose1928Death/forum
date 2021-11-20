@@ -6,6 +6,7 @@ use App\Models\Question;
 use App\Models\QuestionComment;
 use App\Models\QuestionLike;
 use App\Models\User;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
@@ -38,8 +39,14 @@ class QuestionController extends Controller
         return redirect('/')->with('success','Tema creado');
     }
 
-    public function home(){
-        $questions = Question::with("comment","tag","questionsave")->orderBy('id','DESC')->paginate(2);
+    public function home(Request $request){
+        if($post = $request->tag){
+            $tag = Tag::where('post',$post)->first();
+            $questions = $tag->question()->with("comment","tag","questionsave")->orderBy('id','DESC')->paginate(3);
+        }else{
+            $questions = Question::with("comment","tag","questionsave")->orderBy('id','DESC')->paginate(3);
+        }
+        //return $questions;
         foreach($questions as $k => $v){
             $questions[$k]->is_like=$this->getLikeDetail($v->id)['is_like'];
             $questions[$k]->like_count=$this->getLikeDetail($v->id)['like_count'];
@@ -76,8 +83,8 @@ class QuestionController extends Controller
     }
     //Pregunta usuario
     public function userQuestion(){
-        $user = User::find(Auth::user()->id);
-        $questions = $user->question;
+        $user_id = Auth::user()->id;
+        $questions = Question::where('user_id', $user_id)->paginate(5);
         return Inertia::render('UserQuestion',['questions'=>$questions]);
     }
     //Borrar pregunta

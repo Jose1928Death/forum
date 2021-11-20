@@ -6,7 +6,7 @@
       <div class="card-body">
         <ul class="list-group">
           <li class="list-group-item" v-for="tag in $page.props.tag" :key="tag.id">
-            <a>{{ tag.name }}</a>
+            <a :href="'/?tag='+tag.post">{{ tag.name }}</a>
           </li>
         </ul>
       </div>
@@ -37,16 +37,7 @@
 <script>
 export default {
   name: "Sidebar",
-  /*
-  data(){
-    return{
-      path:''
-    }
-  },
-  created(){
-    this.path = location.pathname
-  },
-  */
+
   computed:{
       isProfileUrl(){
           var url = location.pathname;

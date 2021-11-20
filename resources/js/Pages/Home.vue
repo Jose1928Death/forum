@@ -113,9 +113,8 @@ export default {
       });
     },
     like(q_id, index) {
-      this.questions[index].is_like = "true";
-      this.questions[index].like_count++;
-      this.questions;
+      this.questions.data[index].is_like = "true";
+      this.questions.data[index].like_count++;
       axios.get(`/question/like/${q_id}`).then((res) => {});
     },
     isOwn(user_id) {

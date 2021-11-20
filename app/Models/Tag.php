@@ -9,4 +9,7 @@ class Tag extends Model
 {
     use HasFactory;
     protected $fillable = ['post','name'];
+    public function question(){
+        return $this->belongsToMany(Question::class,'question_tags');
+    }
 }

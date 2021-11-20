@@ -2424,19 +2424,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Pagination",
-  props: {}
+  props: {
+    links: Array
+  },
+  created: function created() {
+    var array = this.$page.props.questions.links;
+    array[0].label = "Anterior";
+    var array = this.$page.props.questions.links;
+    array.slice(-1)[0].label = "Siguiente";
+  }
 });
 
 /***/ }),
@@ -2790,9 +2788,8 @@ vue__WEBPACK_IMPORTED_MODULE_4__["default"].mixin({
       });
     },
     like: function like(q_id, index) {
-      this.questions[index].is_like = "true";
-      this.questions[index].like_count++;
-      this.questions;
+      this.questions.data[index].is_like = "true";
+      this.questions.data[index].like_count++;
       axios__WEBPACK_IMPORTED_MODULE_2___default().get("/question/like/".concat(q_id)).then(function (res) {});
     },
     isOwn: function isOwn(user_id) {
@@ -3075,17 +3072,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Sidebar",
-
-  /*
-  data(){
-    return{
-      path:''
-    }
-  },
-  created(){
-    this.path = location.pathname
-  },
-  */
   computed: {
     isProfileUrl: function isProfileUrl() {
       var url = location.pathname;
@@ -3264,6 +3250,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layout_Master__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Layout/Master */ "./resources/js/Pages/Layout/Master.vue");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Component_Pagination__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Component/Pagination */ "./resources/js/Pages/Component/Pagination.vue");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+//
+//
+//
 //
 //
 //
@@ -3283,9 +3274,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 
+
+
+vue__WEBPACK_IMPORTED_MODULE_3__["default"].mixin({
+  methods: {
+    route: window.route
+  }
+});
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    Master: _Layout_Master__WEBPACK_IMPORTED_MODULE_0__["default"]
+    Master: _Layout_Master__WEBPACK_IMPORTED_MODULE_0__["default"],
+    Pagination: _Component_Pagination__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   name: "UserQuestion",
   data: function data() {
@@ -10842,68 +10841,32 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card" }, [
-      _c("nav", { attrs: { "aria-label": "Page navigation example" } }, [
-        _c("ul", { staticClass: "pagination justify-content-between" }, [
-          _c("li", { staticClass: "page-item" }, [
-            _c(
-              "a",
-              {
-                staticClass: "page-link",
-                attrs: { href: "#", "aria-label": "Previous" }
-              },
-              [
-                _c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("«")]),
-                _vm._v(" "),
-                _c("span", { staticClass: "sr-only" }, [_vm._v("Previous")])
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _vm._v("1")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _vm._v("2")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item" }, [
-            _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
-              _vm._v("3")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "page-item" }, [
-            _c(
-              "a",
-              {
-                staticClass: "page-link",
-                attrs: { href: "#", "aria-label": "Next" }
-              },
-              [
-                _c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("»")]),
-                _vm._v(" "),
-                _c("span", { staticClass: "sr-only" }, [_vm._v("Next")])
-              ]
-            )
-          ])
-        ])
-      ])
+  return _c("div", { staticClass: "card" }, [
+    _c("nav", { attrs: { "aria-label": "Page navigation example" } }, [
+      _c(
+        "ul",
+        { staticClass: "pagination justify-content-between" },
+        _vm._l(_vm.links, function(l, index) {
+          return _c(
+            "li",
+            {
+              key: index,
+              staticClass: "page-item",
+              class: { active: l.active }
+            },
+            [
+              _c("a", { staticClass: "page-link", attrs: { href: l.url } }, [
+                _vm._v("\n          " + _vm._s(l.label) + "\n        ")
+              ])
+            ]
+          )
+        }),
+        0
+      )
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -11821,7 +11784,9 @@ var render = function() {
             { staticClass: "list-group" },
             _vm._l(_vm.$page.props.tag, function(tag) {
               return _c("li", { key: tag.id, staticClass: "list-group-item" }, [
-                _c("a", [_vm._v(_vm._s(tag.name))])
+                _c("a", { attrs: { href: "/?tag=" + tag.post } }, [
+                  _vm._v(_vm._s(tag.name))
+                ])
               ])
             }),
             0
@@ -12073,13 +12038,26 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("Master", [
+    _c(
+      "div",
+      { staticClass: "container" },
+      [_c("Pagination", { attrs: { links: _vm.questions.links } })],
+      1
+    ),
+    _vm._v(" "),
     _c("div", { staticClass: "container" }, [
       _c(
         "div",
         { staticClass: "col-md-12" },
-        _vm._l(_vm.questions, function(q, index) {
+        _vm._l(_vm.questions.data, function(q, index) {
           return _c("div", { key: index, staticClass: "card" }, [
             _c("div", { staticClass: "card-body" }, [
+              _c(
+                "a",
+                { attrs: { href: _vm.route("question.detail", q.post) } },
+                [_vm._v(_vm._s(q.title))]
+              ),
+              _vm._v(" "),
               _c("i", {
                 staticClass:
                   "far fa-trash-alt float-right text-danger float-end",
@@ -12088,9 +12066,7 @@ var render = function() {
                     return _vm.deleteQuestion(index, q.id)
                   }
                 }
-              }),
-              _vm._v(" "),
-              _c("a", [_vm._v(_vm._s(q.title))])
+              })
             ])
           ])
         }),

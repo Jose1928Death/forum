@@ -1,14 +1,17 @@
 <template>
   <Master>
     <div class="container">
+      <Pagination :links="questions.links" />
+    </div>
+    <div class="container">
       <div class="col-md-12">
-        <div class="card" v-for="(q, index) in questions" :key="index">
+        <div class="card" v-for="(q, index) in questions.data" :key="index">
           <div class="card-body">
+            <a :href="route('question.detail',q.post)">{{q.title}}</a>
             <i
               v-on:click="deleteQuestion(index, q.id)"
               class="far fa-trash-alt float-right text-danger float-end"
             ></i>
-            <a>{{ q.title }}</a>
           </div>
         </div>
       </div>
@@ -18,8 +21,11 @@
 <script>
 import Master from "./Layout/Master";
 import axios from "axios";
+import Pagination from "./Component/Pagination";
+import Vue from "vue";
+Vue.mixin({ methods: { route: window.route } });
 export default {
-  components: { Master },
+  components: { Master, Pagination },
   name: "UserQuestion",
   data() {
     return {
@@ -41,7 +47,11 @@ export default {
         confirmButtonText: "Sí, quiero borrarlo",
       }).then((result) => {
         if (result.isConfirmed) {
-          Swal.fire("Borrado", "Tu tema ha sido eliminado exitosamente", "success");
+          Swal.fire(
+            "Borrado",
+            "Tu tema ha sido eliminado exitosamente",
+            "success"
+          );
           axios.get(`/question/delete/${q_id}`).then((res) => {
             if (res.data.success) {
               this.questions.splice(index, 1);
