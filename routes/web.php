@@ -24,16 +24,19 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/profile/edit', [PageController::class,'editProfile']);
     Route::post('/profile/edit', [PageController::class,'postEditProfile']);
     Route::get('/profile/question', [QuestionController::class, 'userQuestion'])->name('question.user');
+    Route::get('/profile/savequestion',[QuestionController::class,'showSaveQuestion'])->name('show.savequestion');
 
     //Pregunta detalle
     Route::get('/question/detail/{post}', [QuestionController::class,'detail'])->name('question.detail');
     Route::get('/question/like/{id}',[QuestionController::class,'like']);
 
-    //Crear pregunta
+    //Pregunta
     Route::get('/question/create',[QuestionController::class,'create'])->name('question.create');
     Route::post('/question/create',[QuestionController::class,'store'])->name('question.store');
     Route::get('/question/user',[QuestionController::class,'userQuestion'])->name('question.user');
     Route::get('/question/delete/{id}',[QuestionController::class,'delete'])->name('question.delete');
+    Route::post('/question/set/fix',[QuestionController::class,'setFix'])->name('question.setFix');
+    Route::post('/question/save',[QuestionController::class, 'saveQuestion'])->name('question.save');
 
     //Comentario
     Route::post('question/comment/create',[QuestionController::class, 'createComment']);

@@ -1,6 +1,7 @@
 <?php
 namespace App\Traits;
 use App\Models\QuestionLike;
+use App\Models\QuestionSave;
 use Illuminate\Support\Facades\Auth;
 
 trait Question{
@@ -19,5 +20,12 @@ trait Question{
             $data['like_count'] = $like_count;
             $data['is_like'] = $is_like;
             return $data;
+    }
+    public function isSave($q_id){
+        $s = QuestionSave::where('question_id',$q_id)->where('user_id',Auth::user()->id)->first();
+        if($s){
+            return true;
+        }
+        return false;
     }
 }

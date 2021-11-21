@@ -22,10 +22,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <!-- Link -->
-          <li class="nav-item"><a class="nav-link" href="#">Temas</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Mensajes</a></li>
+          <li class="nav-item"><a class="nav-link" href="/">Preguntas</a></li>
+          <li class="nav-item"><a class="nav-link" href="/?type=answer">Preguntas comentadas</a></li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Sin respuesta</a>
+            <a class="nav-link" href="/?type=unanswer">Preguntas sin comentarios</a>
           </li>
         </ul>
 

@@ -54,7 +54,7 @@ export default {
           );
           axios.get(`/question/delete/${q_id}`).then((res) => {
             if (res.data.success) {
-              this.questions.splice(index, 1);
+              this.questions.data.splice(index, 1);
             }
           });
         }

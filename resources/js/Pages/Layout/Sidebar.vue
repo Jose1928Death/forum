@@ -27,6 +27,11 @@
             &nbsp;
             <a href='/profile/question'>Preguntas creadas</a>
           </li>
+          <li class="list-group-item">
+            <i class="fas text-primary fa-question-circle"></i>
+            &nbsp;
+            <a href='/profile/savequestion'>Preguntas guardadas</a>
+          </li>
         </ul>
       </div>
     </div>

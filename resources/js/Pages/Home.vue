@@ -1,26 +1,28 @@
 <template>
   <Master>
-    <Pagination :links="questions.links"/>
+    <Pagination :links="questions.links" />
     <div v-for="(q, index) in questions.data" :key="q.id" class="card">
       <div class="card-header bg-dark">
-        <span v-if="q.fiexed == 'false'" class="badge bg-primary"
-          >¿Tema fijado?</span
+        <button v-if="q.fiexed == 'false'" class="badge bg-primary"
+          ></button
         >
         <span v-else class="badge bg-success">Fijado</span>
         <span class="text-white">{{ q.title }}</span>
-        <a
+        <button
           v-show="isOwn(q.user_id)"
+           v-on:click="deleteQuestion(index, q.id)"
           href=""
           class="badge bg-danger float-end"
           style="margin-right: 1rem"
-          >Eliminar</a
+          >Eliminar</button
         >
         <a
-          v-show="isOwn(q.user_id)"
+          v-show="isOwn(q.user_id) && q.fiexed !== 'true'"
+          v-on:click="setFixed(index, q.id)"
           href=""
           class="badge bg-warning float-end"
           style="margin-right: 1rem"
-          >Fijado</a
+          >Favorito</a
         >
       </div>
       <div class="card-body">
@@ -47,7 +49,8 @@
             <small>{{ q.comment.length }}</small>
             &nbsp;&nbsp;
             <!-- Favorito -->
-            <i class="far fa-star text-primary"></i>
+            <i @click="saveQuestion(index,q.id)" v-show="!q.is_save" class="far fa-star text-primary"></i>
+            <i v-show="q.is_save" class="fas fa-star text-primary"></i>
             &nbsp;&nbsp;
           </div>
           <div class="col-md-6">
@@ -124,11 +127,50 @@ export default {
       }
       return false;
     },
-    //},
-  },
-
-  mounted() {
-    //this.getSuccess();
+    setFixed(index, q_id) {
+        var data = new FormData();
+        data.append("id",q_id);
+        axios.post('/question/set/fix',data)
+        .then((res)=>{
+            if(res.data.success){
+                this.questions.data[index].setFixed = 'true';
+            }
+        })
+    },
+    //Borrar preguntas
+    deleteQuestion(index, q_id) {
+      Swal.fire({
+        title: "¿Estás seguro?",
+        text: "Vas a borrar un tema con sus comentarios",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sí, quiero borrarlo",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            "Borrado",
+            "Tu tema ha sido eliminado exitosamente",
+            "success"
+          );
+          axios.get(`/question/delete/${q_id}`).then((res) => {
+            if (res.data.success) {
+              this.questions.data.splice(index, 1);
+            }
+          });
+        }
+      });
+    },
+    saveQuestion(index, q_id){
+        var data = new FormData();
+        data.append('question_id',q_id);
+        axios.post("/question/save",data).then((res)=>{
+            if(res.data.success){
+                this.questions.data[index].is_save=true;
+            }
+        })
+    }
   },
 };
 </script>
