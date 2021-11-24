@@ -24,7 +24,7 @@ class AuthController extends Controller
         if(Auth::attempt($credential)){
             return redirect('/')->with('success','Welcome '.Auth::user()->name);
         }else{
-
+            return redirect('login');
         }
     }
 
@@ -35,7 +35,7 @@ class AuthController extends Controller
     public function postRegister(Request $request){
         $request->validate([
             'name'=>'required',
-            'password'=>'required|min:8',
+            'password'=>'required|min:8|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/',
             'email'=>'required|unique:users',
             'image'=>'image|mimes:png,jpg,jpeg'
         ]);

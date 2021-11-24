@@ -2389,7 +2389,7 @@ __webpack_require__.r(__webpack_exports__);
           Swal.fire({
             icon: "error",
             title: "Error",
-            html: (_this.$page.props.errors.name ? "Se requiere un nombre" : "") + "<br>" + (_this.$page.props.errors.email ? "Se requiere un correo" : "") + "<br>" + (_this.$page.props.errors.password ? "Se requiere una contraseña" : "") + "<br>" + (_this.$page.props.errors.image ? "Se requiere una imagen png, jpg" : "")
+            html: (_this.$page.props.errors.name ? "Se requiere un nombre" : "") + "<br>" + (_this.$page.props.errors.email ? "Se requiere un correo" : "") + "<br>" + (_this.$page.props.errors.password ? "Se requiere una contraseña, ejemplo corto: 'A123b!'" : "") + "<br>" + (_this.$page.props.errors.image ? "Se requiere una imagen png, jpg" : "")
           });
         }
       });
@@ -2748,6 +2748,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -2883,61 +2884,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -3057,12 +3003,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "nav",
+
+  /*
+  data(){
+      search:''
+  },
+  */
   computed: {
     user: function user() {
       return this.$page.props.auth.user;
     }
+    /*
+    filteredBlog: function(){
+        return this.questions.filter((question)=>{
+            return question.title.match(this.search);
+        });
+    }
+    */
+
   }
 });
 
@@ -3079,6 +3047,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
 //
 //
 //
@@ -3153,6 +3122,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layout_Master__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Layout/Master */ "./resources/js/Pages/Layout/Master.vue");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+//
 //
 //
 //
@@ -11631,7 +11601,8 @@ var render = function() {
                     {
                       key: t.id,
                       staticClass: "badge bg-dark ml-1",
-                      attrs: { href: "" }
+                      staticStyle: { "margin-right": "5px" },
+                      attrs: { href: "/?tag=" + t.post }
                     },
                     [_vm._v(_vm._s(t.name))]
                   )
@@ -11732,11 +11703,9 @@ var render = function() {
     },
     [
       _c("div", { staticClass: "container-fluid" }, [
-        _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
-          _vm._v("IES ALANDALUS")
-        ]),
-        _vm._v(" "),
         _vm._m(0),
+        _vm._v(" "),
+        _vm._m(1),
         _vm._v(" "),
         _c(
           "div",
@@ -11745,7 +11714,7 @@ var render = function() {
             attrs: { id: "navbarSupportedContent" }
           },
           [
-            _vm._m(1),
+            _vm._m(2),
             _vm._v(" "),
             _c("ul", { staticClass: "navbar-nav d-flex flex-row me-1" }, [
               _c("ul", { staticClass: "navbar-nav d-flex flex-row" }, [
@@ -11797,20 +11766,20 @@ var render = function() {
                         )
                       ]),
                       _vm._v(" "),
-                      _vm._m(2),
-                      _vm._v(" "),
                       _vm._m(3),
                       _vm._v(" "),
-                      _vm._m(4)
+                      _vm._m(4),
+                      _vm._v(" "),
+                      _vm._m(5)
                     ]
                   )
                 ]),
                 _vm._v(" "),
-                _vm._m(5),
-                _vm._v(" "),
                 _vm._m(6),
                 _vm._v(" "),
-                _vm._m(7)
+                _vm._m(7),
+                _vm._v(" "),
+                _vm._m(8)
               ])
             ])
           ]
@@ -11820,6 +11789,18 @@ var render = function() {
   )
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "navbar-brand" }, [
+      _c("img", {
+        staticClass: "rounded-circle",
+        attrs: { src: "/images/web/icon1.png", height: "30", alt: "" }
+      }),
+      _vm._v("\n        Alandal\n    ")
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -11853,7 +11834,8 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("li", { staticClass: "nav-item" }, [
         _c("a", { staticClass: "nav-link", attrs: { href: "/?type=answer" } }, [
-          _vm._v("Preguntas comentadas")
+          _vm._v("Preguntas "),
+          _c("i", { staticClass: "fas fa-comment" })
         ])
       ]),
       _vm._v(" "),
@@ -11861,7 +11843,10 @@ var staticRenderFns = [
         _c(
           "a",
           { staticClass: "nav-link", attrs: { href: "/?type=unanswer" } },
-          [_vm._v("Preguntas sin comentarios")]
+          [
+            _vm._v("Preguntas "),
+            _c("i", { staticClass: "fas fa-comment-slash" })
+          ]
         )
       ])
     ])
@@ -11930,7 +11915,10 @@ var staticRenderFns = [
         "a",
         {
           staticClass: "nav-link",
-          attrs: { href: "https://www.youtube.com/" }
+          attrs: {
+            href:
+              "https://www.youtube.com/channel/UC6GUDQ-vUkCD82Xeh5nYnXQ/videos"
+          }
         },
         [_c("i", { staticClass: "fab fa-youtube" })]
       )
@@ -11983,7 +11971,14 @@ var render = function() {
         staticClass: "card"
       },
       [
-        _c("div", { staticClass: "card-header" }, [_vm._v("Tags")]),
+        _c(
+          "div",
+          {
+            staticClass: "card-header text-primary",
+            staticStyle: { "text-align": "center" }
+          },
+          [_vm._v("Tags")]
+        ),
         _vm._v(" "),
         _c("div", { staticClass: "card-body" }, [
           _c(
@@ -11991,6 +11986,8 @@ var render = function() {
             { staticClass: "list-group" },
             _vm._l(_vm.$page.props.tag, function(tag) {
               return _c("li", { key: tag.id, staticClass: "list-group-item" }, [
+                _c("i", { staticClass: "fas fa-tags" }),
+                _vm._v(" \n          "),
                 _c("a", { attrs: { href: "/?tag=" + tag.post } }, [
                   _vm._v(_vm._s(tag.name))
                 ])
@@ -12122,9 +12119,36 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col-md-4" }, [
-                _c("i", { staticClass: "fas fa-heart" }),
+                _c("i", {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.q.is_like != "true",
+                      expression: "q.is_like != 'true'"
+                    }
+                  ],
+                  staticClass: "far fa-heart text-primary",
+                  on: {
+                    click: function($event) {
+                      return _vm.like(_vm.q.id, _vm.index)
+                    }
+                  }
+                }),
                 _vm._v(" "),
-                _c("small", [_vm._v("2")]),
+                _c("i", {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.q.is_like == "true",
+                      expression: "q.is_like == 'true'"
+                    }
+                  ],
+                  staticClass: "fas fa-heart"
+                }),
+                _vm._v(" "),
+                _c("small", [_vm._v(_vm._s(_vm.q.is_count))]),
                 _vm._v("\n                \n              "),
                 _c("i", { staticClass: "far fa-comment text-success" }),
                 _vm._v(" "),
@@ -12132,19 +12156,23 @@ var render = function() {
                 _vm._v("\n                \n            ")
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "col-md-6" }, [
-                _c(
-                  "a",
-                  { staticClass: "badge bg-dark ml-1", attrs: { href: "" } },
-                  [_vm._v("Android")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  { staticClass: "badge bg-dark ml-1", attrs: { href: "" } },
-                  [_vm._v("Web")]
-                )
-              ])
+              _c(
+                "div",
+                { staticClass: "col-md-6" },
+                _vm._l(_vm.q.tag, function(t) {
+                  return _c(
+                    "a",
+                    {
+                      key: t.id,
+                      staticClass: "badge bg-dark ml-1",
+                      staticStyle: { "margin-right": "5px" },
+                      attrs: { href: "" }
+                    },
+                    [_vm._v(_vm._s(t.name))]
+                  )
+                }),
+                0
+              )
             ])
           ])
         ]),

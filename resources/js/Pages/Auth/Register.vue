@@ -149,7 +149,7 @@ export default {
               "<br>" +
               (this.$page.props.errors.email ? "Se requiere un correo" : "") +
               "<br>" +
-              (this.$page.props.errors.password ? "Se requiere una contraseña" : "") +
+              (this.$page.props.errors.password ? "Se requiere una contraseña, ejemplo corto: 'A123b!'" : "") +
               "<br>" +
               (this.$page.props.errors.image
                 ? "Se requiere una imagen png, jpg"

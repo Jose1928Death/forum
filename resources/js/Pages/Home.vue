@@ -7,6 +7,7 @@
           ></button
         >
         <span v-else class="badge bg-success">Fijado</span>
+
         <span class="text-white">{{ q.title }}</span>
         <button
           v-show="isOwn(q.user_id)"
@@ -54,7 +55,7 @@
             &nbsp;&nbsp;
           </div>
           <div class="col-md-6">
-            <a v-for="t in q.tag" :key="t.id" href class="badge bg-dark ml-1">{{
+            <a v-for="t in q.tag" :key="t.id" :href="'/?tag='+t.post" class="badge bg-dark ml-1" style="margin-right: 5px;">{{
               t.name
             }}</a>
           </div>

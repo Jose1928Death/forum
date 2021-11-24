@@ -29,22 +29,23 @@
             </div>
             <div class="row">
               <div class="col-md-4">
-                <i class="fas fa-heart"></i>
-                <small>2</small>
+                <i
+              v-show="q.is_like != 'true'"
+              @click="like(q.id, index)"
+              class="far fa-heart text-primary"
+            ></i>
+            <i v-show="q.is_like == 'true'" class="fas fa-heart"></i>
+            <small>{{ q.is_count }}</small>
                 &nbsp;&nbsp;
                 <i class="far fa-comment text-success"></i>
                 <small>{{ q.comment.length }}</small>
                 &nbsp;&nbsp;
               </div>
               <div class="col-md-6">
-                <a href class="badge bg-dark ml-1">Android</a>
-                <a href class="badge bg-dark ml-1">Web</a>
-              </div>
-              <!--
-              <div class="col-md-2">
-                <a href="" class="btn btn-sm btn-dark float-end">Read</a>
-              </div>
-              -->
+            <a v-for="t in q.tag" :key="t.id" href class="badge bg-dark ml-1" style="margin-right: 5px;">{{
+              t.name
+            }}</a>
+          </div>
             </div>
           </div>
         </div>

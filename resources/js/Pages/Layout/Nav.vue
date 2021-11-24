@@ -3,7 +3,10 @@
     <!-- Container wrapper -->
     <div class="container-fluid">
       <!-- Navbar brand -->
-      <a href="/" class="navbar-brand">IES ALANDALUS</a>
+      <a class="navbar-brand">
+          <img class="rounded-circle" src="/images/web/icon1.png" height="30" alt="">
+          Alandal
+      </a>
 
       <!-- Toggle button -->
       <button
@@ -23,10 +26,15 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <!-- Link -->
           <li class="nav-item"><a class="nav-link" href="/">Preguntas</a></li>
-          <li class="nav-item"><a class="nav-link" href="/?type=answer">Preguntas comentadas</a></li>
+          <li class="nav-item"><a class="nav-link" href="/?type=answer">Preguntas <i class="fas fa-comment"></i></a></li>
           <li class="nav-item">
-            <a class="nav-link" href="/?type=unanswer">Preguntas sin comentarios</a>
+            <a class="nav-link" href="/?type=unanswer">Preguntas <i class="fas fa-comment-slash"></i></a>
           </li>
+          <!--
+          <li class="nav-item">
+            <input type="text" v-model="search" placeholder="Buscar en Alandales">
+          </li>
+          -->
         </ul>
 
         <!-- Icons -->
@@ -82,7 +90,7 @@
               </a>
             </li>
             <li class="nav-item me-3 me-lg-0">
-              <a class="nav-link" href="https://www.youtube.com/">
+              <a class="nav-link" href="https://www.youtube.com/channel/UC6GUDQ-vUkCD82Xeh5nYnXQ/videos">
                 <i class="fab fa-youtube"></i>
               </a>
             </li>
@@ -97,10 +105,22 @@
 <script>
 export default {
   name: "nav",
+  /*
+  data(){
+      search:''
+  },
+  */
   computed: {
     user() {
       return this.$page.props.auth.user;
     },
+    /*
+    filteredBlog: function(){
+        return this.questions.filter((question)=>{
+            return question.title.match(this.search);
+        });
+    }
+    */
   },
 };
 </script>

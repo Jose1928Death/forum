@@ -20,19 +20,27 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         User::create([
-            'name' => 'ad',
+            'name' => 'admin',
             'email' => 'admin@correo.es',
-            'password' => Hash::make('123456789'),
+            'password' => Hash::make('admin'),
             'image' => '/images/profile/default.png'
         ]);
 
         Tag::create([
-            'name' => 'Web',
+            'name' => 'DAW',
             'post' => Str::slug('Desarrollo web'),
         ]);
         Tag::create([
-            'name' => 'Aplicacion',
+            'name' => 'DAM',
             'post' => Str::slug('Desarrollo de aplicaciones'),
+        ]);
+        Tag::create([
+            'name' => 'ASIR',
+            'post' => Str::slug('Administración de sistemas informáticos, grado superior'),
+        ]);
+        Tag::create([
+            'name' => 'SMR',
+            'post' => Str::slug('Gestión de sistemas y redes, grado medio'),
         ]);
         Tag::create([
             'name' => 'Informal',
@@ -53,6 +61,18 @@ class DatabaseSeeder extends Seeder
         QuestionTag::create([
             'question_id'=>1,
             'tag_id'=>2
+        ]);
+        QuestionTag::create([
+            'question_id'=>1,
+            'tag_id'=>3
+        ]);
+        QuestionTag::create([
+            'question_id'=>1,
+            'tag_id'=>4
+        ]);
+        QuestionTag::create([
+            'question_id'=>1,
+            'tag_id'=>5
         ]);
     }
 }
