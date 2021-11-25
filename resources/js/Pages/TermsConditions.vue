@@ -123,83 +123,95 @@
           los servicios de una compañía para alojar las bases de datos de este
           foro y servicio: AWS.<br /><br />Transferencias internacionales de
           datos<br /><br />No realizamos transferencias internacionales de datos
-          de ningún tipo ni categoría.<br /><br />¿Qué derechos asisten al
-          usuario?<br /><br />El RGPD te otorga los siguientes derechos, que
-          podrás ejercerlos enviando un correo electrónico que será necesario
-          que el correo electrónico nos lo envíes desde la misma dirección que
-          utilizaste para registrarte.<br /><br />Derecho de acceso<br /><br />Tienes
-          derecho a obtener confirmación de si se están tratando o no datos
-          personales que te conciernen y, en tal caso, derecho de acceso a los
-          datos personales y a la información relacionada con su tratamiento.<br />Tienes
-          derecho a obtener una copia de los datos personales objeto de
-          tratamiento.<br /><br />Derecho de rectificación<br /><br />Tienes
-          derecho a obtener sin dilación indebida la rectificación de los datos
-          personales inexactos que te conciernen. Teniendo en cuenta los fines
-          del tratamiento, tendrás derecho a que se completen los datos
-          personales que sean incompletos.<br /><br />Derecho de supresión<br /><br />Tienes
-          derecho a obtener sin dilación indebida la supresión de los datos
-          personales que te conciernen.<br /><br />Estamos obligados a suprimir
-          sin dilación indebida los datos personales cuando concurra alguna de
-          las circunstancias siguientes:<br /><br />a) los datos personales ya
-          no sean necesarios en relación con los fines para los que fueron
-          recogidos o tratados de otro modo;<br /><br />b) &nbsp;el interesado
-          retire el consentimiento prestado para fines específicos o el
-          consentimiento expreso prestado para el tratamiento de categorías
-          especiales de datos, como los que revelen sus opiniones políticas,
-          mientras este tratamiento no se base en otro fundamento jurídico;<br /><br />c)
-          &nbsp;el interesado se oponga al tratamiento por motivos relacionados
-          con su situación particular y no prevalezcan otros motivos legítimos
-          para el tratamiento;<br /><br />d) &nbsp;los datos personales hayan
-          sido tratados ilícitamente;<br /><br />e) &nbsp;los datos personales
-          deban suprimirse para el cumplimiento de una obligación legal
-          establecida en el Derecho de la Unión o de los Estados miembros que se
-          aplique al responsable del tratamiento.<br /><br />No será aplicable
-          la obligación de supresión de los datos personales cuando el
-          tratamiento sea necesario para:<br /><br />a) &nbsp;ejercer el derecho
-          a la libertad de expresión e información;<br /><br />b) &nbsp;el
-          cumplimiento de una obligación legal que requiera el tratamiento de
-          datos impuesta por el Derecho de la Unión o de los Estados miembros
-          que se aplique al responsable del tratamiento;<br /><br />c) &nbsp;el
-          cumplimiento de una misión realizada en interés público o en el
-          ejercicio de poderes públicos conferidos al responsable;<br /><br />d)
-          &nbsp;con fines de archivo en interés público, fines de investigación
-          científica o histórica o fines estadísticos, en la medida en que el
-          derecho a la supresión pudiera hacer imposible u obstaculizar
-          gravemente el logro de los objetivos de dicho tratamiento;<br /><br />e)
-          &nbsp;para la formulación, el ejercicio o la defensa de
-          reclamaciones.<br /><br />Limitación del tratamiento<br /><br />Tienes
-          derecho a obtener la limitación del tratamiento de los datos cuando se
-          cumpla alguna de las condiciones siguientes:<br /><br />a) Impugnes la
-          exactitud de los datos personales, durante un plazo que nos permita
-          verificar la exactitud de los mismos;<br />b) El tratamiento sea
-          ilícito y te opongas a la supresión de los datos personales y
-          solicites en su lugar la limitación de su uso;<br />c) No necesitemos
-          los datos personales para los fines del tratamiento, pero los
-          necesites para la formulación, el ejercicio o la defensa de
-          reclamaciones;<br />d) Te hayas opuesto al tratamiento por motivos
-          relacionados con tu situación particular, mientras se verifica si los
-          motivos legítimos como responsable del tratamiento prevalecen sobre
-          los del interesado.<br /><br />Portabilidad de los datos<br /><br />Tienes
-          derecho a recibir los datos personales que te incumban, en un formato
-          estructurado, de uso común y lectura mecánica.<br /><br />Oposición al
-          tratamiento<br /><br />Tienes derecho a oponerte en cualquier momento,
-          por motivos relacionados con tu situación particular, a que datos
-          personales que te conciernan sean objeto de un tratamiento basado en
-          lo dispuesto en el artículo 6, apartado 1, letras e) o f) del RGPD.
-          Dejaremos de tratar los datos personales, salvo que acreditemos
-          motivos legítimos imperiosos para el tratamiento que prevalezcan sobre
-          los intereses, los derechos y las libertades del interesado, o para la
-          formulación, el ejercicio o la defensa de reclamaciones.<br /><br />Revocación
-          del consentimiento<br /><br />Tienes derecho a retirar en cualquier
-          momento el consentimiento que nos diste para tratar tus datos
-          personales.<br /><br />Reclamación ante las autoridades de protección
-          de datos<br /><br />Tienes derechos a reclamar ante las autoridades de
-          control en materia de protección de datos si consideras que tus datos
-          personales no están siendo tratados de forma correcta.<br /><br />Tratamiento
-          de datos de menores de edad<br /><br />Nuestros servicios deben ser
-          utilizados por mayores de 14 años, por lo que en el caso de que no
-          tengas esta edad deberás abstenerte de utilizarlos.<br /><br />Podremos
-          requerir documentación oficial para acreditar la edad.
+          de ningún tipo ni categoría.
+        </div>
+        <span class="lowerframe"><span></span></span><br />
+        <div class="p-3 mb-2 bg-primary text-white">
+          <h3 class="catbg">¿Qué derechos asisten al usuario?</h3>
+        </div>
+        <span class="upperframe"><span></span></span>
+        <div class="roundframe">
+          <div>
+            El RGPD te otorga los siguientes derechos, que podrás ejercerlos
+            enviando un correo electrónico que será necesario que el correo
+            electrónico nos lo envíes desde la misma dirección que utilizaste
+            para registrarte.<br /><br />Derecho de acceso<br /><br />Tienes
+            derecho a obtener confirmación de si se están tratando o no datos
+            personales que te conciernen y, en tal caso, derecho de acceso a los
+            datos personales y a la información relacionada con su
+            tratamiento.<br />Tienes derecho a obtener una copia de los datos
+            personales objeto de tratamiento.<br /><br />Derecho de
+            rectificación<br /><br />Tienes derecho a obtener sin dilación
+            indebida la rectificación de los datos personales inexactos que te
+            conciernen. Teniendo en cuenta los fines del tratamiento, tendrás
+            derecho a que se completen los datos personales que sean
+            incompletos.<br /><br />Derecho de supresión<br /><br />Tienes
+            derecho a obtener sin dilación indebida la supresión de los datos
+            personales que te conciernen.<br /><br />Estamos obligados a
+            suprimir sin dilación indebida los datos personales cuando concurra
+            alguna de las circunstancias siguientes:<br /><br />a) los datos
+            personales ya no sean necesarios en relación con los fines para los
+            que fueron recogidos o tratados de otro modo;<br /><br />b) &nbsp;el
+            interesado retire el consentimiento prestado para fines específicos
+            o el consentimiento expreso prestado para el tratamiento de
+            categorías especiales de datos, como los que revelen sus opiniones
+            políticas, mientras este tratamiento no se base en otro fundamento
+            jurídico;<br /><br />c) &nbsp;el interesado se oponga al tratamiento
+            por motivos relacionados con su situación particular y no
+            prevalezcan otros motivos legítimos para el tratamiento;<br /><br />d)
+            &nbsp;los datos personales hayan sido tratados ilícitamente;<br /><br />e)
+            &nbsp;los datos personales deban suprimirse para el cumplimiento de
+            una obligación legal establecida en el Derecho de la Unión o de los
+            Estados miembros que se aplique al responsable del tratamiento.<br /><br />No
+            será aplicable la obligación de supresión de los datos personales
+            cuando el tratamiento sea necesario para:<br /><br />a)
+            &nbsp;ejercer el derecho a la libertad de expresión e
+            información;<br /><br />b) &nbsp;el cumplimiento de una obligación
+            legal que requiera el tratamiento de datos impuesta por el Derecho
+            de la Unión o de los Estados miembros que se aplique al responsable
+            del tratamiento;<br /><br />c) &nbsp;el cumplimiento de una misión
+            realizada en interés público o en el ejercicio de poderes públicos
+            conferidos al responsable;<br /><br />d) &nbsp;con fines de archivo
+            en interés público, fines de investigación científica o histórica o
+            fines estadísticos, en la medida en que el derecho a la supresión
+            pudiera hacer imposible u obstaculizar gravemente el logro de los
+            objetivos de dicho tratamiento;<br /><br />e) &nbsp;para la
+            formulación, el ejercicio o la defensa de reclamaciones.<br /><br />Limitación
+            del tratamiento<br /><br />Tienes derecho a obtener la limitación
+            del tratamiento de los datos cuando se cumpla alguna de las
+            condiciones siguientes:<br /><br />a) Impugnes la exactitud de los
+            datos personales, durante un plazo que nos permita verificar la
+            exactitud de los mismos;<br />b) El tratamiento sea ilícito y te
+            opongas a la supresión de los datos personales y solicites en su
+            lugar la limitación de su uso;<br />c) No necesitemos los datos
+            personales para los fines del tratamiento, pero los necesites para
+            la formulación, el ejercicio o la defensa de reclamaciones;<br />d)
+            Te hayas opuesto al tratamiento por motivos relacionados con tu
+            situación particular, mientras se verifica si los motivos legítimos
+            como responsable del tratamiento prevalecen sobre los del
+            interesado.<br /><br />Portabilidad de los datos<br /><br />Tienes
+            derecho a recibir los datos personales que te incumban, en un
+            formato estructurado, de uso común y lectura mecánica.<br /><br />Oposición
+            al tratamiento<br /><br />Tienes derecho a oponerte en cualquier
+            momento, por motivos relacionados con tu situación particular, a que
+            datos personales que te conciernan sean objeto de un tratamiento
+            basado en lo dispuesto en el artículo 6, apartado 1, letras e) o f)
+            del RGPD. Dejaremos de tratar los datos personales, salvo que
+            acreditemos motivos legítimos imperiosos para el tratamiento que
+            prevalezcan sobre los intereses, los derechos y las libertades del
+            interesado, o para la formulación, el ejercicio o la defensa de
+            reclamaciones.<br /><br />Revocación del consentimiento<br /><br />Tienes
+            derecho a retirar en cualquier momento el consentimiento que nos
+            diste para tratar tus datos personales.<br /><br />Reclamación ante
+            las autoridades de protección de datos<br /><br />Tienes derechos a
+            reclamar ante las autoridades de control en materia de protección de
+            datos si consideras que tus datos personales no están siendo
+            tratados de forma correcta.<br /><br />Tratamiento de datos de
+            menores de edad<br /><br />Nuestros servicios deben ser utilizados
+            por mayores de 14 años, por lo que en el caso de que no tengas esta
+            edad deberás abstenerte de utilizarlos.<br /><br />Podremos requerir
+            documentación oficial para acreditar la edad.
+          </div>
         </div>
       </div>
       <span class="lowerframe"><span></span></span>
