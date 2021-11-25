@@ -3,7 +3,7 @@
     <!-- Container wrapper -->
     <div class="container-fluid">
       <!-- Navbar brand -->
-      <a class="navbar-brand">
+      <a class="navbar-brand" href="">
           <img class="rounded-circle" src="/images/web/icon1.png" height="30" alt="">
           Alandal
       </a>
@@ -25,16 +25,22 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <!-- Link -->
-          <li class="nav-item"><a class="nav-link" href="/">Preguntas</a></li>
-          <li class="nav-item"><a class="nav-link" href="/?type=answer">Preguntas <i class="fas fa-comment"></i></a></li>
+
+          <li class="nav-item"><a class="nav-link" href="/">FORO</a></li>
           <li class="nav-item">
-            <a class="nav-link" href="/?type=unanswer">Preguntas <i class="fas fa-comment-slash"></i></a>
+            <a class="nav-link" href="/about">ACERCA DE</a>
           </li>
-          <!--
+          <li class="nav-item">
+            <a class="nav-link" href="/termsconditions">TERMINOS DE USO</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/legal">AVISO LEGAL</a>
+          </li>
+<!--
           <li class="nav-item">
             <input type="text" v-model="search" placeholder="Buscar en Alandales">
           </li>
-          -->
+-->
         </ul>
 
         <!-- Icons -->
@@ -80,13 +86,13 @@
             </li>
             <!-- Icons -->
             <li class="nav-item me-3 me-lg-0">
-              <a class="nav-link" href="https://twitter.com/">
-                <i class="fab fa-twitter"></i>
+              <a class="nav-link" href="https://iesalandalus.org/joomla/">
+                <i class="fas fa-graduation-cap"></i>
               </a>
             </li>
             <li class="nav-item me-3 me-lg-0">
-              <a class="nav-link" href="https://es-es.facebook.com/">
-                <i class="fab fa-facebook"></i>
+              <a class="nav-link" href="https://iesalandalus.linkpc.net/moodle/?redirect=0">
+                <i class="fas fa-chalkboard-teacher"></i>
               </a>
             </li>
             <li class="nav-item me-3 me-lg-0">

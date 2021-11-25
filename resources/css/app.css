@@ -219,3 +219,7 @@ br {
     margin: 10px 0;
  }
 
+ .sidebar {
+    position: -webkit-sticky;
+    position: sticky;
+  }

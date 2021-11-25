@@ -16,6 +16,18 @@ class PageController extends Controller
         return Inertia::render('EditUser');
     }
 
+    public function about(){
+        return Inertia::render('About');
+    }
+
+    public function termsconditions(){
+        return Inertia::render('TermsConditions');
+    }
+
+    public function legal(){
+        return Inertia::render('Legal');
+    }
+
     public function postEditProfile(Request $request){
         //recoger usuario del id
         $id = Auth::user()->id;

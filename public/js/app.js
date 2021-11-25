@@ -2078,6 +2078,33 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/About.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/About.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Layout_Master__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Layout/Master */ "./resources/js/Pages/Layout/Master.vue");
+//
+//
+//
+//
+//
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    Master: _Layout_Master__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  name: "About"
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/AllQuestions.vue?vue&type=script&lang=js&":
 /*!**************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/AllQuestions.vue?vue&type=script&lang=js& ***!
@@ -2389,7 +2416,7 @@ __webpack_require__.r(__webpack_exports__);
           Swal.fire({
             icon: "error",
             title: "Error",
-            html: (_this.$page.props.errors.name ? "Se requiere un nombre" : "") + "<br>" + (_this.$page.props.errors.email ? "Se requiere un correo" : "") + "<br>" + (_this.$page.props.errors.password ? "Se requiere una contraseña, ejemplo corto: 'A123b!'" : "") + "<br>" + (_this.$page.props.errors.image ? "Se requiere una imagen png, jpg" : "")
+            html: (_this.$page.props.errors.name ? "Nombre no válido" : "") + "<br>" + (_this.$page.props.errors.email ? "Correo no válido" : "") + "<br>" + (_this.$page.props.errors.password ? "Contraseña no válida, ejemplo corto: 'A123b!'" : "") + "<br>" + (_this.$page.props.errors.image ? "Imagen no válida, se necesita png, jpg" : "")
           });
         }
       });
@@ -2527,13 +2554,24 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       this.loading = true;
-      var data = new FormData();
-      data.append('title', this.title);
-      data.append('tag', this.tag);
-      data.append('description', this.description);
-      this.$inertia.post('/question/create', data).then(function () {
-        return _this.loading = false;
-      });
+
+      if (this.title == "" || this.tag == "" || this.description == "") {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          html: "Rellene todos los campos"
+        }).then(function () {
+          return _this.loading = false;
+        });
+      } else {
+        var data = new FormData();
+        data.append('title', this.title);
+        data.append('tag', this.tag);
+        data.append('description', this.description);
+        this.$inertia.post('/question/create', data).then(function () {
+          return _this.loading = false;
+        });
+      }
     }
   }
 });
@@ -2552,9 +2590,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Layout_Master__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Layout/Master */ "./resources/js/Pages/Layout/Master.vue");
-//
-//
-//
 //
 //
 //
@@ -2675,6 +2710,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /* harmony import */ var _Component_Pagination__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Component/Pagination */ "./resources/js/Pages/Component/Pagination.vue");
+//
+//
 //
 //
 //
@@ -3011,6 +3048,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "nav",
 
@@ -3089,12 +3132,37 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Sidebar",
   computed: {
     isProfileUrl: function isProfileUrl() {
       var url = location.pathname;
-      var exp = '/profile/.*';
+      var exp = "/profile/.*";
       var res = url.match(exp);
 
       if (res != null) {
@@ -3104,6 +3172,322 @@ __webpack_require__.r(__webpack_exports__);
       return false;
     }
   }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Legal.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Legal.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Layout_Master__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Layout/Master */ "./resources/js/Pages/Layout/Master.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    Master: _Layout_Master__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  name: "Legal"
 });
 
 /***/ }),
@@ -3122,6 +3506,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layout_Master__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Layout/Master */ "./resources/js/Pages/Layout/Master.vue");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3235,8 +3636,46 @@ __webpack_require__.r(__webpack_exports__);
     this.q = this.question;
   },
   methods: {
-    createComment: function createComment(q_id) {
+    deleteQuestion: function deleteQuestion(index, q_id) {
+      Swal.fire({
+        title: "¿Estás seguro?",
+        text: "Vas a borrar un tema con sus comentarios",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sí, quiero borrarlo"
+      }).then(function (result) {
+        if (result.isConfirmed) {
+          Swal.fire("Borrado", "Tu tema ha sido eliminado exitosamente", "success");
+          axios__WEBPACK_IMPORTED_MODULE_1___default().get("/question/delete/".concat(q_id)).then(function (res) {
+            window.location.href = '/';
+          });
+        }
+      });
+    },
+    setFixed: function setFixed(index, q_id) {
       var _this = this;
+
+      var data = new FormData();
+      data.append("id", q_id);
+      axios__WEBPACK_IMPORTED_MODULE_1___default().post("/question/set/fix", data).then(function (res) {
+        if (res.data.success) {
+          _this.questions.data[index].setFixed = "true";
+        }
+      });
+    },
+    isOwn: function isOwn(user_id) {
+      var auth_user_id = this.$page.props.auth_user.id;
+
+      if (user_id == auth_user_id) {
+        return true;
+      }
+
+      return false;
+    },
+    createComment: function createComment(q_id) {
+      var _this2 = this;
 
       var data = new FormData();
       data.append("question_id", q_id);
@@ -3247,7 +3686,7 @@ __webpack_require__.r(__webpack_exports__);
             comment = _res$data.comment;
 
         if (success) {
-          _this.q.comment.push(comment);
+          _this2.q.comment.push(comment);
         }
       });
     }
@@ -3300,6 +3739,236 @@ vue__WEBPACK_IMPORTED_MODULE_1__["default"].mixin({
   created: function created() {
     this.questions = this.$page.props.questions;
   }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/TermsConditions.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/TermsConditions.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Layout_Master__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Layout/Master */ "./resources/js/Pages/Layout/Master.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    Master: _Layout_Master__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  name: "TermsConditions"
 });
 
 /***/ }),
@@ -9493,6 +10162,45 @@ module.exports = function getSideChannel() {
 
 /***/ }),
 
+/***/ "./resources/js/Pages/About.vue":
+/*!**************************************!*\
+  !*** ./resources/js/Pages/About.vue ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _About_vue_vue_type_template_id_169e1534___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./About.vue?vue&type=template&id=169e1534& */ "./resources/js/Pages/About.vue?vue&type=template&id=169e1534&");
+/* harmony import */ var _About_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./About.vue?vue&type=script&lang=js& */ "./resources/js/Pages/About.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _About_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _About_vue_vue_type_template_id_169e1534___WEBPACK_IMPORTED_MODULE_0__.render,
+  _About_vue_vue_type_template_id_169e1534___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Pages/About.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/Pages/AllQuestions.vue":
 /*!*********************************************!*\
   !*** ./resources/js/Pages/AllQuestions.vue ***!
@@ -9883,6 +10591,45 @@ component.options.__file = "resources/js/Pages/Layout/Sidebar.vue"
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Legal.vue":
+/*!**************************************!*\
+  !*** ./resources/js/Pages/Legal.vue ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Legal_vue_vue_type_template_id_39224340___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Legal.vue?vue&type=template&id=39224340& */ "./resources/js/Pages/Legal.vue?vue&type=template&id=39224340&");
+/* harmony import */ var _Legal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Legal.vue?vue&type=script&lang=js& */ "./resources/js/Pages/Legal.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Legal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Legal_vue_vue_type_template_id_39224340___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Legal_vue_vue_type_template_id_39224340___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Pages/Legal.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/Pages/QuestionDetail.vue":
 /*!***********************************************!*\
   !*** ./resources/js/Pages/QuestionDetail.vue ***!
@@ -9961,6 +10708,45 @@ component.options.__file = "resources/js/Pages/SaveQuestion.vue"
 
 /***/ }),
 
+/***/ "./resources/js/Pages/TermsConditions.vue":
+/*!************************************************!*\
+  !*** ./resources/js/Pages/TermsConditions.vue ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _TermsConditions_vue_vue_type_template_id_2710dcf4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TermsConditions.vue?vue&type=template&id=2710dcf4& */ "./resources/js/Pages/TermsConditions.vue?vue&type=template&id=2710dcf4&");
+/* harmony import */ var _TermsConditions_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TermsConditions.vue?vue&type=script&lang=js& */ "./resources/js/Pages/TermsConditions.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _TermsConditions_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _TermsConditions_vue_vue_type_template_id_2710dcf4___WEBPACK_IMPORTED_MODULE_0__.render,
+  _TermsConditions_vue_vue_type_template_id_2710dcf4___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Pages/TermsConditions.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/Pages/UserQuestion.vue":
 /*!*********************************************!*\
   !*** ./resources/js/Pages/UserQuestion.vue ***!
@@ -9997,6 +10783,22 @@ var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__
 if (false) { var api; }
 component.options.__file = "resources/js/Pages/UserQuestion.vue"
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/About.vue?vue&type=script&lang=js&":
+/*!***************************************************************!*\
+  !*** ./resources/js/Pages/About.vue?vue&type=script&lang=js& ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_About_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./About.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/About.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_About_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -10160,6 +10962,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Legal.vue?vue&type=script&lang=js&":
+/*!***************************************************************!*\
+  !*** ./resources/js/Pages/Legal.vue?vue&type=script&lang=js& ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Legal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Legal.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Legal.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Legal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/Pages/QuestionDetail.vue?vue&type=script&lang=js&":
 /*!************************************************************************!*\
   !*** ./resources/js/Pages/QuestionDetail.vue?vue&type=script&lang=js& ***!
@@ -10192,6 +11010,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Pages/TermsConditions.vue?vue&type=script&lang=js&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/Pages/TermsConditions.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TermsConditions_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TermsConditions.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/TermsConditions.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TermsConditions_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/Pages/UserQuestion.vue?vue&type=script&lang=js&":
 /*!**********************************************************************!*\
   !*** ./resources/js/Pages/UserQuestion.vue?vue&type=script&lang=js& ***!
@@ -10205,6 +11039,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_UserQuestion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./UserQuestion.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/UserQuestion.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_UserQuestion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/About.vue?vue&type=template&id=169e1534&":
+/*!*********************************************************************!*\
+  !*** ./resources/js/Pages/About.vue?vue&type=template&id=169e1534& ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_About_vue_vue_type_template_id_169e1534___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_About_vue_vue_type_template_id_169e1534___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_About_vue_vue_type_template_id_169e1534___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./About.vue?vue&type=template&id=169e1534& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/About.vue?vue&type=template&id=169e1534&");
+
 
 /***/ }),
 
@@ -10378,6 +11229,23 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Legal.vue?vue&type=template&id=39224340&":
+/*!*********************************************************************!*\
+  !*** ./resources/js/Pages/Legal.vue?vue&type=template&id=39224340& ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Legal_vue_vue_type_template_id_39224340___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Legal_vue_vue_type_template_id_39224340___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Legal_vue_vue_type_template_id_39224340___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Legal.vue?vue&type=template&id=39224340& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Legal.vue?vue&type=template&id=39224340&");
+
+
+/***/ }),
+
 /***/ "./resources/js/Pages/QuestionDetail.vue?vue&type=template&id=6abd2e40&":
 /*!******************************************************************************!*\
   !*** ./resources/js/Pages/QuestionDetail.vue?vue&type=template&id=6abd2e40& ***!
@@ -10412,6 +11280,23 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Pages/TermsConditions.vue?vue&type=template&id=2710dcf4&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/Pages/TermsConditions.vue?vue&type=template&id=2710dcf4& ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TermsConditions_vue_vue_type_template_id_2710dcf4___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TermsConditions_vue_vue_type_template_id_2710dcf4___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TermsConditions_vue_vue_type_template_id_2710dcf4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TermsConditions.vue?vue&type=template&id=2710dcf4& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/TermsConditions.vue?vue&type=template&id=2710dcf4&");
+
+
+/***/ }),
+
 /***/ "./resources/js/Pages/UserQuestion.vue?vue&type=template&id=6089d30c&":
 /*!****************************************************************************!*\
   !*** ./resources/js/Pages/UserQuestion.vue?vue&type=template&id=6089d30c& ***!
@@ -10425,6 +11310,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_UserQuestion_vue_vue_type_template_id_6089d30c___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_UserQuestion_vue_vue_type_template_id_6089d30c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./UserQuestion.vue?vue&type=template&id=6089d30c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/UserQuestion.vue?vue&type=template&id=6089d30c&");
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/About.vue?vue&type=template&id=169e1534&":
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/About.vue?vue&type=template&id=169e1534& ***!
+  \************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("Master")
+}
+var staticRenderFns = []
+render._withStripped = true
+
 
 
 /***/ }),
@@ -11459,7 +12369,9 @@ var render = function() {
               : _c("span", { staticClass: "badge bg-success" }, [
                   _vm._v("Fijado")
                 ]),
-            _vm._v(" "),
+            _vm._v("\n       \n      "),
+            _c("i", { staticClass: "fas fa-comments text-white" }),
+            _vm._v("\n       \n      "),
             _c("span", { staticClass: "text-white" }, [
               _vm._v(_vm._s(q.title))
             ]),
@@ -11793,12 +12705,12 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "navbar-brand" }, [
+    return _c("a", { staticClass: "navbar-brand", attrs: { href: "" } }, [
       _c("img", {
         staticClass: "rounded-circle",
         attrs: { src: "/images/web/icon1.png", height: "30", alt: "" }
       }),
-      _vm._v("\n        Alandal\n    ")
+      _vm._v("\n          Alandal\n      ")
     ])
   },
   function() {
@@ -11828,26 +12740,28 @@ var staticRenderFns = [
     return _c("ul", { staticClass: "navbar-nav me-auto mb-2 mb-lg-0" }, [
       _c("li", { staticClass: "nav-item" }, [
         _c("a", { staticClass: "nav-link", attrs: { href: "/" } }, [
-          _vm._v("Preguntas")
+          _vm._v("FORO")
         ])
       ]),
       _vm._v(" "),
       _c("li", { staticClass: "nav-item" }, [
-        _c("a", { staticClass: "nav-link", attrs: { href: "/?type=answer" } }, [
-          _vm._v("Preguntas "),
-          _c("i", { staticClass: "fas fa-comment" })
+        _c("a", { staticClass: "nav-link", attrs: { href: "/about" } }, [
+          _vm._v("ACERCA DE")
         ])
       ]),
       _vm._v(" "),
       _c("li", { staticClass: "nav-item" }, [
         _c(
           "a",
-          { staticClass: "nav-link", attrs: { href: "/?type=unanswer" } },
-          [
-            _vm._v("Preguntas "),
-            _c("i", { staticClass: "fas fa-comment-slash" })
-          ]
+          { staticClass: "nav-link", attrs: { href: "/termsconditions" } },
+          [_vm._v("TERMINOS DE USO")]
         )
+      ]),
+      _vm._v(" "),
+      _c("li", { staticClass: "nav-item" }, [
+        _c("a", { staticClass: "nav-link", attrs: { href: "/legal" } }, [
+          _vm._v("AVISO LEGAL")
+        ])
       ])
     ])
   },
@@ -11886,8 +12800,11 @@ var staticRenderFns = [
     return _c("li", { staticClass: "nav-item me-3 me-lg-0" }, [
       _c(
         "a",
-        { staticClass: "nav-link", attrs: { href: "https://twitter.com/" } },
-        [_c("i", { staticClass: "fab fa-twitter" })]
+        {
+          staticClass: "nav-link",
+          attrs: { href: "https://iesalandalus.org/joomla/" }
+        },
+        [_c("i", { staticClass: "fas fa-graduation-cap" })]
       )
     ])
   },
@@ -11900,9 +12817,9 @@ var staticRenderFns = [
         "a",
         {
           staticClass: "nav-link",
-          attrs: { href: "https://es-es.facebook.com/" }
+          attrs: { href: "https://iesalandalus.linkpc.net/moodle/?redirect=0" }
         },
-        [_c("i", { staticClass: "fab fa-facebook" })]
+        [_c("i", { staticClass: "fas fa-chalkboard-teacher" })]
       )
     ])
   },
@@ -11977,7 +12894,7 @@ var render = function() {
             staticClass: "card-header text-primary",
             staticStyle: { "text-align": "center" }
           },
-          [_vm._v("Tags")]
+          [_vm._v("\n      CATEGORIAS\n    ")]
         ),
         _vm._v(" "),
         _c("div", { staticClass: "card-body" }, [
@@ -11986,16 +12903,32 @@ var render = function() {
             { staticClass: "list-group" },
             _vm._l(_vm.$page.props.tag, function(tag) {
               return _c("li", { key: tag.id, staticClass: "list-group-item" }, [
-                _c("i", { staticClass: "fas fa-tags" }),
+                _c("i", { staticClass: "fas fa-tags text-primary" }),
                 _vm._v(" \n          "),
-                _c("a", { attrs: { href: "/?tag=" + tag.post } }, [
-                  _vm._v(_vm._s(tag.name))
-                ])
+                _c(
+                  "a",
+                  {
+                    staticClass: "text-dark",
+                    attrs: { href: "/?tag=" + tag.post }
+                  },
+                  [_vm._v(_vm._s(tag.name))]
+                )
               ])
             }),
             0
           )
-        ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "card-header text-primary",
+            staticStyle: { "text-align": "center" }
+          },
+          [_vm._v("\n      DESCUBRE\n    ")]
+        ),
+        _vm._v(" "),
+        _vm._m(0)
       ]
     ),
     _vm._v(" "),
@@ -12012,7 +12945,18 @@ var render = function() {
         ],
         staticClass: "card"
       },
-      [_vm._m(0)]
+      [
+        _c(
+          "div",
+          {
+            staticClass: "card-header text-primary",
+            staticStyle: { "text-align": "center" }
+          },
+          [_vm._v("\n      CONFIGURACIÓN\n    ")]
+        ),
+        _vm._v(" "),
+        _vm._m(1)
+      ]
     )
   ])
 }
@@ -12024,30 +12968,445 @@ var staticRenderFns = [
     return _c("div", { staticClass: "card-body" }, [
       _c("ul", { staticClass: "list-group" }, [
         _c("li", { staticClass: "list-group-item" }, [
-          _c("i", { staticClass: "fas text-primary fa-user" }),
-          _vm._v("\n           \n          "),
-          _c("a", [_vm._v("Editar perfil")])
+          _c("i", { staticClass: "fas fa-comments text-primary" }),
+          _vm._v(" \n          "),
+          _c(
+            "a",
+            { staticClass: "text-dark", attrs: { href: "/?type=answer" } },
+            [_vm._v("Temas comentados por ti")]
+          )
         ]),
         _vm._v(" "),
         _c("li", { staticClass: "list-group-item" }, [
-          _c("i", { staticClass: "fas text-primary fa-question-circle" }),
+          _c("i", { staticClass: "fas fa-question text-primary" }),
+          _vm._v(" \n          "),
+          _c(
+            "a",
+            { staticClass: "text-dark", attrs: { href: "/?type=unanswer" } },
+            [_vm._v("Temas por descubrir")]
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-body" }, [
+      _c("ul", { staticClass: "list-group" }, [
+        _c("li", { staticClass: "list-group-item" }, [
+          _c("i", { staticClass: "fas fa-address-book text-primary" }),
           _vm._v("\n           \n          "),
-          _c("a", { attrs: { href: "/profile/question" } }, [
-            _vm._v("Preguntas creadas")
-          ])
+          _c(
+            "a",
+            { staticClass: "text-dark", attrs: { href: "/profile/edit" } },
+            [_vm._v("Editar perfil")]
+          )
         ]),
         _vm._v(" "),
         _c("li", { staticClass: "list-group-item" }, [
-          _c("i", { staticClass: "fas text-primary fa-question-circle" }),
+          _c("i", { staticClass: "fas fa-file-alt text-primary" }),
           _vm._v("\n           \n          "),
-          _c("a", { attrs: { href: "/profile/savequestion" } }, [
-            _vm._v("Preguntas guardadas")
-          ])
+          _c(
+            "a",
+            { staticClass: "text-dark", attrs: { href: "/profile/question" } },
+            [_vm._v("Preguntas creadas")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "list-group-item" }, [
+          _c("i", { staticClass: "fas fa-save text-primary" }),
+          _vm._v("\n           \n          "),
+          _c(
+            "a",
+            {
+              staticClass: "text-dark",
+              attrs: { href: "/profile/savequestion" }
+            },
+            [_vm._v("Preguntas guardadas")]
+          )
         ])
       ])
     ])
   }
 ]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Legal.vue?vue&type=template&id=39224340&":
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/Legal.vue?vue&type=template&id=39224340& ***!
+  \************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("Master", [
+    _c("div", { attrs: { id: "terminos" } }, [
+      _c("div", { staticClass: "p-3 mb-2 bg-primary text-white" }, [
+        _c("h3", { staticClass: "catbg" }, [
+          _vm._v(
+            "\n        Aviso legal e información sobre las condiciones de uso\n      "
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "upperframe" }, [_c("span")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "roundframe" }, [
+        _c("div", [
+          _vm._v("\n        Datos identificativos del titular de la web"),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "En cumplimiento\n        del deber de información estipulado en el artículo 10 de la Ley\n        34/2002 de 11 de julio de Servicios de la Sociedad de la Información y\n        de Comercio Electrónico, Fundación Foro de Encuentros - ALANDAL (en lo\n        sucesivo ALANDAL) en calidad de titular de la web www.ALANDAL.com\n        procede a comunicarles los datos identificativos exigidos por la\n        referida norma:"
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v("Denominación social: ALANDAL"),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Dirección\n        de correo electrónico: contacto@alandal.com"
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "La presente\n        información conforma y regula las condiciones de uso, las limitaciones\n        de responsabilidad y las obligaciones que los usuarios de la página\n        Web que se publica bajo el nombre de dominio www.ALANDAL.com asumen y\n        se comprometen a respetar."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "El responsable del tratamiento\n        de los datos personales del interesado te informa de que estos datos\n        serán tratados de conformidad con lo dispuesto en las normativas\n        vigentes en protección de datos personales, el Reglamento (UE)\n        2016/679 de 27 de abril de 2016 (RGPD) y la Ley Orgánica 3/2018, de 5\n        de diciembre, de Protección de Datos Personales y garantía de los\n        derechos digitales, por lo que se le facilita la siguiente información\n        del tratamiento:"
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "En tanto en cuanto contamos con el\n        consentimiento del interesado para el tratamiento de los datos\n        personales, rige el apartado a) del punto 1) del artículo 6 del RGPD\n        como base jurídica."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Si el tratamiento de los datos\n        personales es necesario para la ejecución de un contrato con el\n        interesado o de medidas precontractuales rige el apartado b) del punto\n        1) del artículo 6 del RGPD."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Si el tratamiento de los datos\n        personales es consecuencia de una obligación legal por nuestra parte,\n        nos remitimos al apartado c) del punto 1) del artículo 6 del RGPD."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Si\n        el tratamiento de los datos personales tiene como objeto proteger los\n        intereses vitales del interesado o de otra persona natural, nos\n        basamos en el apartado d) del punto 1) del artículo 6 del RGPD."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Si\n        el tratamiento de los datos personales es necesario para cumplir una\n        tarea de interés público o en el ejercicio de una obligación pública\n        nos remitimos al apartado e) del punto 1) del artículo 6 del RGPD."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Mientras\n        que el tratamiento de los datos sea necesario para satisfacer los\n        intereses legítimos del responsable o de un tercero sin poner en\n        riesgo los intereses, los derechos o las libertades fundamentales del\n        interesado, la base legal está establecida por el apartado f) del\n        punto 1) del artículo 6 del RGPD."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v("Definiciones"),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "\n        “Página”, dominio www.ALANDAL.com que se pone a disposición de los\n        Usuarios de Internet."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "“Usuario”, persona física o jurídica\n        que utiliza o navega por la Página."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "“Contenido”, son las\n        páginas que conforman la totalidad del dominio www.ALANDAL.com, las\n        cuales conforman la información y los servicios que ALANDAL pone a\n        disposición de los Usuarios de Internet. En ellas se contienen los\n        mensajes, textos, fotografías, gráficos, iconos, logos, tecnología,\n        links, texturas, dibujos, archivos de sonido y/o imagen, grabaciones,\n        software, aspecto, diseño gráfico y códigos fuente y, en general,\n        cualquier clase de material contenido en la Página."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "“Web”,\n        palabra técnica que describe el sistema de acceso a la información vía\n        Internet, que se configura por medio de páginas confeccionadas con\n        lenguaje HTML o similar, y mecanismos de programación tales como java,\n        javascript, PHP, u otros, etc… En estas páginas diseñadas y publicadas\n        bajo un nombre de dominio Internet son el resultado de la información\n        que el titular pone a disposición de los Usuarios de Internet."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "“Hiperenlace”,\n        técnica por la cual un Usuario puede navegar por diferentes páginas de\n        la Web, o por Internet, con un simple click sobre el texto, icono,\n        botón o indicativo que contiene el enlace."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "“Cookies”, medio\n        técnico para la “trazabilidad” y seguimiento de la navegación en los\n        sitios Web. Son pequeños ficheros de texto que se escriben en el\n        ordenador del Usuario. Este método tiene implicaciones sobre la\n        privacidad, por lo que ALANDAL avisará oportuna y fehacientemente de\n        su utilización en el momento en que se implanten en la Página, a\n        través de un enlace junto a la política de privacidad y el aviso\n        legal, denominado “Política de Cookies”.\n      "
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "lowerframe" }, [_c("span")]),
+      _c("br"),
+      _vm._v(" "),
+      _c("div", { staticClass: "p-3 mb-2 bg-primary text-white" }, [
+        _c("h3", { staticClass: "catbg" }, [_vm._v("Condiciones de uso")])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "upperframe" }, [_c("span")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "roundframe" }, [
+        _c("div", [
+          _vm._v(
+            "\n        La simple y mera utilización de la Página otorga la condición de\n        usuario de la Página, bien sea persona física o jurídica, y\n        obligatoriamente implica la aceptación completa, plena y sin reservas\n        de todas y cada una de las cláusulas y condiciones generales incluidas\n        en el Aviso Legal. Si el Usuario no estuviera conforme con las\n        cláusulas y condiciones de uso de este Aviso Legal, se abstendrá de\n        utilizar la Página."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "A través de la Página, ALANDAL facilita\n        a los Usuarios el acceso y la utilización de diversos Contenidos\n        publicados por medio de Internet por ALANDAL o por terceros\n        autorizados."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "El Usuario está obligado y se compromete a\n        utilizar la Página y los Contenidos de conformidad con la legislación\n        vigente, el Aviso Legal, y cualquier otro aviso o instrucciones\n        puestos en su conocimiento, bien sea por medio de este aviso legal o\n        en cualquier otro lugar dentro de los Contenidos que conforman la\n        Página, así como con las normas de convivencia, la moral y buenas\n        costumbres generalmente aceptadas."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "A tal efecto, el Usuario\n        se obliga y compromete a NO utilizar cualquiera de los Contenidos con\n        fines o efectos ilícitos, prohibidos en el Aviso Legal o por la\n        legislación vigente, lesivos de los derechos e intereses de terceros,\n        o que de cualquier forma puedan dañar, inutilizar, sobrecargar,\n        deteriorar o impedir la normal utilización de los Contenidos, los\n        equipos informáticos o los documentos, archivos y toda clase de\n        contenidos almacenados en cualquier equipo informático propios o\n        contratados por ALANDAL , de otros Usuarios o de cualquier usuario de\n        Internet (hardware y software)"
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v("¿Qué datos vamos a obtener\n        de ti?"),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "El Usuario se obliga y se compromete a no\n        transmitir, difundir o poner a disposición de terceros cualquier clase\n        de material contenido en la Página, tales como informaciones, textos,\n        datos, contenidos, mensajes, gráficos, dibujos, archivos de sonido y/o\n        imagen, fotografías, grabaciones, software, logotipos, marcas, iconos,\n        tecnología, fotografías, software, enlaces, diseño gráfico y códigos\n        fuente, o cualquier otro material al que tuviera acceso en su\n        condición de Usuario de la Página, sin que esta enumeración tenga\n        carácter limitativo."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Asimismo, de conformidad con todo\n        ello, el Usuario no podrá:"
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v("Trataremos tus datos\n        personales"),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "- Reproducir, copiar, distribuir, poner a\n        disposición o de cualquier otra forma comunicar públicamente,\n        transformar o modificar los Contenidos, a menos que se cuente con la\n        autorización escrita y explícita de ALANDAL, que es titular de los\n        correspondientes derechos, o bien que ello resulte legalmente\n        permitido."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "- Suprimir, manipular o de cualquier forma\n        alterar el «copyright» y demás datos identificativos de la reserva de\n        derechos de ALANDAL o de sus titulares, de las huellas y/o\n        identificadores digitales, o de cualesquiera otros medios técnicos\n        establecidos para su reconocimiento."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "El Usuario deberá\n        abstenerse de obtener e incluso de intentar obtener los Contenidos\n        empleando para ello medios o procedimientos distintos de los que,\n        según los casos, se hayan puesto a su disposición a este efecto o se\n        hayan indicado a este efecto en las páginas Web donde se encuentren\n        los Contenidos o, en general, de los que se empleen habitualmente en\n        Internet a este efecto siempre que no entrañen un riesgo de daño o\n        inutilización de la Página, y/o de los Contenidos.\n      "
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "lowerframe" }, [_c("span")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "p-3 mb-2 bg-primary text-white" }, [
+        _c("h3", { staticClass: "catbg" }, [_vm._v("Propiedad intelectual")])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "upperframe" }, [_c("span")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "roundframe" }, [
+        _c("div", [
+          _vm._v(
+            "\n        Todas las marcas, nombres comerciales o signos distintivos de\n        cualquier clase que aparecen en la Página son propiedad de ALANDAL o,\n        en su caso, de terceros que han autorizado su uso, sin que pueda\n        entenderse que el uso o acceso al Portal y/o a los Contenidos atribuya\n        al Usuario derecho alguno sobre las citadas marcas, nombres\n        comerciales y/o signos distintivos, y sin que puedan entenderse\n        cedidos al Usuario, ninguno de los derechos de explotación que existen\n        o puedan existir sobre dichos Contenidos."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "De igual modo los\n        Contenidos son propiedad intelectual de ALANDAL , o de terceros en su\n        caso, por tanto, los derechos de Propiedad Intelectual son titularidad\n        de ALANDAL o de terceros que han autorizado su uso, a quienes\n        corresponde el ejercicio exclusivo de los derechos de explotación de\n        los mismos en cualquier forma y, en especial, los derechos de\n        reproducción, distribución, comunicación pública y transformación."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "La\n        utilización no autorizada de la información contenida en esta Web, así\n        como la lesión de los derechos de Propiedad Intelectual o Industrial\n        de ALANDAL o de terceros incluidos en la Página que hayan cedido\n        contenidos dará lugar a las responsabilidades legalmente\n        establecidas."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v("Hiperenlaces"),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "¿Qué Aquellas\n        personas que se propongan establecer hiperenlaces entre su página Web\n        y la Página deberán observar y cumplir las condiciones siguientes:"
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "-\n        No será necesaria autorización previa cuando el Hiperenlace permita\n        únicamente el acceso a la página de inicio, pero no podrá reproducirla\n        de ninguna forma. Cualquier otra forma de Hiperenlace requerirá la\n        autorización expresa e inequívoca por escrito por parte de ALANDAL."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "-\n        No se crearán “marcos” (“frames”) con las páginas Web ni sobre las\n        páginas Web de ALANDAL."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "- No se realizarán manifestaciones\n        o indicaciones falsas, inexactas, u ofensivas sobre ALANDAL, sus\n        directivos, sus empleados o colaboradores, o de las personas que se\n        relacionen en la Página por cualquier motivo, o de los Usuarios de las\n        Página, o de los Contenidos suministrados."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "- No se\n        declarará ni se dará a entender que ALANDAL ha autorizado el\n        Hiperenlace o que ha supervisado o asumido de cualquier forma los\n        Contenidos ofrecidos o puestos a disposición de la página Web en la\n        que se establece el Hiperenlace."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "- La página Web en la que\n        se establezca el Hiperenlace solo podrá contener lo estrictamente\n        necesario para identificar el destino del Hiperenlace."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "La\n        página Web en la que se establezca el Hiperenlace no contendrá\n        informaciones o contenidos ilícitos, contrarios a la moral y a las\n        buenas costumbres generalmente aceptadas y al orden público, así como\n        tampoco contendrá contenidos contrarios a cualesquiera derechos de\n        terceros."
+          ),
+          _c("br"),
+          _c("br")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "lowerframe" }, [_c("span")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "p-3 mb-2 bg-primary text-white" }, [
+        _c("h3", { staticClass: "catbg" }, [
+          _vm._v("Disponibilidad de la Página")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "upperframe" }, [_c("span")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "roundframe" }, [
+        _c("div", [
+          _vm._v(
+            "\n        ALANDAL no garantiza la inexistencia de interrupciones o errores en el\n        acceso a la Página, a sus Contenidos, ni que éste se encuentren\n        actualizados, aunque desarrollará sus mejores esfuerzos para, en su\n        caso, evitarlos, subsanarlos o actualizarlos. Por consiguiente,\n        ALANDAL no se responsabiliza de los daños o perjuicios de cualquier\n        tipo producidos en el Usuario que traigan causa de fallos o\n        desconexiones en las redes de telecomunicaciones que produzcan la\n        suspensión, cancelación o interrupción del servicio del Portal durante\n        la prestación del mismo o con carácter previo."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "ALANDAL\n        excluye, con las excepciones contempladas en la legislación vigente,\n        cualquier responsabilidad por los daños y perjuicios de toda\n        naturaleza que puedan deberse a la falta de disponibilidad,\n        continuidad o calidad del funcionamiento de la Página y de los\n        Contenidos, al no cumplimiento de la expectativa de utilidad que los\n        usuarios hubieren podido atribuir a la Página y a los Contenidos."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "La\n        función de los Hiperenlaces que aparecen en esta Web es exclusivamente\n        la de informar al usuario acerca de la existencia de otras Web que\n        contienen información sobre la materia. Dichos Hiperenlaces no\n        constituyen sugerencia ni recomendación alguna."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "ALANDAL\n        no se hace responsable de los contenidos de dichas páginas enlazadas,\n        del funcionamiento o utilidad de los Hiperenlaces ni del resultado de\n        dichos enlaces, ni garantiza la ausencia de virus u otros elementos en\n        los mismos que puedan producir alteraciones en el sistema informático\n        (hardware y software), los documentos o los ficheros del usuario,\n        excluyendo cualquier responsabilidad por los daños de cualquier clase\n        causados al usuario por este motivo."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "El acceso a la Página\n        no implica la obligación por parte de ALANDAL de controlar la\n        ausencia de virus, gusanos o cualquier otro elemento informático\n        dañino. Corresponde al Usuario, en todo caso, la disponibilidad de\n        herramientas adecuadas para la detección y desinfección de programas\n        informáticos dañinos, por lo tanto, ALANDAL no se hace\n        responsable de los posibles errores de seguridad que se puedan\n        producir durante la prestación del servicio de la Página, ni de los\n        posibles daños que puedan causarse al sistema informático del usuario\n        o de terceros (hardware y software), los ficheros o documentos\n        almacenados en el mismo, como consecuencia de la presencia de virus en\n        el ordenador del usuario utilizado para la conexión a los servicios y\n        contenidos de la Web, de un mal funcionamiento del navegador o del uso\n        de versiones no actualizadas del mismo."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v("Calidad de la\n        Página"),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Dado el entorno dinámico y cambiante de la\n        información y servicios que se suministran por medio de la Página,\n        ALANDAL realiza su mejor esfuerzo, pero no garantiza la completa\n        veracidad, exactitud, fiabilidad, utilidad y/o actualidad de los\n        Contenidos."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "La información contenida en las páginas que\n        componen este Portal sólo tiene carácter informativo, consultivo,\n        divulgativo y publicitario. En ningún caso ofrecen ni tienen carácter\n        de compromiso vinculante o contractual."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v("Limitación de\n        responsabilidad"),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "ALANDAL excluye toda responsabilidad\n        por las decisiones que el Usuario pueda tomar basado en esta\n        información, así como por los posibles errores tipográficos que puedan\n        contener los documentos y gráficos de la Página. La información está\n        sometida a posibles cambios periódicos sin previo aviso de su\n        contenido por ampliación, mejora, corrección o actualización de los\n        Contenidos."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v("Notificaciones"),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Todas las\n        notificaciones y comunicaciones por parte de ALANDAL al Usuario\n        realizados por cualquier medio se considerarán eficaces a todos los\n        efectos."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v("Disponibilidad de los Contenidos"),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "La\n        prestación del servicio de la Página y de los Contenidos tiene, en\n        principio, duración indefinida. ALANDAL, no obstante, queda\n        autorizada para dar por terminada o suspender la prestación del\n        servicio de la Página y/o de cualquiera de los Contenidos en cualquier\n        momento. Cuando ello sea razonablemente posible, ALANDAL\n        advertirá previamente la terminación o suspensión de la Página."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v("Protección\n        de Datos de Carácter Personal"),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "ALANDAL es consciente de\n        la importancia de la privacidad de los datos de carácter personal y\n        por ello, ha implementado una política de tratamiento de datos\n        orientada a proveer la máxima seguridad en el uso y recogida de los\n        mismos, garantizando el cumplimiento de la normativa vigente en la\n        materia y configurando dicha política como uno de los pilares básicos\n        en las líneas de actuación de la entidad."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Por favor, le\n        rogamos lea detenidamente la Política de Privacidad de nuestra web,\n        cuyo enlace se encuentra a pie de página, junto al presente Aviso\n        Legal.\n      "
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "lowerframe" }, [_c("span")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "p-3 mb-2 bg-primary text-white" }, [
+        _c("h3", { staticClass: "catbg" }, [_vm._v("Jurisdicción")])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "upperframe" }, [_c("span")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "roundframe" }, [
+        _c("div", [
+          _vm._v(
+            "\n        Para cuantas cuestiones se susciten sobre la interpretación,\n        aplicación y cumplimiento de este Aviso Legal, así como de las\n        reclamaciones que puedan derivarse de su uso, todos las partes\n        intervinientes se someten a los Jueces y Tribunales de Madrid,\n        renunciando de forma expresa a cualquier otro fuero que pudiera\n        corresponderles."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v("Legislación aplicable"),
+          _c("br"),
+          _c("br"),
+          _vm._v("El Aviso\n        Legal se rige por la ley española."),
+          _c("br"),
+          _c("br"),
+          _vm._v("Copyright © 2020 –\n        ALANDAL"),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Reservados todos los derechos de autor por las\n        leyes y tratados internacionales de propiedad intelectual. Queda\n        expresamente prohibida su copia, reproducción o difusión, total o\n        parcial, por cualquier medio.\n      "
+          )
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -12075,32 +13434,62 @@ var render = function() {
       _c("div", { staticClass: "card-header" }, [
         _c("div", { staticClass: "card" }, [
           _c("div", { staticClass: "card-header bg-dark" }, [
-            _c("span", { staticClass: "badge bg-primary" }, [
-              _vm._v("¿Tema fijado?")
-            ]),
-            _vm._v(" "),
+            _vm.q.fiexed == "false"
+              ? _c("button", { staticClass: "badge bg-primary" })
+              : _c("span", { staticClass: "badge bg-success" }, [
+                  _vm._v("Fijado")
+                ]),
+            _vm._v("\n           \n          "),
+            _c("i", { staticClass: "fas fa-comments text-white" }),
+            _vm._v("\n           \n          "),
             _c("span", { staticClass: "text-white" }, [
               _vm._v(_vm._s(_vm.q.title))
             ]),
             _vm._v(" "),
             _c(
-              "a",
+              "button",
               {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.isOwn(_vm.q.user_id),
+                    expression: "isOwn(q.user_id)"
+                  }
+                ],
                 staticClass: "badge bg-danger float-end",
                 staticStyle: { "margin-right": "1rem" },
-                attrs: { href: "" }
+                attrs: { href: "" },
+                on: {
+                  click: function($event) {
+                    return _vm.deleteQuestion(_vm.index, _vm.q.id)
+                  }
+                }
               },
-              [_vm._v("Eliminar")]
+              [_vm._v("\n            Eliminar\n          ")]
             ),
             _vm._v(" "),
             _c(
               "a",
               {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.isOwn(_vm.q.user_id) && _vm.q.fiexed !== "true",
+                    expression: "isOwn(q.user_id) && q.fiexed !== 'true'"
+                  }
+                ],
                 staticClass: "badge bg-warning float-end",
                 staticStyle: { "margin-right": "1rem" },
-                attrs: { href: "" }
+                attrs: { href: "" },
+                on: {
+                  click: function($event) {
+                    return _vm.setFixed(_vm.index, _vm.q.id)
+                  }
+                }
               },
-              [_vm._v("Fijado")]
+              [_vm._v("Favorito")]
             )
           ]),
           _vm._v(" "),
@@ -12166,7 +13555,7 @@ var render = function() {
                       key: t.id,
                       staticClass: "badge bg-dark ml-1",
                       staticStyle: { "margin-right": "5px" },
-                      attrs: { href: "" }
+                      attrs: { href: "/?tag=" + t.post }
                     },
                     [_vm._v(_vm._s(t.name))]
                   )
@@ -12299,6 +13688,369 @@ var render = function() {
       }),
       0
     )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/TermsConditions.vue?vue&type=template&id=2710dcf4&":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/Pages/TermsConditions.vue?vue&type=template&id=2710dcf4& ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("Master", [
+    _c("div", { attrs: { id: "terminos" } }, [
+      _c("div", { staticClass: "p-3 mb-2 bg-primary text-white" }, [
+        _c("h3", { staticClass: "catbg" }, [_vm._v("Acuerdo de Registro")])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "upperframe" }, [_c("span")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "roundframe" }, [
+        _c("div", [
+          _vm._v(
+            "\n        Está de acuerdo, mediante el uso de este foro, en no publicar ningún\n        material que sea falso, difamatorio, inexacto, abusivo, vulgar, que\n        incite al odio, intimidatorio, obsceno, orientado sexualmente,\n        amenazante, que invada la privacidad de la persona, material para\n        adultos, o que viole cualquier ley Internacional. También está de\n        acuerdo en no publicar material protegido por derechos de autor a\n        menos que usted sea el propietario de los derechos o tenga el\n        consentimiento por escrito del propietario de dicho material\n        protegido. Spam, flooding, anuncios, mensajes en cadena, esquemas\n        piramidales, y colectas están también prohibidos en este foro."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Tenga\n        en cuenta que es imposible para la plantilla o los propietarios de\n        este foro confirmar la validez de los mensajes. Por favor recuerde que\n        no monitorizamos activamente los mensajes publicados, y por tanto, no\n        somos responsables de su contenido. No garantizamos la exactitud,\n        integridad o utilidad de ninguna información presentada. Los mensajes\n        publicados expresan la opinión del autor, y no necesariamente las\n        opiniones de este foro, su plantilla, sus subsidiarios, o los\n        propietarios. Se invita a cualquiera que considere que un mensaje\n        publicado es censurable a notificarlo al administrador o moderador del\n        foro de manera inmediata. La plantilla y el propietario del foro se\n        reservan el derecho a eliminar contenido censurable, dentro de un\n        tiempo razonable, si determinan que la eliminación es necesaria. Este\n        es un proceso manual, así que, por favor entienda que pueden no ser\n        capaces de eliminar o modificar mensajes particulares de manera\n        inmediata. Esta política se aplica también a la información de los\n        perfiles de los miembros del foro."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Usted es el único\n        responsable del contenido de los mensajes que publica. Además, está de\n        acuerdo en indemnizar y liberar de toda responsabilidad a los\n        propietarios de este foro, cualquier sitio web relacionado con este\n        foro, su plantilla, y sus subsidiarios. Los propietarios de este foro\n        también se reservan el derecho a revelar su identidad (o cualquier\n        información relacionada recabada en este servicio) en el supuesto de\n        una queja formal o proceso legal que pueda derivarse de cualquier\n        situación causada por su uso de este foro."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Cuando se\n        registra tiene la posibilidad de elegir su nombre de usuario. Le\n        aconsejamos que utilice un nombre apropiado*. Con esta cuenta de\n        usuario que está a punto de registrar, se compromete a no entregar\n        jamás su contraseña a otra persona excepto a un administrador, para su\n        protección y por motivos de validación. También está de acuerdo en no\n        usar NUNCA la cuenta de otra persona bajo ningún concepto. Le\n        recomendamos ENCARECIDAMENTE que use una contraseña compleja y única\n        para su cuenta, a fin de prevenir su robo."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v("*Consejos de\n        seguridad y privacidad:"),
+          _c("br"),
+          _vm._v(
+            " - No utilice números personales\n        como nombre de usuario como por ejemplo DNI, número de teléfono,\n        número de la seguridad social, matrículas, etc. El usuario se muestra\n        públicamente y si usamos este tipo de identificadores quedamos\n        expuestos."
+          ),
+          _c("br"),
+          _vm._v(
+            " - No utilice como contraseña el nombre de\n        usuario, ni siquiera con pequeñas alteraciones."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Después de\n        registrarse e ingresar en el foro, podrá cumplimentar un perfil\n        detallado. Es su responsabilidad presentar una información nítida y\n        exacta. Cualquier información que el propietario o la plantilla del\n        foro determine como inexacta o de naturaleza vulgar será eliminada,\n        con o sin previo aviso. Podrán ser de aplicación las sanciones\n        apropiadas."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Por favor tenga en cuenta que, con cada\n        mensaje, se almacena su dirección IP, en el supuesto de que debamos\n        bloquear su acceso al foro o contactar con su proveedor de acceso a\n        internet. Esto solo ocurrirá en caso de vulneración grave de este\n        acuerdo."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Tenga en cuenta también que el software coloca una\n        cookie, un archivo de texto que contiene bits de información (como su\n        nombre o su contraseña), en la caché de su navegador. Esto SOLO se usa\n        para mantenerle conectado/desconectado. El software no reúne ni envía\n        ningún otro tipo de información a su ordenador.\n      "
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "lowerframe" }, [_c("span")]),
+      _c("br"),
+      _vm._v(" "),
+      _c("div", { staticClass: "p-3 mb-2 bg-primary text-white" }, [
+        _c("h3", { staticClass: "catbg" }, [_vm._v("Política de Privacidad")])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "upperframe" }, [_c("span")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "roundframe" }, [
+        _c("div", [
+          _vm._v(
+            "\n        Aviso legal e información sobre las condiciones de uso de ALANDAL"
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "POLÍTICA\n        DE PROTECCIÓN DE DATOS DE CARÁCTER PERSONAL"
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Esta política\n        de privacidad ha sido redactada al amparo de lo dispuesto en el\n        REGLAMENTO (UE) 2016/679 DEL PARLAMENTO EUROPEO Y DEL CONSEJO de 27 de\n        abril de 2016 relativo a la protección de las personas físicas en lo\n        que respecta al tratamiento de datos personales y a la libre\n        circulación de estos datos (RGPD), en la Ley Orgánica 15/1999, de 13\n        de diciembre, de Protección de Datos de Carácter Personal (LOPD) y en\n        su reglamento de desarrollo."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "¿Quién es el responsable de\n        los datos personales que recabamos en esta web?"
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v("El\n        responsable del tratamiento es Alandal "),
+          _c("br"),
+          _c("br"),
+          _vm._v("¿Qué datos vamos a\n        obtener de ti?"),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "En nuestra web los únicos datos personales\n        que podremos recabar de ti son los que nos facilites en el momento de\n        registrarte: correo electrónico, fecha de nacimiento, género y nombre\n        de usuario a utilizar en los foros."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "¿Cuál es la finalidad\n        de este tratamiento de datos?"
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Trataremos tus datos\n        personales para las siguientes finalidades:"
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "• Mantener tu\n        usuario activo en nuestros foros y servicios. Cuando te registres,\n        enviaremos un email de confirmación a la dirección que nos hayas\n        indicado; si no verificas la dirección, tu cuenta tendrá ciertas\n        limitaciones."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "• También utilizaremos tu dirección de correo\n        electrónico para enviarte notificaciones y avisos de eventos que te\n        conciernan en el foro y servicio, siempre y cuando tengas activadas\n        estas notificaciones y alertas en tu panel de configuración de\n        usuario."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "¿Cuál es la base jurídica de estos tratamientos de\n        datos?"
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "La base jurídica es el interés legítimo en abrir tu\n        cuenta de usuario en nuestros foros y servicios al registrarte así\n        como enviarte las notificaciones del foro y servicio si las\n        activas."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "¿Durante cuánto tiempo se van a conservar los\n        datos?"
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Conservaremos tus datos personales mientras hagas\n        uso de nuestros foros y servicios y hasta que solicites la baja."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "En\n        cualquier momento podrás escribirnos para solicitar la supresión de\n        tus datos o la baja de tu usuario; en ese caso, tus datos personales\n        quedarán bloqueados durante 3 años, a disposición exclusiva de Jueces\n        y Tribunales, el Ministerio Fiscal, la Agencia Española de Protección\n        de Datos y demás autoridades y Administraciones Públicas competentes,\n        para resolver cualquier cuestión o responsabilidad relacionada con el\n        tratamiento de tus datos o con el ejercicio de acciones legales,\n        reclamaciones o consultas posteriores, durante el plazo de\n        prescripción de las mismas."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Destinatario o categorías de\n        destinatarios de los datos"
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Tus datos personales no serán\n        facilitados ni cedidos a ninguna entidad ajena a este portal."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Utilizamos\n        los servicios de una compañía para alojar las bases de datos de este\n        foro y servicio: AWS."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v("Transferencias internacionales de\n        datos"),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "No realizamos transferencias internacionales de datos\n        de ningún tipo ni categoría."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v("¿Qué derechos asisten al\n        usuario?"),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "El RGPD te otorga los siguientes derechos, que\n        podrás ejercerlos enviando un correo electrónico que será necesario\n        que el correo electrónico nos lo envíes desde la misma dirección que\n        utilizaste para registrarte."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v("Derecho de acceso"),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Tienes\n        derecho a obtener confirmación de si se están tratando o no datos\n        personales que te conciernen y, en tal caso, derecho de acceso a los\n        datos personales y a la información relacionada con su tratamiento."
+          ),
+          _c("br"),
+          _vm._v(
+            "Tienes\n        derecho a obtener una copia de los datos personales objeto de\n        tratamiento."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v("Derecho de rectificación"),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Tienes\n        derecho a obtener sin dilación indebida la rectificación de los datos\n        personales inexactos que te conciernen. Teniendo en cuenta los fines\n        del tratamiento, tendrás derecho a que se completen los datos\n        personales que sean incompletos."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v("Derecho de supresión"),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Tienes\n        derecho a obtener sin dilación indebida la supresión de los datos\n        personales que te conciernen."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Estamos obligados a suprimir\n        sin dilación indebida los datos personales cuando concurra alguna de\n        las circunstancias siguientes:"
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "a) los datos personales ya\n        no sean necesarios en relación con los fines para los que fueron\n        recogidos o tratados de otro modo;"
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "b)  el interesado\n        retire el consentimiento prestado para fines específicos o el\n        consentimiento expreso prestado para el tratamiento de categorías\n        especiales de datos, como los que revelen sus opiniones políticas,\n        mientras este tratamiento no se base en otro fundamento jurídico;"
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "c)\n         el interesado se oponga al tratamiento por motivos relacionados\n        con su situación particular y no prevalezcan otros motivos legítimos\n        para el tratamiento;"
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "d)  los datos personales hayan\n        sido tratados ilícitamente;"
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "e)  los datos personales\n        deban suprimirse para el cumplimiento de una obligación legal\n        establecida en el Derecho de la Unión o de los Estados miembros que se\n        aplique al responsable del tratamiento."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "No será aplicable\n        la obligación de supresión de los datos personales cuando el\n        tratamiento sea necesario para:"
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "a)  ejercer el derecho\n        a la libertad de expresión e información;"
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "b)  el\n        cumplimiento de una obligación legal que requiera el tratamiento de\n        datos impuesta por el Derecho de la Unión o de los Estados miembros\n        que se aplique al responsable del tratamiento;"
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "c)  el\n        cumplimiento de una misión realizada en interés público o en el\n        ejercicio de poderes públicos conferidos al responsable;"
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "d)\n         con fines de archivo en interés público, fines de investigación\n        científica o histórica o fines estadísticos, en la medida en que el\n        derecho a la supresión pudiera hacer imposible u obstaculizar\n        gravemente el logro de los objetivos de dicho tratamiento;"
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "e)\n         para la formulación, el ejercicio o la defensa de\n        reclamaciones."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v("Limitación del tratamiento"),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Tienes\n        derecho a obtener la limitación del tratamiento de los datos cuando se\n        cumpla alguna de las condiciones siguientes:"
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "a) Impugnes la\n        exactitud de los datos personales, durante un plazo que nos permita\n        verificar la exactitud de los mismos;"
+          ),
+          _c("br"),
+          _vm._v(
+            "b) El tratamiento sea\n        ilícito y te opongas a la supresión de los datos personales y\n        solicites en su lugar la limitación de su uso;"
+          ),
+          _c("br"),
+          _vm._v(
+            "c) No necesitemos\n        los datos personales para los fines del tratamiento, pero los\n        necesites para la formulación, el ejercicio o la defensa de\n        reclamaciones;"
+          ),
+          _c("br"),
+          _vm._v(
+            "d) Te hayas opuesto al tratamiento por motivos\n        relacionados con tu situación particular, mientras se verifica si los\n        motivos legítimos como responsable del tratamiento prevalecen sobre\n        los del interesado."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v("Portabilidad de los datos"),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Tienes\n        derecho a recibir los datos personales que te incumban, en un formato\n        estructurado, de uso común y lectura mecánica."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v("Oposición al\n        tratamiento"),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Tienes derecho a oponerte en cualquier momento,\n        por motivos relacionados con tu situación particular, a que datos\n        personales que te conciernan sean objeto de un tratamiento basado en\n        lo dispuesto en el artículo 6, apartado 1, letras e) o f) del RGPD.\n        Dejaremos de tratar los datos personales, salvo que acreditemos\n        motivos legítimos imperiosos para el tratamiento que prevalezcan sobre\n        los intereses, los derechos y las libertades del interesado, o para la\n        formulación, el ejercicio o la defensa de reclamaciones."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v("Revocación\n        del consentimiento"),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Tienes derecho a retirar en cualquier\n        momento el consentimiento que nos diste para tratar tus datos\n        personales."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Reclamación ante las autoridades de protección\n        de datos"
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Tienes derechos a reclamar ante las autoridades de\n        control en materia de protección de datos si consideras que tus datos\n        personales no están siendo tratados de forma correcta."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v("Tratamiento\n        de datos de menores de edad"),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Nuestros servicios deben ser\n        utilizados por mayores de 14 años, por lo que en el caso de que no\n        tengas esta edad deberás abstenerte de utilizarlos."
+          ),
+          _c("br"),
+          _c("br"),
+          _vm._v(
+            "Podremos\n        requerir documentación oficial para acreditar la edad.\n      "
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "lowerframe" }, [_c("span")])
+    ])
   ])
 }
 var staticRenderFns = []
@@ -24533,6 +26285,8 @@ Vue.compile = compileToFunctions;
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
+	"./About": "./resources/js/Pages/About.vue",
+	"./About.vue": "./resources/js/Pages/About.vue",
 	"./AllQuestions": "./resources/js/Pages/AllQuestions.vue",
 	"./AllQuestions.vue": "./resources/js/Pages/AllQuestions.vue",
 	"./Auth/Login": "./resources/js/Pages/Auth/Login.vue",
@@ -24553,10 +26307,14 @@ var map = {
 	"./Layout/Nav.vue": "./resources/js/Pages/Layout/Nav.vue",
 	"./Layout/Sidebar": "./resources/js/Pages/Layout/Sidebar.vue",
 	"./Layout/Sidebar.vue": "./resources/js/Pages/Layout/Sidebar.vue",
+	"./Legal": "./resources/js/Pages/Legal.vue",
+	"./Legal.vue": "./resources/js/Pages/Legal.vue",
 	"./QuestionDetail": "./resources/js/Pages/QuestionDetail.vue",
 	"./QuestionDetail.vue": "./resources/js/Pages/QuestionDetail.vue",
 	"./SaveQuestion": "./resources/js/Pages/SaveQuestion.vue",
 	"./SaveQuestion.vue": "./resources/js/Pages/SaveQuestion.vue",
+	"./TermsConditions": "./resources/js/Pages/TermsConditions.vue",
+	"./TermsConditions.vue": "./resources/js/Pages/TermsConditions.vue",
 	"./UserQuestion": "./resources/js/Pages/UserQuestion.vue",
 	"./UserQuestion.vue": "./resources/js/Pages/UserQuestion.vue"
 };

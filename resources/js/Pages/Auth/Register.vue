@@ -145,14 +145,14 @@ export default {
             icon: "error",
             title: "Error",
             html:
-              (this.$page.props.errors.name ? "Se requiere un nombre" : "") +
+              (this.$page.props.errors.name ? "Nombre no válido" : "") +
               "<br>" +
-              (this.$page.props.errors.email ? "Se requiere un correo" : "") +
+              (this.$page.props.errors.email ? "Correo no válido" : "") +
               "<br>" +
-              (this.$page.props.errors.password ? "Se requiere una contraseña, ejemplo corto: 'A123b!'" : "") +
+              (this.$page.props.errors.password ? "Contraseña no válida, ejemplo corto: 'A123b!'" : "") +
               "<br>" +
               (this.$page.props.errors.image
-                ? "Se requiere una imagen png, jpg"
+                ? "Imagen no válida, se necesita png, jpg"
                 : ""),
           });
         },

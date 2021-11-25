@@ -7,7 +7,9 @@
           ></button
         >
         <span v-else class="badge bg-success">Fijado</span>
-
+        &nbsp;
+        <i class="fas fa-comments text-white"></i>
+        &nbsp;
         <span class="text-white">{{ q.title }}</span>
         <button
           v-show="isOwn(q.user_id)"

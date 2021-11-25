@@ -40,6 +40,11 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Comentario
     Route::post('question/comment/create',[QuestionController::class, 'createComment']);
+
+    //Terminos de uso, acerca de...
+    Route::get('/about', [PageController::class,'about'])->name('about');
+    Route::get('/termsconditions', [PageController::class,'termsconditions'])->name('termsconditions');
+    Route::get('/legal', [PageController::class,'legal'])->name('legal');
 });
 
 Route::group(['middleware' => 'NotLogin'], function () {

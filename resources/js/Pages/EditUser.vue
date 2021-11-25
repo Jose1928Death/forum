@@ -3,9 +3,6 @@
     <div class="card">
       <div class="card-header">Bienvenido</div>
       <div class="card-body">
-          <!-- <div class="alert alert-success" v-show="this.$page.props.flash">
-           {{ $page.flash.success }}
-        </div>  -->
         <form @submit.prevent="update">
           <div class="form-group">
             <label for="">Nombre</label>

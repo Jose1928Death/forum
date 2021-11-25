@@ -71,12 +71,20 @@ export default {
   methods:{
       createQuestion(){
           this.loading=true;
-          var data = new FormData();
-          data.append('title',this.title);
-          data.append('tag',this.tag);
-          data.append('description',this.description);
-
-          this.$inertia.post('/question/create',data).then(()=>(this.loading=false));
+          if(this.title=="" || this.tag=="" || this.description==""){
+            Swal.fire({
+            icon: "error",
+            title: "Error",
+            html:
+              "Rellene todos los campos"
+          }).then(()=>(this.loading=false));
+          }else{
+            var data = new FormData();
+            data.append('title',this.title);
+            data.append('tag',this.tag);
+            data.append('description',this.description);
+            this.$inertia.post('/question/create',data).then(()=>(this.loading=false));
+          }
       }
   }
 };
