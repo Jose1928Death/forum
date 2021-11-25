@@ -7,14 +7,14 @@
             <div class="form-group">
               <input
                 type="text"
-                placeholder="Enviar titulo"
+                placeholder="Título"
                 class="form-control"
                 v-model="title"
               />
             </div>
             <br />
-            <div class="form-group">
-              <div v-for="t in $page.props.tag" :key="t.id">
+            <div class="row">
+              <div class="col-sm" v-for="t in $page.props.tag" :key="t.id">
                 <label for="">{{ t.name }}</label>
                 <input
                   :value="t.id"
@@ -28,8 +28,9 @@
             <div class="form-group">
               <textarea
                 class="form-control"
-                placeholder="Enviar pregunta"
+                placeholder="Descripción"
                 v-model="description"
+                rows="11"
               ></textarea>
             </div>
             <br />

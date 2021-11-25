@@ -28,7 +28,7 @@
               href=""
               class="badge bg-warning float-end"
               style="margin-right: 1rem"
-              >Favorito</a
+              >Fijar</a
             >
           </div>
           <div class="card-body">
@@ -49,7 +49,7 @@
                 <i v-show="q.is_like == 'true'" class="fas fa-heart"></i>
                 <small>{{ q.is_count }}</small>
                 &nbsp;&nbsp;
-                <i class="far fa-comment text-success"></i>
+                <i class="far fa-comment text-primary"></i>
                 <small>{{ q.comment.length }}</small>
                 &nbsp;&nbsp;
               </div>

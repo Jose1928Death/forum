@@ -2535,6 +2535,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "CreateQuestion",
@@ -11978,7 +11979,7 @@ var render = function() {
                     }
                   ],
                   staticClass: "form-control",
-                  attrs: { type: "text", placeholder: "Enviar titulo" },
+                  attrs: { type: "text", placeholder: "Título" },
                   domProps: { value: _vm.title },
                   on: {
                     input: function($event) {
@@ -11995,9 +11996,9 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "div",
-                { staticClass: "form-group" },
+                { staticClass: "row" },
                 _vm._l(_vm.$page.props.tag, function(t) {
-                  return _c("div", { key: t.id }, [
+                  return _c("div", { key: t.id, staticClass: "col-sm" }, [
                     _c("label", { attrs: { for: "" } }, [
                       _vm._v(_vm._s(t.name))
                     ]),
@@ -12061,7 +12062,7 @@ var render = function() {
                     }
                   ],
                   staticClass: "form-control",
-                  attrs: { placeholder: "Enviar pregunta" },
+                  attrs: { placeholder: "Descripción", rows: "11" },
                   domProps: { value: _vm.description },
                   on: {
                     input: function($event) {
@@ -13502,7 +13503,7 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("Favorito")]
+              [_vm._v("Fijar")]
             )
           ]),
           _vm._v(" "),
@@ -13552,7 +13553,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("small", [_vm._v(_vm._s(_vm.q.is_count))]),
                 _vm._v("\n                \n              "),
-                _c("i", { staticClass: "far fa-comment text-success" }),
+                _c("i", { staticClass: "far fa-comment text-primary" }),
                 _vm._v(" "),
                 _c("small", [_vm._v(_vm._s(_vm.q.comment.length))]),
                 _vm._v("\n                \n            ")
