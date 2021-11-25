@@ -2638,6 +2638,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -2675,18 +2678,28 @@ __webpack_require__.r(__webpack_exports__);
     update: function update() {
       var _this = this;
 
-      this.loading = true;
-      var data = new FormData();
-      data.append("name", this.name);
-      data.append("email", this.email);
-      data.append("password", this.password);
-      data.append("image", this.image);
-      this.$inertia.post("/profile/edit", data, {
-        onFinish: function onFinish() {
+      if (/^[a-zA-Z ]+$/.test(this.name) == false || /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email) == false || /^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/.test(this.password) == false) {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          html: "Rellene los campos" + "<br>" + "Nombre: Jose Antonio" + "<br>" + "Correo: ejemplo01@correo.es" + "<br>" + "Contraseña: G145JSABCDeee!" + "<br>" + "Imagen: png, jpg"
+        }).then(function () {
           return _this.loading = false;
-        }
-      });
-      this.getSuccess(); //.then(() => (this.loading = false));
+        });
+      } else {
+        this.loading = true;
+        var data = new FormData();
+        data.append("name", this.name);
+        data.append("email", this.email);
+        data.append("password", this.password);
+        data.append("image", this.image);
+        this.$inertia.post("/profile/edit", data, {
+          onFinish: function onFinish() {
+            return _this.loading = false;
+          }
+        });
+        this.getSuccess(); //.then(() => (this.loading = false));
+      }
     }
   }
 });

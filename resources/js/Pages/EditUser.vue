@@ -3,6 +3,9 @@
     <div class="card">
       <div class="card-header">Bienvenido</div>
       <div class="card-body">
+        <!-- <div class="alert alert-success" v-show="this.$page.props.flash">
+           {{ $page.flash.success }}
+        </div>  -->
         <form @submit.prevent="update">
           <div class="form-group">
             <label for="">Nombre</label>
@@ -74,26 +77,45 @@ export default {
 
     getSuccess: function () {
       //if (this.$page.flash.success) {
-        Swal.fire({
-          icon: "success",
-          title: "Actualizado",
-          text: "Tu perfil ha sido actualizado correctamente",
-        });
-      },
+      Swal.fire({
+        icon: "success",
+        title: "Actualizado",
+        text: "Tu perfil ha sido actualizado correctamente",
+      });
+    },
 
     update() {
-      this.loading = true;
-      var data = new FormData();
-      data.append("name", this.name);
-      data.append("email", this.email);
-      data.append("password", this.password);
-      data.append("image", this.image);
-      this.$inertia
-        .post("/profile/edit", data, {
-        onFinish: () => (this.loading = false),
-      });
-      this.getSuccess();
+      if (
+        (/^[a-zA-Z ]+$/.test(this.name) ==
+            false ||
+          /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email) ==
+            false ||
+          /^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/.test(
+            this.password
+          ) == false)
+      ) {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          html: "Rellene los campos"+"<br>"+
+          "Nombre: Jose Antonio"+"<br>"+
+          "Correo: ejemplo01@correo.es"+"<br>"+
+          "Contraseña: G145JSABCDeee!"+"<br>"+
+          "Imagen: png, jpg"
+        }).then(() => (this.loading = false));
+      } else {
+        this.loading = true;
+        var data = new FormData();
+        data.append("name", this.name);
+        data.append("email", this.email);
+        data.append("password", this.password);
+        data.append("image", this.image);
+        this.$inertia.post("/profile/edit", data, {
+          onFinish: () => (this.loading = false),
+        });
+        this.getSuccess();
         //.then(() => (this.loading = false));
+      }
     },
   },
 };
