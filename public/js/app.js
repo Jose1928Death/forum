@@ -3977,6 +3977,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -13890,176 +13902,187 @@ var render = function() {
           _c("br"),
           _c("br"),
           _vm._v(
-            "No realizamos transferencias internacionales de datos\n        de ningún tipo ni categoría."
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v("¿Qué derechos asisten al\n        usuario?"),
-          _c("br"),
-          _c("br"),
-          _vm._v(
-            "El RGPD te otorga los siguientes derechos, que\n        podrás ejercerlos enviando un correo electrónico que será necesario\n        que el correo electrónico nos lo envíes desde la misma dirección que\n        utilizaste para registrarte."
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v("Derecho de acceso"),
-          _c("br"),
-          _c("br"),
-          _vm._v(
-            "Tienes\n        derecho a obtener confirmación de si se están tratando o no datos\n        personales que te conciernen y, en tal caso, derecho de acceso a los\n        datos personales y a la información relacionada con su tratamiento."
-          ),
-          _c("br"),
-          _vm._v(
-            "Tienes\n        derecho a obtener una copia de los datos personales objeto de\n        tratamiento."
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v("Derecho de rectificación"),
-          _c("br"),
-          _c("br"),
-          _vm._v(
-            "Tienes\n        derecho a obtener sin dilación indebida la rectificación de los datos\n        personales inexactos que te conciernen. Teniendo en cuenta los fines\n        del tratamiento, tendrás derecho a que se completen los datos\n        personales que sean incompletos."
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v("Derecho de supresión"),
-          _c("br"),
-          _c("br"),
-          _vm._v(
-            "Tienes\n        derecho a obtener sin dilación indebida la supresión de los datos\n        personales que te conciernen."
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v(
-            "Estamos obligados a suprimir\n        sin dilación indebida los datos personales cuando concurra alguna de\n        las circunstancias siguientes:"
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v(
-            "a) los datos personales ya\n        no sean necesarios en relación con los fines para los que fueron\n        recogidos o tratados de otro modo;"
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v(
-            "b)  el interesado\n        retire el consentimiento prestado para fines específicos o el\n        consentimiento expreso prestado para el tratamiento de categorías\n        especiales de datos, como los que revelen sus opiniones políticas,\n        mientras este tratamiento no se base en otro fundamento jurídico;"
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v(
-            "c)\n         el interesado se oponga al tratamiento por motivos relacionados\n        con su situación particular y no prevalezcan otros motivos legítimos\n        para el tratamiento;"
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v(
-            "d)  los datos personales hayan\n        sido tratados ilícitamente;"
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v(
-            "e)  los datos personales\n        deban suprimirse para el cumplimiento de una obligación legal\n        establecida en el Derecho de la Unión o de los Estados miembros que se\n        aplique al responsable del tratamiento."
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v(
-            "No será aplicable\n        la obligación de supresión de los datos personales cuando el\n        tratamiento sea necesario para:"
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v(
-            "a)  ejercer el derecho\n        a la libertad de expresión e información;"
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v(
-            "b)  el\n        cumplimiento de una obligación legal que requiera el tratamiento de\n        datos impuesta por el Derecho de la Unión o de los Estados miembros\n        que se aplique al responsable del tratamiento;"
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v(
-            "c)  el\n        cumplimiento de una misión realizada en interés público o en el\n        ejercicio de poderes públicos conferidos al responsable;"
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v(
-            "d)\n         con fines de archivo en interés público, fines de investigación\n        científica o histórica o fines estadísticos, en la medida en que el\n        derecho a la supresión pudiera hacer imposible u obstaculizar\n        gravemente el logro de los objetivos de dicho tratamiento;"
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v(
-            "e)\n         para la formulación, el ejercicio o la defensa de\n        reclamaciones."
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v("Limitación del tratamiento"),
-          _c("br"),
-          _c("br"),
-          _vm._v(
-            "Tienes\n        derecho a obtener la limitación del tratamiento de los datos cuando se\n        cumpla alguna de las condiciones siguientes:"
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v(
-            "a) Impugnes la\n        exactitud de los datos personales, durante un plazo que nos permita\n        verificar la exactitud de los mismos;"
-          ),
-          _c("br"),
-          _vm._v(
-            "b) El tratamiento sea\n        ilícito y te opongas a la supresión de los datos personales y\n        solicites en su lugar la limitación de su uso;"
-          ),
-          _c("br"),
-          _vm._v(
-            "c) No necesitemos\n        los datos personales para los fines del tratamiento, pero los\n        necesites para la formulación, el ejercicio o la defensa de\n        reclamaciones;"
-          ),
-          _c("br"),
-          _vm._v(
-            "d) Te hayas opuesto al tratamiento por motivos\n        relacionados con tu situación particular, mientras se verifica si los\n        motivos legítimos como responsable del tratamiento prevalecen sobre\n        los del interesado."
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v("Portabilidad de los datos"),
-          _c("br"),
-          _c("br"),
-          _vm._v(
-            "Tienes\n        derecho a recibir los datos personales que te incumban, en un formato\n        estructurado, de uso común y lectura mecánica."
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v("Oposición al\n        tratamiento"),
-          _c("br"),
-          _c("br"),
-          _vm._v(
-            "Tienes derecho a oponerte en cualquier momento,\n        por motivos relacionados con tu situación particular, a que datos\n        personales que te conciernan sean objeto de un tratamiento basado en\n        lo dispuesto en el artículo 6, apartado 1, letras e) o f) del RGPD.\n        Dejaremos de tratar los datos personales, salvo que acreditemos\n        motivos legítimos imperiosos para el tratamiento que prevalezcan sobre\n        los intereses, los derechos y las libertades del interesado, o para la\n        formulación, el ejercicio o la defensa de reclamaciones."
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v("Revocación\n        del consentimiento"),
-          _c("br"),
-          _c("br"),
-          _vm._v(
-            "Tienes derecho a retirar en cualquier\n        momento el consentimiento que nos diste para tratar tus datos\n        personales."
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v(
-            "Reclamación ante las autoridades de protección\n        de datos"
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v(
-            "Tienes derechos a reclamar ante las autoridades de\n        control en materia de protección de datos si consideras que tus datos\n        personales no están siendo tratados de forma correcta."
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v("Tratamiento\n        de datos de menores de edad"),
-          _c("br"),
-          _c("br"),
-          _vm._v(
-            "Nuestros servicios deben ser\n        utilizados por mayores de 14 años, por lo que en el caso de que no\n        tengas esta edad deberás abstenerte de utilizarlos."
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v(
-            "Podremos\n        requerir documentación oficial para acreditar la edad.\n      "
+            "No realizamos transferencias internacionales de datos\n        de ningún tipo ni categoría.\n      "
           )
+        ]),
+        _vm._v(" "),
+        _c("span", { staticClass: "lowerframe" }, [_c("span")]),
+        _c("br"),
+        _vm._v(" "),
+        _c("div", { staticClass: "p-3 mb-2 bg-primary text-white" }, [
+          _c("h3", { staticClass: "catbg" }, [
+            _vm._v("¿Qué derechos asisten al usuario?")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("span", { staticClass: "upperframe" }, [_c("span")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "roundframe" }, [
+          _c("div", [
+            _vm._v(
+              "\n          El RGPD te otorga los siguientes derechos, que podrás ejercerlos\n          enviando un correo electrónico que será necesario que el correo\n          electrónico nos lo envíes desde la misma dirección que utilizaste\n          para registrarte."
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v("Derecho de acceso"),
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "Tienes\n          derecho a obtener confirmación de si se están tratando o no datos\n          personales que te conciernen y, en tal caso, derecho de acceso a los\n          datos personales y a la información relacionada con su\n          tratamiento."
+            ),
+            _c("br"),
+            _vm._v(
+              "Tienes derecho a obtener una copia de los datos\n          personales objeto de tratamiento."
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v("Derecho de\n          rectificación"),
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "Tienes derecho a obtener sin dilación\n          indebida la rectificación de los datos personales inexactos que te\n          conciernen. Teniendo en cuenta los fines del tratamiento, tendrás\n          derecho a que se completen los datos personales que sean\n          incompletos."
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v("Derecho de supresión"),
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "Tienes\n          derecho a obtener sin dilación indebida la supresión de los datos\n          personales que te conciernen."
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "Estamos obligados a\n          suprimir sin dilación indebida los datos personales cuando concurra\n          alguna de las circunstancias siguientes:"
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "a) los datos\n          personales ya no sean necesarios en relación con los fines para los\n          que fueron recogidos o tratados de otro modo;"
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "b)  el\n          interesado retire el consentimiento prestado para fines específicos\n          o el consentimiento expreso prestado para el tratamiento de\n          categorías especiales de datos, como los que revelen sus opiniones\n          políticas, mientras este tratamiento no se base en otro fundamento\n          jurídico;"
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "c)  el interesado se oponga al tratamiento\n          por motivos relacionados con su situación particular y no\n          prevalezcan otros motivos legítimos para el tratamiento;"
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "d)\n           los datos personales hayan sido tratados ilícitamente;"
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "e)\n           los datos personales deban suprimirse para el cumplimiento de\n          una obligación legal establecida en el Derecho de la Unión o de los\n          Estados miembros que se aplique al responsable del tratamiento."
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "No\n          será aplicable la obligación de supresión de los datos personales\n          cuando el tratamiento sea necesario para:"
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "a)\n           ejercer el derecho a la libertad de expresión e\n          información;"
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "b)  el cumplimiento de una obligación\n          legal que requiera el tratamiento de datos impuesta por el Derecho\n          de la Unión o de los Estados miembros que se aplique al responsable\n          del tratamiento;"
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "c)  el cumplimiento de una misión\n          realizada en interés público o en el ejercicio de poderes públicos\n          conferidos al responsable;"
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "d)  con fines de archivo\n          en interés público, fines de investigación científica o histórica o\n          fines estadísticos, en la medida en que el derecho a la supresión\n          pudiera hacer imposible u obstaculizar gravemente el logro de los\n          objetivos de dicho tratamiento;"
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "e)  para la\n          formulación, el ejercicio o la defensa de reclamaciones."
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v("Limitación\n          del tratamiento"),
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "Tienes derecho a obtener la limitación\n          del tratamiento de los datos cuando se cumpla alguna de las\n          condiciones siguientes:"
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "a) Impugnes la exactitud de los\n          datos personales, durante un plazo que nos permita verificar la\n          exactitud de los mismos;"
+            ),
+            _c("br"),
+            _vm._v(
+              "b) El tratamiento sea ilícito y te\n          opongas a la supresión de los datos personales y solicites en su\n          lugar la limitación de su uso;"
+            ),
+            _c("br"),
+            _vm._v(
+              "c) No necesitemos los datos\n          personales para los fines del tratamiento, pero los necesites para\n          la formulación, el ejercicio o la defensa de reclamaciones;"
+            ),
+            _c("br"),
+            _vm._v(
+              "d)\n          Te hayas opuesto al tratamiento por motivos relacionados con tu\n          situación particular, mientras se verifica si los motivos legítimos\n          como responsable del tratamiento prevalecen sobre los del\n          interesado."
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v("Portabilidad de los datos"),
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "Tienes\n          derecho a recibir los datos personales que te incumban, en un\n          formato estructurado, de uso común y lectura mecánica."
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v("Oposición\n          al tratamiento"),
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "Tienes derecho a oponerte en cualquier\n          momento, por motivos relacionados con tu situación particular, a que\n          datos personales que te conciernan sean objeto de un tratamiento\n          basado en lo dispuesto en el artículo 6, apartado 1, letras e) o f)\n          del RGPD. Dejaremos de tratar los datos personales, salvo que\n          acreditemos motivos legítimos imperiosos para el tratamiento que\n          prevalezcan sobre los intereses, los derechos y las libertades del\n          interesado, o para la formulación, el ejercicio o la defensa de\n          reclamaciones."
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v("Revocación del consentimiento"),
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "Tienes\n          derecho a retirar en cualquier momento el consentimiento que nos\n          diste para tratar tus datos personales."
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "Reclamación ante\n          las autoridades de protección de datos"
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "Tienes derechos a\n          reclamar ante las autoridades de control en materia de protección de\n          datos si consideras que tus datos personales no están siendo\n          tratados de forma correcta."
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v("Tratamiento de datos de\n          menores de edad"),
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "Nuestros servicios deben ser utilizados\n          por mayores de 14 años, por lo que en el caso de que no tengas esta\n          edad deberás abstenerte de utilizarlos."
+            ),
+            _c("br"),
+            _c("br"),
+            _vm._v(
+              "Podremos requerir\n          documentación oficial para acreditar la edad.\n        "
+            )
+          ])
         ])
       ]),
       _vm._v(" "),
