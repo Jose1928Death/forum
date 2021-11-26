@@ -3046,8 +3046,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     Nav: _Nav__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Sidebar: _Sidebar__WEBPACK_IMPORTED_MODULE_1__["default"],
-    Footer: Footer
+    Sidebar: _Sidebar__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   name: "Master"
 });
