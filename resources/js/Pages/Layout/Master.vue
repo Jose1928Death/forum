@@ -18,7 +18,7 @@
 import Nav from "./Nav";
 import Sidebar from "./Sidebar"
 export default {
-  components: { Nav, Sidebar, Footer },
+  components: { Nav, Sidebar },
   name: "Master",
 };
 </script>
