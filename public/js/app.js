@@ -3171,6 +3171,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Sidebar",
   computed: {
@@ -3630,6 +3634,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -3663,7 +3673,7 @@ __webpack_require__.r(__webpack_exports__);
         if (result.isConfirmed) {
           Swal.fire("Borrado", "Tu tema ha sido eliminado exitosamente", "success");
           axios__WEBPACK_IMPORTED_MODULE_1___default().get("/question/delete/".concat(q_id)).then(function (res) {
-            window.location.href = '/';
+            window.location.href = "/";
           });
         }
       });
@@ -3722,6 +3732,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Layout_Master__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Layout/Master */ "./resources/js/Pages/Layout/Master.vue");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -4015,6 +4033,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Component_Pagination__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Component/Pagination */ "./resources/js/Pages/Component/Pagination.vue");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+//
 //
 //
 //
@@ -13032,7 +13051,7 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("li", { staticClass: "list-group-item" }, [
-          _c("i", { staticClass: "fas fa-file-alt text-primary" }),
+          _c("i", { staticClass: "fas fa-folder text-primary" }),
           _vm._v("\n           \n          "),
           _c(
             "a",
@@ -13042,7 +13061,7 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("li", { staticClass: "list-group-item" }, [
-          _c("i", { staticClass: "fas fa-save text-primary" }),
+          _c("i", { staticClass: "fas fa-folder text-primary" }),
           _vm._v("\n           \n          "),
           _c(
             "a",
@@ -13568,7 +13587,35 @@ var render = function() {
                 _c("i", { staticClass: "far fa-comment text-primary" }),
                 _vm._v(" "),
                 _c("small", [_vm._v(_vm._s(_vm.q.comment.length))]),
-                _vm._v("\n                \n            ")
+                _vm._v("\n                \n              "),
+                _c("i", {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: !_vm.q.is_save,
+                      expression: "!q.is_save"
+                    }
+                  ],
+                  staticClass: "far fa-star text-primary",
+                  on: {
+                    click: function($event) {
+                      return _vm.saveQuestion(_vm.index, _vm.q.id)
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("i", {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.q.is_save,
+                      expression: "q.is_save"
+                    }
+                  ],
+                  staticClass: "fas fa-star text-primary"
+                })
               ]),
               _vm._v(" "),
               _c(
@@ -13702,13 +13749,19 @@ var render = function() {
       _vm._l(_vm.questions, function(q, index) {
         return _c("div", { key: index, staticClass: "card" }, [
           _c("div", { staticClass: "card-body" }, [
+            _c("i", { staticClass: "fas fa-save text-primary" }),
+            _vm._v(" Título:\n        "),
             _c(
               "a",
               {
                 attrs: { href: _vm.route("question.detail", q.question.post) }
               },
               [_vm._v(_vm._s(q.question.title))]
-            )
+            ),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v("\n        Descripción:\n        "),
+            _c("label", [_vm._v(_vm._s(q.question.description))])
           ])
         ])
       }),
@@ -14128,6 +14181,8 @@ var render = function() {
         _vm._l(_vm.questions.data, function(q, index) {
           return _c("div", { key: index, staticClass: "card" }, [
             _c("div", { staticClass: "card-body" }, [
+              _c("i", { staticClass: "fas fa-save text-primary" }),
+              _vm._v(" \n          "),
               _c(
                 "a",
                 { attrs: { href: _vm.route("question.detail", q.post) } },

@@ -7,7 +7,8 @@
       <div class="col-md-12">
         <div class="card" v-for="(q, index) in questions.data" :key="index">
           <div class="card-body">
-            <a :href="route('question.detail',q.post)">{{q.title}}</a>
+            <i class="fas fa-save text-primary"></i>&nbsp;
+            <a :href="route('question.detail', q.post)">{{ q.title }}</a>
             <i
               v-on:click="deleteQuestion(index, q.id)"
               class="far fa-trash-alt float-right text-danger float-end"

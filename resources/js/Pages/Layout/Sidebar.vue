@@ -26,7 +26,9 @@
         <ul class="list-group">
           <li class="list-group-item">
             <i class="fas fa-comments text-primary"></i>&nbsp;
-            <a class="text-dark" href="/?type=answer">Temas comentados por ti</a>
+            <a class="text-dark" href="/?type=answer"
+              >Temas comentados por ti</a
+            >
           </li>
           <li class="list-group-item">
             <i class="fas fa-question text-primary"></i>&nbsp;
@@ -50,14 +52,16 @@
             <a class="text-dark" href="/profile/edit">Editar perfil</a>
           </li>
           <li class="list-group-item">
-            <i class="fas fa-file-alt text-primary"></i>
+            <i class="fas fa-folder text-primary"></i>
             &nbsp;
             <a class="text-dark" href="/profile/question">Preguntas creadas</a>
           </li>
           <li class="list-group-item">
-            <i class="fas fa-save text-primary"></i>
+            <i class="fas fa-folder text-primary"></i>
             &nbsp;
-            <a class="text-dark" href="/profile/savequestion">Preguntas guardadas</a>
+            <a class="text-dark" href="/profile/savequestion"
+              >Preguntas guardadas</a
+            >
           </li>
         </ul>
       </div>

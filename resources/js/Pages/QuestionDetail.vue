@@ -52,12 +52,18 @@
                 <i class="far fa-comment text-primary"></i>
                 <small>{{ q.comment.length }}</small>
                 &nbsp;&nbsp;
+                <i
+                  @click="saveQuestion(index, q.id)"
+                  v-show="!q.is_save"
+                  class="far fa-star text-primary"
+                ></i>
+                <i v-show="q.is_save" class="fas fa-star text-primary"></i>
               </div>
               <div class="col-md-6">
                 <a
                   v-for="t in q.tag"
                   :key="t.id"
-                  :href="'/?tag='+t.post"
+                  :href="'/?tag=' + t.post"
                   class="badge bg-dark ml-1"
                   style="margin-right: 5px"
                   >{{ t.name }}</a
@@ -142,7 +148,7 @@ export default {
             "success"
           );
           axios.get(`/question/delete/${q_id}`).then((res) => {
-            window.location.href = '/';
+            window.location.href = "/";
           });
         }
       });
