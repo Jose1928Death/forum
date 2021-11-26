@@ -52,7 +52,7 @@
             <a class="text-dark" href="/profile/edit">Editar perfil</a>
           </li>
           <li class="list-group-item">
-            <i class="fas fa-folder text-primary"></i>
+            <i class="fas fa-folder-plus text-primary"></i>
             &nbsp;
             <a class="text-dark" href="/profile/question">Preguntas creadas</a>
           </li>

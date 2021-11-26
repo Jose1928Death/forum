@@ -3,7 +3,7 @@
     <!-- Container wrapper -->
     <div class="container-fluid">
       <!-- Navbar brand -->
-      <a class="navbar-brand" href="">
+      <a class="navbar-brand" href="#">
           <img class="rounded-circle" src="/images/web/icon1.png" height="30" alt="">
           Alandal
       </a>

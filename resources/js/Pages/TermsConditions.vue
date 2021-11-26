@@ -211,6 +211,7 @@
             por mayores de 14 años, por lo que en el caso de que no tengas esta
             edad deberás abstenerte de utilizarlos.<br /><br />Podremos requerir
             documentación oficial para acreditar la edad.
+            <br /><br />
           </div>
         </div>
       </div>

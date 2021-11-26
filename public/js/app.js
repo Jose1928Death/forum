@@ -2095,6 +2095,112 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -2228,8 +2334,8 @@ __webpack_require__.r(__webpack_exports__);
       email: "",
       password: "",
       loading: false,
-      image1: ["https://mapio.net/images-p/621666.jpg"],
-      image2: ["https://static.ideal.es/www/pre2017/multimedia/noticias/201606/21/media/almeria/ies-andalus_xoptimizadax.jpg"]
+      image1: ["/images/web/ies.jpg"],
+      image2: ["/images/web/ies2.jpg"]
     };
   },
   methods: {
@@ -2391,7 +2497,7 @@ __webpack_require__.r(__webpack_exports__);
       password: "",
       image: "",
       loading: false,
-      image2: ["https://static.ideal.es/www/pre2017/multimedia/noticias/201606/21/media/almeria/ies-andalus_xoptimizadax.jpg"]
+      image2: ["/images/web/ies2.jpg"]
     };
   },
   //metodos
@@ -2940,7 +3046,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     Nav: _Nav__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Sidebar: _Sidebar__WEBPACK_IMPORTED_MODULE_1__["default"]
+    Sidebar: _Sidebar__WEBPACK_IMPORTED_MODULE_1__["default"],
+    Footer: Footer
   },
   name: "Master"
 });
@@ -3206,6 +3313,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Layout_Master__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Layout/Master */ "./resources/js/Pages/Layout/Master.vue");
+//
+//
+//
 //
 //
 //
@@ -3787,6 +3897,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Layout_Master__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Layout/Master */ "./resources/js/Pages/Layout/Master.vue");
+//
 //
 //
 //
@@ -11375,7 +11486,225 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("Master")
+  return _c("Master", [
+    _c("div", { attrs: { id: "terminos" } }, [
+      _c("main", { attrs: { role: "main" } }, [
+        _c("section", { staticClass: "jumbotron text-center" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("h1", { staticClass: "jumbotron-heading" }, [
+              _vm._v("Foro Alandal")
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "lead text-muted" }, [
+              _vm._v(
+                "\n            Espacio donde los alumnos y los profesores pueden intercambiar temas de conversación, este foro puede enfocarse en diversos temas y suele desarrollar un sentido de comunidad virtual entre los participantes.\n          "
+              )
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _c(
+                "a",
+                {
+                  staticClass: "btn btn-primary my-2",
+                  attrs: { href: "https://iesalandalus.linkpc.net/moodle/" }
+                },
+                [_vm._v("Entrar a Moodle")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "btn btn-secondary my-2",
+                  attrs: { href: "https://iesalandalus.org/joomla/" }
+                },
+                [_vm._v("Entrar a Web Al-Ándalus")]
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "album py-5 bg-light" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-4" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "card mb-4 box-shadow bg-secondary text-center text-white"
+                  },
+                  [
+                    _c("i", {
+                      staticClass: "fas fa-school fa-8x",
+                      staticStyle: { "margin-top": "25px" }
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-body" }, [
+                      _c("p", { staticClass: "card-text" }, [
+                        _vm._v(
+                          "\n                    Sitio donde puedes establecer temas de conversación acerca del centro educativo.\n                  "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", {
+                        staticClass:
+                          "d-flex justify-content-between align-items-center"
+                      })
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "card mb-4 box-shadow bg-primary text-center text-white"
+                  },
+                  [
+                    _c("i", {
+                      staticClass: "fas fa-user-shield fa-8x",
+                      staticStyle: { "margin-top": "25px" }
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-body" }, [
+                      _c("p", { staticClass: "card-text" }, [
+                        _vm._v(
+                          "\n                    Tolerancia cero al racismo, sexismo, política y/o orientación sexual.\n                  "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", {
+                        staticClass:
+                          "d-flex justify-content-between align-items-center"
+                      })
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "card mb-4 box-shadow bg-secondary text-center text-white"
+                  },
+                  [
+                    _c("i", {
+                      staticClass: "fas fa-users fa-8x",
+                      staticStyle: { "margin-top": "25px" }
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-body" }, [
+                      _c("p", { staticClass: "card-text" }, [
+                        _vm._v(
+                          "\n                    Temas de conversación dedicados a los módulos superiores, medios y temas informales.\n                  "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", {
+                        staticClass:
+                          "d-flex justify-content-between align-items-center"
+                      })
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "card mb-4 box-shadow bg-primary text-center text-white"
+                  },
+                  [
+                    _c("i", {
+                      staticClass: "far fa-comment-alt fa-8x",
+                      staticStyle: { "margin-top": "25px" }
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-body" }, [
+                      _c("p", { staticClass: "card-text" }, [
+                        _vm._v(
+                          "\n                    Diversidad de comentarios y debates sobre los temas creados por los propios usuarios.\n                  "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", {
+                        staticClass:
+                          "d-flex justify-content-between align-items-center"
+                      })
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "card mb-4 box-shadow bg-secondary text-center text-white"
+                  },
+                  [
+                    _c("i", {
+                      staticClass: "fas fa-running fa-8x",
+                      staticStyle: { "margin-top": "25px" }
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-body" }, [
+                      _c("p", { staticClass: "card-text" }, [
+                        _vm._v(
+                          "\n                    Alta velocidad de respuesta de información y manejo de páginas.\n                  "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", {
+                        staticClass:
+                          "d-flex justify-content-between align-items-center"
+                      })
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "card mb-4 box-shadow bg-primary text-center text-white"
+                  },
+                  [
+                    _c("i", {
+                      staticClass: "fas fa-skull-crossbones fa-8x",
+                      staticStyle: { "margin-top": "25px" }
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-body" }, [
+                      _c("p", { staticClass: "card-text" }, [
+                        _vm._v(
+                          "\n                    Protección de datos frente a los piratas informáticos con contraseñas potentes.\n                  "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", {
+                        staticClass:
+                          "d-flex justify-content-between align-items-center"
+                      })
+                    ])
+                  ]
+                )
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -12750,7 +13079,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "navbar-brand", attrs: { href: "" } }, [
+    return _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
       _c("img", {
         staticClass: "rounded-circle",
         attrs: { src: "/images/web/icon1.png", height: "30", alt: "" }
@@ -13051,7 +13380,7 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("li", { staticClass: "list-group-item" }, [
-          _c("i", { staticClass: "fas fa-folder text-primary" }),
+          _c("i", { staticClass: "fas fa-folder-plus text-primary" }),
           _vm._v("\n           \n          "),
           _c(
             "a",
@@ -13265,6 +13594,8 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
       _c("span", { staticClass: "lowerframe" }, [_c("span")]),
       _vm._v(" "),
       _c("div", { staticClass: "p-3 mb-2 bg-primary text-white" }, [
@@ -13419,6 +13750,8 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
       _c("span", { staticClass: "lowerframe" }, [_c("span")]),
       _vm._v(" "),
       _c("div", { staticClass: "p-3 mb-2 bg-primary text-white" }, [
@@ -13444,8 +13777,10 @@ var render = function() {
           _c("br"),
           _c("br"),
           _vm._v(
-            "Reservados todos los derechos de autor por las\n        leyes y tratados internacionales de propiedad intelectual. Queda\n        expresamente prohibida su copia, reproducción o difusión, total o\n        parcial, por cualquier medio.\n      "
-          )
+            "Reservados todos los derechos de autor por las\n        leyes y tratados internacionales de propiedad intelectual. Queda\n        expresamente prohibida su copia, reproducción o difusión, total o\n        parcial, por cualquier medio.\n        "
+          ),
+          _c("br"),
+          _c("br")
         ])
       ])
     ])
@@ -14133,8 +14468,10 @@ var render = function() {
             _c("br"),
             _c("br"),
             _vm._v(
-              "Podremos requerir\n          documentación oficial para acreditar la edad.\n        "
-            )
+              "Podremos requerir\n          documentación oficial para acreditar la edad.\n          "
+            ),
+            _c("br"),
+            _c("br")
           ])
         ])
       ]),

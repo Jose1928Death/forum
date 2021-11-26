@@ -136,6 +136,7 @@
           inutilización de la Página, y/o de los Contenidos.
         </div>
       </div>
+      <br />
       <span class="lowerframe"><span></span></span>
       <div class="p-3 mb-2 bg-primary text-white">
         <h3 class="catbg">Propiedad intelectual</h3>
@@ -269,6 +270,7 @@
           Legal.
         </div>
       </div>
+      <br />
       <span class="lowerframe"><span></span></span>
       <div class="p-3 mb-2 bg-primary text-white">
         <h3 class="catbg">Jurisdicción</h3>
@@ -287,6 +289,7 @@
           leyes y tratados internacionales de propiedad intelectual. Queda
           expresamente prohibida su copia, reproducción o difusión, total o
           parcial, por cualquier medio.
+          <br /><br />
         </div>
       </div>
     </div>

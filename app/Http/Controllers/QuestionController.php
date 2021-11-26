@@ -45,19 +45,19 @@ class QuestionController extends Controller
         //chequear tag
         if($post = $request->tag){
             $tag = Tag::where('post',$post)->first();
-            $questions = $tag->question()->with("comment","tag","questionsave")->orderBy('id','DESC')->paginate(10);
+            $questions = $tag->question()->with("comment","tag","questionsave")->orderBy('id','DESC')->paginate(3);
         }elseif($type = $request->type){
             //preguntas sin respuestas
             if($type == 'answer'){
                 $questions = Question::whereHas('comment',function(Builder $q){
                     $q->where('user_id', Auth::user()->id);
-                })->with("comment","tag","questionsave")->paginate(10);
+                })->with("comment","tag","questionsave")->paginate(3);
             }
             if($type=='unanswer'){
-                $questions = Question::has('comment','<',1)->with('comment','tag','questionsave')->paginate(10);
+                $questions = Question::has('comment','<',1)->with('comment','tag','questionsave')->paginate(3);
             }
         }else{
-            $questions = Question::with("comment","tag","questionsave")->orderBy('id','DESC')->paginate(10);
+            $questions = Question::with("comment","tag","questionsave")->orderBy('id','DESC')->paginate(3);
         }
         //return $questions;
         foreach($questions as $k => $v){

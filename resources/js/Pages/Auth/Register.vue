@@ -122,7 +122,7 @@ export default {
       image: "",
       loading: false,
       image2: [
-        "https://static.ideal.es/www/pre2017/multimedia/noticias/201606/21/media/almeria/ies-andalus_xoptimizadax.jpg",
+        "/images/web/ies2.jpg",
       ],
     };
   },
