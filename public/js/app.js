@@ -12115,10 +12115,7 @@ var render = function() {
           { staticClass: "front" },
           [
             _vm._l(_vm.image2, function(img) {
-              return _c("img", {
-                staticClass: "backImg",
-                attrs: { src: img, alt: "" }
-              })
+              return _c("img", { attrs: { src: img, alt: "" } })
             }),
             _vm._v(" "),
             _vm._m(0)
@@ -12129,7 +12126,7 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "forms" }, [
         _c("div", { staticClass: "form-content" }, [
-          _c("div", { staticClass: "signup-form" }, [
+          _c("div", { staticClass: "login-form" }, [
             _c("div", { staticClass: "title" }, [
               _vm._v("\n            Crear tu cuenta\n            "),
               _c("div", {

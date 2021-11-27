@@ -3,7 +3,7 @@
     <div class="containerInicio">
       <div class="cover">
         <div class="front">
-          <img class="backImg" v-for="img in image2" v-bind:src="img" alt="" />
+          <img v-for="img in image2" v-bind:src="img" alt="" />
           <div class="text">
             <span class="text-1">Únete a nuestro foro</span>
             <span class="text-2"
@@ -15,7 +15,7 @@
       </div>
       <div class="forms">
         <div class="form-content">
-          <div class="signup-form">
+          <div class="login-form">
             <div class="title">
               Crear tu cuenta
               <div
