@@ -73,7 +73,9 @@ class QuestionController extends Controller
         $question = Question::where('post',$post)->with('comment.user','like','tag')->first();
         $question->is_like = $this->getLikeDetail($question->id)['is_like'];
         $question->is_count = $this->getLikeDetail($question->id)['like_count'];
-        return Inertia::render('QuestionDetail',['question'=>$question]);
+        $question->is_save=$this->isSave($question->id);
+
+        return Inertia::render('QuestionDetail',['question' => $question]);
     }
     public function like($id){
         QuestionLike::create([
@@ -121,6 +123,15 @@ class QuestionController extends Controller
             'question_id'=>$q_id,
             'user_id'=>$user_id,
         ]);
+        return response()->json(['success'=>true]);
+    }
+    public function unsaveQuestion(){
+        $q_id = request()->question_id;
+        $user_id=Auth::user()->id;
+        QuestionSave::where([
+            'question_id'=>$q_id,
+            'user_id'=>$user_id,
+        ])->delete();
         return response()->json(['success'=>true]);
     }
     //Mostrar preguntas guardadas

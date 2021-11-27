@@ -52,12 +52,16 @@
                 <i class="far fa-comment text-primary"></i>
                 <small>{{ q.comment.length }}</small>
                 &nbsp;&nbsp;
-                <i
+                <a
                   @click="saveQuestion(index, q.id)"
                   v-show="!q.is_save"
                   class="far fa-star text-primary"
+                ></a>
+                <i
+                  @click="unsaveQuestion(index, q.id)"
+                  v-show="q.is_save"
+                  class="fas fa-star text-primary"
                 ></i>
-                <i v-show="q.is_save" class="fas fa-star text-primary"></i>
               </div>
               <div class="col-md-6">
                 <a
@@ -177,6 +181,24 @@ export default {
         const { success, comment } = res.data;
         if (success) {
           this.q.comment.push(comment);
+        }
+      });
+    },
+    saveQuestion(index, q_id) {
+      var data = new FormData();
+      data.append("question_id", q_id);
+      axios.post("/question/save", data).then((res) => {
+        if (res.data.success) {
+          this.q.is_save = true;
+        }
+      });
+    },
+    unsaveQuestion(index, q_id) {
+      var data = new FormData();
+      data.append("question_id", q_id);
+      axios.post("/question/unsave", data).then((res) => {
+        if (res.data.success) {
+          this.q.is_save = false;
         }
       });
     },

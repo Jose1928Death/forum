@@ -37,6 +37,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/question/delete/{id}',[QuestionController::class,'delete'])->name('question.delete');
     Route::post('/question/set/fix',[QuestionController::class,'setFix'])->name('question.setFix');
     Route::post('/question/save',[QuestionController::class, 'saveQuestion'])->name('question.save');
+    Route::post('/question/unsave',[QuestionController::class, 'unsaveQuestion'])->name('question.unsave');
 
     //Comentario
     Route::post('question/comment/create',[QuestionController::class, 'createComment']);

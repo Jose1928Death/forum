@@ -8,7 +8,6 @@
             q.question.title
           }}</a>
           <br>
-          Descripción:
           <label>{{
             q.question.description
           }}</label>

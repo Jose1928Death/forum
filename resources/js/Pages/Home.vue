@@ -25,7 +25,7 @@
           href=""
           class="badge bg-warning float-end"
           style="margin-right: 1rem"
-          >Favorito</a
+          >Fijar</a
         >
       </div>
       <div class="card-body">
@@ -53,7 +53,7 @@
             &nbsp;&nbsp;
             <!-- Favorito -->
             <i @click="saveQuestion(index,q.id)" v-show="!q.is_save" class="far fa-star text-primary"></i>
-            <i v-show="q.is_save" class="fas fa-star text-primary"></i>
+            <i @click="unsaveQuestion(index,q.id)" v-show="q.is_save" class="fas fa-star text-primary"></i>
             &nbsp;&nbsp;
           </div>
           <div class="col-md-6">
@@ -171,6 +171,15 @@ export default {
         axios.post("/question/save",data).then((res)=>{
             if(res.data.success){
                 this.questions.data[index].is_save=true;
+            }
+        })
+    },
+    unsaveQuestion(index, q_id){
+        var data = new FormData();
+        data.append('question_id',q_id);
+        axios.post("/question/unsave",data).then((res)=>{
+            if(res.data.success){
+                this.questions.data[index].is_save=false;
             }
         })
     }

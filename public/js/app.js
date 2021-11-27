@@ -3006,6 +3006,17 @@ vue__WEBPACK_IMPORTED_MODULE_4__["default"].mixin({
           _this3.questions.data[index].is_save = true;
         }
       });
+    },
+    unsaveQuestion: function unsaveQuestion(index, q_id) {
+      var _this4 = this;
+
+      var data = new FormData();
+      data.append('question_id', q_id);
+      axios__WEBPACK_IMPORTED_MODULE_2___default().post("/question/unsave", data).then(function (res) {
+        if (res.data.success) {
+          _this4.questions.data[index].is_save = false;
+        }
+      });
     }
   }
 });
@@ -3749,6 +3760,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -3822,6 +3837,28 @@ __webpack_require__.r(__webpack_exports__);
           _this2.q.comment.push(comment);
         }
       });
+    },
+    saveQuestion: function saveQuestion(index, q_id) {
+      var _this3 = this;
+
+      var data = new FormData();
+      data.append("question_id", q_id);
+      axios__WEBPACK_IMPORTED_MODULE_1___default().post("/question/save", data).then(function (res) {
+        if (res.data.success) {
+          _this3.q.is_save = true;
+        }
+      });
+    },
+    unsaveQuestion: function unsaveQuestion(index, q_id) {
+      var _this4 = this;
+
+      var data = new FormData();
+      data.append("question_id", q_id);
+      axios__WEBPACK_IMPORTED_MODULE_1___default().post("/question/unsave", data).then(function (res) {
+        if (res.data.success) {
+          _this4.q.is_save = false;
+        }
+      });
     }
   }
 });
@@ -3841,7 +3878,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Layout_Master__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Layout/Master */ "./resources/js/Pages/Layout/Master.vue");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-//
 //
 //
 //
@@ -12792,7 +12828,7 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("Favorito")]
+              [_vm._v("Fijar")]
             )
           ]),
           _vm._v(" "),
@@ -12872,7 +12908,12 @@ var render = function() {
                       expression: "q.is_save"
                     }
                   ],
-                  staticClass: "fas fa-star text-primary"
+                  staticClass: "fas fa-star text-primary",
+                  on: {
+                    click: function($event) {
+                      return _vm.unsaveQuestion(index, q.id)
+                    }
+                  }
                 }),
                 _vm._v("\n            \n        ")
               ]),
@@ -13922,7 +13963,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("small", [_vm._v(_vm._s(_vm.q.comment.length))]),
                 _vm._v("\n                \n              "),
-                _c("i", {
+                _c("a", {
                   directives: [
                     {
                       name: "show",
@@ -13948,7 +13989,12 @@ var render = function() {
                       expression: "q.is_save"
                     }
                   ],
-                  staticClass: "fas fa-star text-primary"
+                  staticClass: "fas fa-star text-primary",
+                  on: {
+                    click: function($event) {
+                      return _vm.unsaveQuestion(_vm.index, _vm.q.id)
+                    }
+                  }
                 })
               ]),
               _vm._v(" "),
@@ -14094,7 +14140,7 @@ var render = function() {
             ),
             _vm._v(" "),
             _c("br"),
-            _vm._v("\n        Descripción:\n        "),
+            _vm._v(" "),
             _c("label", [_vm._v(_vm._s(q.question.description))])
           ])
         ])
