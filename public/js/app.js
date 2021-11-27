@@ -2906,6 +2906,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2953,6 +2976,11 @@ vue__WEBPACK_IMPORTED_MODULE_4__["default"].mixin({
       this.questions.data[index].like_count++;
       axios__WEBPACK_IMPORTED_MODULE_2___default().get("/question/like/".concat(q_id)).then(function (res) {});
     },
+    unlike: function unlike(q_id, index) {
+      this.questions.data[index].is_like = "false";
+      this.questions.data[index].like_count--;
+      axios__WEBPACK_IMPORTED_MODULE_2___default().get("/question/unlike/".concat(q_id)).then(function (res) {});
+    },
     isOwn: function isOwn(user_id) {
       var auth_user_id = this.$page.props.auth_user.id;
 
@@ -2967,15 +2995,26 @@ vue__WEBPACK_IMPORTED_MODULE_4__["default"].mixin({
 
       var data = new FormData();
       data.append("id", q_id);
-      axios__WEBPACK_IMPORTED_MODULE_2___default().post('/question/set/fix', data).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_2___default().post("/question/set/fix", data).then(function (res) {
         if (res.data.success) {
-          _this.questions.data[index].setFixed = 'true';
+          _this.questions.data[index].setFixed = "true";
+        }
+      });
+    },
+    setunFixed: function setunFixed(index, q_id) {
+      var _this2 = this;
+
+      var data = new FormData();
+      data.append("id", q_id);
+      axios__WEBPACK_IMPORTED_MODULE_2___default().post("/question/set/unfix", data).then(function (res) {
+        if (res.data.success) {
+          _this2.questions.data[index].setFixed = "true";
         }
       });
     },
     //Borrar preguntas
     deleteQuestion: function deleteQuestion(index, q_id) {
-      var _this2 = this;
+      var _this3 = this;
 
       Swal.fire({
         title: "¿Estás seguro?",
@@ -2990,31 +3029,31 @@ vue__WEBPACK_IMPORTED_MODULE_4__["default"].mixin({
           Swal.fire("Borrado", "Tu tema ha sido eliminado exitosamente", "success");
           axios__WEBPACK_IMPORTED_MODULE_2___default().get("/question/delete/".concat(q_id)).then(function (res) {
             if (res.data.success) {
-              _this2.questions.data.splice(index, 1);
+              _this3.questions.data.splice(index, 1);
             }
           });
         }
       });
     },
     saveQuestion: function saveQuestion(index, q_id) {
-      var _this3 = this;
+      var _this4 = this;
 
       var data = new FormData();
-      data.append('question_id', q_id);
+      data.append("question_id", q_id);
       axios__WEBPACK_IMPORTED_MODULE_2___default().post("/question/save", data).then(function (res) {
         if (res.data.success) {
-          _this3.questions.data[index].is_save = true;
+          _this4.questions.data[index].is_save = true;
         }
       });
     },
     unsaveQuestion: function unsaveQuestion(index, q_id) {
-      var _this4 = this;
+      var _this5 = this;
 
       var data = new FormData();
-      data.append('question_id', q_id);
+      data.append("question_id", q_id);
       axios__WEBPACK_IMPORTED_MODULE_2___default().post("/question/unsave", data).then(function (res) {
         if (res.data.success) {
-          _this4.questions.data[index].is_save = false;
+          _this5.questions.data[index].is_save = false;
         }
       });
     }
@@ -3644,6 +3683,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layout_Master__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Layout/Master */ "./resources/js/Pages/Layout/Master.vue");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+var _methods;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3783,7 +3837,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     this.q = this.question;
   },
-  methods: {
+  methods: (_methods = {
     deleteQuestion: function deleteQuestion(index, q_id) {
       Swal.fire({
         title: "¿Estás seguro?",
@@ -3860,7 +3914,35 @@ __webpack_require__.r(__webpack_exports__);
         }
       });
     }
-  }
+  }, _defineProperty(_methods, "setFixed", function setFixed(index, q_id) {
+    var _this5 = this;
+
+    var data = new FormData();
+    data.append("id", q_id);
+    axios__WEBPACK_IMPORTED_MODULE_1___default().post("/question/set/fix", data).then(function (res) {
+      if (res.data.success) {
+        _this5.q.setFixed = "true";
+      }
+    });
+  }), _defineProperty(_methods, "setunFixed", function setunFixed(index, q_id) {
+    var _this6 = this;
+
+    var data = new FormData();
+    data.append("id", q_id);
+    axios__WEBPACK_IMPORTED_MODULE_1___default().post("/question/set/unfix", data).then(function (res) {
+      if (res.data.success) {
+        _this6.q.setFixed = "true";
+      }
+    });
+  }), _defineProperty(_methods, "like", function like(q_id, index) {
+    this.q.is_like = "true";
+    this.q.is_count++;
+    axios__WEBPACK_IMPORTED_MODULE_1___default().get("/question/like/".concat(q_id)).then(function (res) {});
+  }), _defineProperty(_methods, "unlike", function unlike(q_id, index) {
+    this.q.is_like = "false";
+    this.q.is_count--;
+    axios__WEBPACK_IMPORTED_MODULE_1___default().get("/question/unlike/".concat(q_id)).then(function (res) {});
+  }), _methods)
 });
 
 /***/ }),
@@ -3878,6 +3960,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Layout_Master__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Layout/Master */ "./resources/js/Pages/Layout/Master.vue");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -4179,6 +4272,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Component_Pagination__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Component/Pagination */ "./resources/js/Pages/Component/Pagination.vue");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+//
 //
 //
 //
@@ -12775,9 +12869,27 @@ var render = function() {
           _c("div", { staticClass: "card-header bg-dark" }, [
             q.fiexed == "false"
               ? _c("button", { staticClass: "badge bg-primary" })
-              : _c("span", { staticClass: "badge bg-success" }, [
-                  _vm._v("Fijado")
-                ]),
+              : _c(
+                  "a",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.isOwn(q.user_id) && q.fiexed == "true",
+                        expression: "isOwn(q.user_id) && q.fiexed == 'true'"
+                      }
+                    ],
+                    staticClass: "badge bg-success",
+                    attrs: { href: "" },
+                    on: {
+                      click: function($event) {
+                        return _vm.setunFixed(index, q.id)
+                      }
+                    }
+                  },
+                  [_vm._v("Fijado")]
+                ),
             _vm._v("\n       \n      "),
             _c("i", { staticClass: "fas fa-comments text-white" }),
             _vm._v("\n       \n      "),
@@ -12805,7 +12917,7 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("Eliminar")]
+              [_vm._v("\n        Eliminar\n      ")]
             ),
             _vm._v(" "),
             _c(
@@ -12871,7 +12983,12 @@ var render = function() {
                       expression: "q.is_like == 'true'"
                     }
                   ],
-                  staticClass: "fas fa-heart"
+                  staticClass: "fas fa-heart",
+                  on: {
+                    click: function($event) {
+                      return _vm.unlike(q.id, index)
+                    }
+                  }
                 }),
                 _vm._v(" "),
                 _c("small", [_vm._v(_vm._s(q.like_count))]),
@@ -13856,9 +13973,28 @@ var render = function() {
           _c("div", { staticClass: "card-header bg-dark" }, [
             _vm.q.fiexed == "false"
               ? _c("button", { staticClass: "badge bg-primary" })
-              : _c("span", { staticClass: "badge bg-success" }, [
-                  _vm._v("Fijado")
-                ]),
+              : _c(
+                  "a",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value:
+                          _vm.isOwn(_vm.q.user_id) && _vm.q.fiexed == "true",
+                        expression: "isOwn(q.user_id) && q.fiexed == 'true'"
+                      }
+                    ],
+                    staticClass: "badge bg-success",
+                    attrs: { href: "" },
+                    on: {
+                      click: function($event) {
+                        return _vm.setunFixed(_vm.index, _vm.q.id)
+                      }
+                    }
+                  },
+                  [_vm._v("Fijado")]
+                ),
             _vm._v("\n           \n          "),
             _c("i", { staticClass: "fas fa-comments text-white" }),
             _vm._v("\n           \n          "),
@@ -13954,7 +14090,12 @@ var render = function() {
                       expression: "q.is_like == 'true'"
                     }
                   ],
-                  staticClass: "fas fa-heart"
+                  staticClass: "fas fa-heart",
+                  on: {
+                    click: function($event) {
+                      return _vm.unlike(_vm.q.id, _vm.index)
+                    }
+                  }
                 }),
                 _vm._v(" "),
                 _c("small", [_vm._v(_vm._s(_vm.q.is_count))]),
@@ -14128,20 +14269,34 @@ var render = function() {
       { staticClass: "container" },
       _vm._l(_vm.questions, function(q, index) {
         return _c("div", { key: index, staticClass: "card" }, [
-          _c("div", { staticClass: "card-body" }, [
-            _c("i", { staticClass: "fas fa-save text-primary" }),
-            _vm._v(" Título:\n        "),
-            _c(
-              "a",
-              {
-                attrs: { href: _vm.route("question.detail", q.question.post) }
-              },
-              [_vm._v(_vm._s(q.question.title))]
-            ),
+          _c("div", { staticClass: "card" }, [
+            _c("div", { staticClass: "card-header bg-dark" }, [
+              _vm._v("\n           \n          "),
+              _c("i", { staticClass: "fas fa-comments text-white" }),
+              _vm._v("\n           \n          "),
+              _c(
+                "a",
+                {
+                  staticClass: "text-white",
+                  attrs: { href: _vm.route("question.detail", q.question.post) }
+                },
+                [_vm._v(_vm._s(q.question.title))]
+              )
+            ]),
             _vm._v(" "),
-            _c("br"),
-            _vm._v(" "),
-            _c("label", [_vm._v(_vm._s(q.question.description))])
+            _c("div", { staticClass: "card-body" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-12" }, [
+                  _c("p", [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(q.question.description) +
+                        "\n              "
+                    )
+                  ])
+                ])
+              ])
+            ])
           ])
         ])
       }),
@@ -14562,12 +14717,15 @@ var render = function() {
         { staticClass: "col-md-12" },
         _vm._l(_vm.questions.data, function(q, index) {
           return _c("div", { key: index, staticClass: "card" }, [
-            _c("div", { staticClass: "card-body" }, [
-              _c("i", { staticClass: "fas fa-save text-primary" }),
+            _c("div", { staticClass: "card-body bg-dark" }, [
+              _c("i", { staticClass: "fas fa-save text-white" }),
               _vm._v(" \n          "),
               _c(
                 "a",
-                { attrs: { href: _vm.route("question.detail", q.post) } },
+                {
+                  staticClass: "text-white",
+                  attrs: { href: _vm.route("question.detail", q.post) }
+                },
                 [_vm._v(_vm._s(q.title))]
               ),
               _vm._v(" "),
@@ -14580,7 +14738,9 @@ var render = function() {
                   }
                 }
               })
-            ])
+            ]),
+            _vm._v(" "),
+            _c("br")
           ])
         }),
         0

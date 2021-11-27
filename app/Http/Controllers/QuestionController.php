@@ -85,6 +85,14 @@ class QuestionController extends Controller
         return response()->json(['success' => true]);
     }
 
+    public function unlike($id){
+        QuestionLike::where([
+            'user_id' => Auth::user()->id,
+            'question_id' => $id
+        ])->delete();
+        return response()->json(['success' => true]);
+    }
+
     public function createComment(Request $request){
         $q_id = $request->question_id;
         $comment = $request -> comment;
@@ -113,6 +121,13 @@ class QuestionController extends Controller
         $id = request()->id;
         Question::where('id',$id)->update([
             "fiexed" => 'true'
+        ]);
+        return response()->json(['success' => true]);
+    }
+    public function setunFix(){
+        $id = request()->id;
+        Question::where('id',$id)->update([
+            "fiexed" => 'false'
         ]);
         return response()->json(['success' => true]);
     }

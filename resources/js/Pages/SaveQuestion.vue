@@ -2,15 +2,26 @@
   <Master>
     <div class="container">
       <div class="card" v-for="(q, index) in questions" :key="index">
-        <div class="card-body">
-          <i class="fas fa-save text-primary"></i>&nbsp;Título:
-          <a :href="route('question.detail', q.question.post)">{{
+          <div class="card">
+          <div class="card-header bg-dark">
+            &nbsp;
+            <i class="fas fa-comments text-white"></i>
+            &nbsp;
+            <a class="text-white" :href="route('question.detail', q.question.post)">{{
             q.question.title
           }}</a>
-          <br>
-          <label>{{
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-12">
+                <p>
+                  {{
             q.question.description
-          }}</label>
+          }}
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

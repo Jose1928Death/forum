@@ -3,22 +3,28 @@
     <Pagination :links="questions.links" />
     <div v-for="(q, index) in questions.data" :key="q.id" class="card">
       <div class="card-header bg-dark">
-        <button v-if="q.fiexed == 'false'" class="badge bg-primary"
-          ></button
+        <button v-if="q.fiexed == 'false'" class="badge bg-primary"></button>
+        <a
+          v-else
+          href=""
+          class="badge bg-success"
+          v-show="isOwn(q.user_id) && q.fiexed == 'true'"
+          v-on:click="setunFixed(index, q.id)"
+          >Fijado</a
         >
-        <span v-else class="badge bg-success">Fijado</span>
         &nbsp;
         <i class="fas fa-comments text-white"></i>
         &nbsp;
         <span class="text-white">{{ q.title }}</span>
         <button
           v-show="isOwn(q.user_id)"
-           v-on:click="deleteQuestion(index, q.id)"
+          v-on:click="deleteQuestion(index, q.id)"
           href=""
           class="badge bg-danger float-end"
           style="margin-right: 1rem"
-          >Eliminar</button
         >
+          Eliminar
+        </button>
         <a
           v-show="isOwn(q.user_id) && q.fiexed !== 'true'"
           v-on:click="setFixed(index, q.id)"
@@ -44,7 +50,11 @@
               @click="like(q.id, index)"
               class="far fa-heart text-primary"
             ></i>
-            <i v-show="q.is_like == 'true'" class="fas fa-heart"></i>
+            <i
+              v-show="q.is_like == 'true'"
+              @click="unlike(q.id, index)"
+              class="fas fa-heart"
+            ></i>
             <small>{{ q.like_count }}</small>
             &nbsp;&nbsp;
             <!-- Comentario -->
@@ -52,14 +62,27 @@
             <small>{{ q.comment.length }}</small>
             &nbsp;&nbsp;
             <!-- Favorito -->
-            <i @click="saveQuestion(index,q.id)" v-show="!q.is_save" class="far fa-star text-primary"></i>
-            <i @click="unsaveQuestion(index,q.id)" v-show="q.is_save" class="fas fa-star text-primary"></i>
+            <i
+              @click="saveQuestion(index, q.id)"
+              v-show="!q.is_save"
+              class="far fa-star text-primary"
+            ></i>
+            <i
+              @click="unsaveQuestion(index, q.id)"
+              v-show="q.is_save"
+              class="fas fa-star text-primary"
+            ></i>
             &nbsp;&nbsp;
           </div>
           <div class="col-md-6">
-            <a v-for="t in q.tag" :key="t.id" :href="'/?tag='+t.post" class="badge bg-dark ml-1" style="margin-right: 5px;">{{
-              t.name
-            }}</a>
+            <a
+              v-for="t in q.tag"
+              :key="t.id"
+              :href="'/?tag=' + t.post"
+              class="badge bg-dark ml-1"
+              style="margin-right: 5px"
+              >{{ t.name }}</a
+            >
           </div>
           <div class="col-md-2">
             <a
@@ -123,6 +146,11 @@ export default {
       this.questions.data[index].like_count++;
       axios.get(`/question/like/${q_id}`).then((res) => {});
     },
+    unlike(q_id, index) {
+      this.questions.data[index].is_like = "false";
+      this.questions.data[index].like_count--;
+      axios.get(`/question/unlike/${q_id}`).then((res) => {});
+    },
     isOwn(user_id) {
       var auth_user_id = this.$page.props.auth_user.id;
       if (user_id == auth_user_id) {
@@ -131,14 +159,22 @@ export default {
       return false;
     },
     setFixed(index, q_id) {
-        var data = new FormData();
-        data.append("id",q_id);
-        axios.post('/question/set/fix',data)
-        .then((res)=>{
-            if(res.data.success){
-                this.questions.data[index].setFixed = 'true';
-            }
-        })
+      var data = new FormData();
+      data.append("id", q_id);
+      axios.post("/question/set/fix", data).then((res) => {
+        if (res.data.success) {
+          this.questions.data[index].setFixed = "true";
+        }
+      });
+    },
+    setunFixed(index, q_id) {
+      var data = new FormData();
+      data.append("id", q_id);
+      axios.post("/question/set/unfix", data).then((res) => {
+        if (res.data.success) {
+          this.questions.data[index].setFixed = "true";
+        }
+      });
     },
     //Borrar preguntas
     deleteQuestion(index, q_id) {
@@ -165,24 +201,24 @@ export default {
         }
       });
     },
-    saveQuestion(index, q_id){
-        var data = new FormData();
-        data.append('question_id',q_id);
-        axios.post("/question/save",data).then((res)=>{
-            if(res.data.success){
-                this.questions.data[index].is_save=true;
-            }
-        })
+    saveQuestion(index, q_id) {
+      var data = new FormData();
+      data.append("question_id", q_id);
+      axios.post("/question/save", data).then((res) => {
+        if (res.data.success) {
+          this.questions.data[index].is_save = true;
+        }
+      });
     },
-    unsaveQuestion(index, q_id){
-        var data = new FormData();
-        data.append('question_id',q_id);
-        axios.post("/question/unsave",data).then((res)=>{
-            if(res.data.success){
-                this.questions.data[index].is_save=false;
-            }
-        })
-    }
+    unsaveQuestion(index, q_id) {
+      var data = new FormData();
+      data.append("question_id", q_id);
+      axios.post("/question/unsave", data).then((res) => {
+        if (res.data.success) {
+          this.questions.data[index].is_save = false;
+        }
+      });
+    },
   },
 };
 </script>

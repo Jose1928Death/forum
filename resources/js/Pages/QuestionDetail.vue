@@ -8,7 +8,14 @@
               v-if="q.fiexed == 'false'"
               class="badge bg-primary"
             ></button>
-            <span v-else class="badge bg-success">Fijado</span>
+            <a
+              v-else
+              href=""
+              class="badge bg-success"
+              v-show="isOwn(q.user_id) && q.fiexed == 'true'"
+              v-on:click="setunFixed(index, q.id)"
+              >Fijado</a
+            >
             &nbsp;
             <i class="fas fa-comments text-white"></i>
             &nbsp;
@@ -46,7 +53,11 @@
                   @click="like(q.id, index)"
                   class="far fa-heart text-primary"
                 ></i>
-                <i v-show="q.is_like == 'true'" class="fas fa-heart"></i>
+                <i
+                  v-show="q.is_like == 'true'"
+                  @click="unlike(q.id, index)"
+                  class="fas fa-heart"
+                ></i>
                 <small>{{ q.is_count }}</small>
                 &nbsp;&nbsp;
                 <i class="far fa-comment text-primary"></i>
@@ -201,6 +212,34 @@ export default {
           this.q.is_save = false;
         }
       });
+    },
+    setFixed(index, q_id) {
+      var data = new FormData();
+      data.append("id", q_id);
+      axios.post("/question/set/fix", data).then((res) => {
+        if (res.data.success) {
+          this.q.setFixed = "true";
+        }
+      });
+    },
+    setunFixed(index, q_id) {
+      var data = new FormData();
+      data.append("id", q_id);
+      axios.post("/question/set/unfix", data).then((res) => {
+        if (res.data.success) {
+          this.q.setFixed = "true";
+        }
+      });
+    },
+    like(q_id, index) {
+      this.q.is_like = "true";
+      this.q.is_count++;
+      axios.get(`/question/like/${q_id}`).then((res) => {});
+    },
+    unlike(q_id, index) {
+      this.q.is_like = "false";
+      this.q.is_count--;
+      axios.get(`/question/unlike/${q_id}`).then((res) => {});
     },
   },
 };

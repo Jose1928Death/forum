@@ -29,6 +29,7 @@ Route::group(['middleware' => 'auth'], function () {
     //Pregunta detalle
     Route::get('/question/detail/{post}', [QuestionController::class,'detail'])->name('question.detail');
     Route::get('/question/like/{id}',[QuestionController::class,'like']);
+    Route::get('/question/unlike/{id}',[QuestionController::class,'unlike']);
 
     //Pregunta
     Route::get('/question/create',[QuestionController::class,'create'])->name('question.create');
@@ -36,6 +37,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/question/user',[QuestionController::class,'userQuestion'])->name('question.user');
     Route::get('/question/delete/{id}',[QuestionController::class,'delete'])->name('question.delete');
     Route::post('/question/set/fix',[QuestionController::class,'setFix'])->name('question.setFix');
+    Route::post('/question/set/unfix',[QuestionController::class,'setunFix'])->name('question.setunFix');
     Route::post('/question/save',[QuestionController::class, 'saveQuestion'])->name('question.save');
     Route::post('/question/unsave',[QuestionController::class, 'unsaveQuestion'])->name('question.unsave');
 
