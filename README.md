@@ -64,7 +64,7 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
 
-INSTRUCCIONES PARA INSTALAR EL PROYECTO LOCALMENTE
+## INSTRUCCIONES PARA INSTALAR EL PROYECTO LOCALMENTE
 
 Antes de extraer el proyecto, debes tener xampp (php y sql), composer, una base de datos llamado foro.
 
