@@ -78,9 +78,10 @@ Antes de extraer el proyecto, debes tener xampp (php y sql), composer, una base 
         DB_USERNAME=root
         DB_PASSWORD=
 
--  Si da problemas de key introducir esta linea: APP_KEY=base64:y9Wzz0Im7PBEc7A/ru9KtGDfBgbpVmdVhEKcTB6V7bw=
+-  *Si da problemas de key introducir esta linea: APP_KEY=base64:y9Wzz0Im7PBEc7A/ru9KtGDfBgbpVmdVhEKcTB6V7bw= *
 
 -  Dentro de la carpeta del proyecto ejecutar el comando "composer update" para cargar las librerias.
 -  Dentro de la caperta del proyecto ejecutar el comando "yarn install" para hacer funcionar la parte cliente con Vue.
+-  Dentro de la caperta del proyecto ejecutar el comando "php artisan migrate:fresh --seed" para cargar los datos por defecto de la base de datos.
 -  Abrir dos consolas, en la primera consola ejecutamos el comando "php artisan serve" y en la segunda consola ejecutamos el comando "yarn watch".
 -  Tendriamos el proyecto en funcionamiento en la ip 127.0.0.1 con laravel y vue
